@@ -1,8 +1,16 @@
 #!/bin/sh
 
-. /home/homeautomation/homeassistant/scripts/secrets.sh
-cd /home/homeautomation/homeassistant/snapshots/ || exit 4
-LOGDIR=/home/homeautomation/homeassistant/logs/
+if [ -z "$HAROOT" ]; then
+    echo "$HAROOT not set">&2
+    exit 2
+fi
+. "$HAROOT/scripts/common/include.sh"
+
+havedep curl
+
+cd /home/homeautomation/snapshots/ || die "Snapshot dir not found"
+LOGDIR=/home/homeautomation/logs/
+mkdir -p "$LOGDIR"
 
 DATE=$(date +%Y-%m-%d_%H:%M:%S)
 
@@ -12,10 +20,10 @@ if [ -z "$MODE" ]; then
     exit 2
 fi
 
-if [ -f "$MODE.lock" ]; then
+if [ -e "$TMPDIR/$MODE.lock" ]; then
     exit 1
 else
-    touch "$MODE.lock"
+    touch "$TMPDIR/$MODE.lock"
 fi
 
 FLIP=0
@@ -37,21 +45,21 @@ elif [ "$MODE" = "street" ]; then
     curl -sS "http://$STREETCAM_USER:$STREETCAM_PASSWORD@$STREETCAM_IP/Streaming/Channels/1/picture" -o "$DATE.$MODE.jpg" 2>"$LOGDIR/camera.$MODE.log"
 elif [ "$MODE" = "balcony" ]; then
     curl -sS "http://$BALCONYCAM_IP:88/cgi-bin/CGIProxy.fcgi?cmd=snapPicture2&usr=$BALCONYCAM_USER&pwd=$BALCONYCAM_PASSWORD" -o "$DATE.$MODE.jpg" 2>"$LOGDIR/camera.$MODE.log"
-elif [ "$MODE" = "jaiko" ]; then
-    curl -sS "http://$JAIKOCAM_IP:88/cgi-bin/CGIProxy.fcgi?cmd=snapPicture2&usr=$JAIKOCAM_USER&pwd=$JAIKOCAM_PASSWORD" -o "$DATE.$MODE.jpg" 2>"$LOGDIR/camera.$MODE.log"
 elif [ "$MODE" = "garden" ]; then
     curl -sS "http://$GARDENCAM_IP/snapshot.cgi?user=$GARDENCAM_USER&pwd=$GARDENCAM_PASSWORD" -o "$DATE.$MODE.jpg" 2>"$LOGDIR/camera.$MODE.log"
 elif [ "$MODE" = "frontdoor" ]; then
+    #unused
     fswebcam -S 3 -r 640x480 -d "$FRONTDOORCAM_DEV" --save "$DATE.$MODE.jpg" 2>"$LOGDIR/camera.$MODE.log"
 elif [ "$MODE" = "hallupstairs" ]; then
+    #unused
     fswebcam -S 3 -r 640x480 -d "$HALLUPSTAIRSCAM_DEV" --save "$DATE.$MODE.jpg" 2>"$LOGDIR/camera.$MODE.log"
 else
-    rm "$MODE.lock"
+    rm "$TMPDIR/$MODE.lock"
     echo "No such mode: $MODE" >&2
     exit 2
 fi
 
-rm "$MODE.lock"
+rm "$TMPDIR/$MODE.lock"
 
 if [ -f "$DATE.$MODE.jpg" ]; then
     ln -sf "$DATE.$MODE.jpg" "_$MODE.jpg"

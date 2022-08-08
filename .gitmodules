@@ -1,3 +1,6 @@
 [submodule "media"]
 	path = media
 	url = git@github.com:proycon/homeautomation-media/
+[submodule "programs/433send"]
+	path = programs/433send
+	url = git@github.com:proycon/433mhzforrpi

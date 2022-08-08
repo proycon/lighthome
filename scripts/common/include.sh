@@ -43,13 +43,20 @@ if [ -z "$HAROOT" ]; then
     die "$HAROOT not set"
 fi
 
-if [ -e "$HAROOT/.mqtt_secrets" ]; then
+if [ -e "$HAROOT/private/mqtt.secrets.sh" ]; then
+    . "$HAROOT/private/mqtt.secrets.sh"
+elif [ -e "$HAROOT/.mqtt_secrets" ]; then
     . "$HAROOT/.mqtt_secrets"
 elif [ -e "$HOME/.mqtt_secrets" ]; then
     . "$HOME/.mqtt_secrets"
 elif [ -e "/etc/mqtt_secrets" ]; then
     . "/etc/mqtt_secrets"
 fi
+
+if [ -e "$HAROOT/private/secrets.sh" ]; then
+    . "$HAROOT/private/secrets.sh"
+fi
+
 
 mqttcheck() {
     [ -n "$MQTT_USER" ] || die "No MQTT user defined"
