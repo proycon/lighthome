@@ -41,8 +41,8 @@ do
     TIMEDELTA=0
     if [ $# -gt 1 ] && [[ "$1" =~ ^[0-9]+$ ]]; then
         #assume to be a timestamp if first is numeric and NOT the only argument
-        shift
         MSGTIME=$1
+        shift
         PAYLOAD=$(echo -e "$@" | sed -e 's/^[[:space:]]*//' -e 's/[[:space:]]*$//') #trim
         echo "MQTT IN [@$MSGTIME] $TOPIC> $PAYLOAD" >&2
         TIMEDELTA=$(( NOW - MSGTIME ))
