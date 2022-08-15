@@ -10,7 +10,7 @@ ONEWIRE_FILE="/sys/devices/w1_bus_master1/$ONEWIRE_DEVICE_ID/temperature"
 
 if [ -e "$ONEWIRE_FILE" ]; then
     TEMP="$(cat "$ONEWIRE_FILE")" #will report an integer in celsius * 1000
-    [ -n "$TEMP" ] && echo "$TEMP / 1000" | bc -l
+    [ -n "$TEMP" ] && echo "scale=1; $TEMP / 1000" | bc -l
 else
     die "Onewire file not found: $ONEWIRE_FILE"
 fi
