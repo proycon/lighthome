@@ -174,7 +174,7 @@ mqtt_transmitter() {
                     #small delay before reconnecting
                     error "mqtt sender script failed ($SENDER.sh $*), reconnecting after 10s grace period..."
                     sleep 10
-                elif ! mosquitto_pub -I "$HOSTNAME" -h "$MQTT_HOST" -p "$MQTT_PORT" -u "$MQTT_USER" -P "$MQTT_PASSWORD" --cafile "$CACERT" -t "$TOPIC" -m "$PAYLOAD" -l --qos 1 $MQTT_OPTIONS; then
+                elif ! mosquitto_pub -I "$HOSTNAME" -h "$MQTT_HOST" -p "$MQTT_PORT" -u "$MQTT_USER" -P "$MQTT_PASSWORD" --cafile "$CACERT" -t "$TOPIC" -m "$PAYLOAD" --qos 1 $MQTT_OPTIONS; then
                     #small delay before reconnecting
                     error "mqtt publish for sender failed ($SENDER.sh $*), reconnecting after 10s grace period..."
                     sleep 10
@@ -185,7 +185,7 @@ mqtt_transmitter() {
             else
                 #sender runs continuously (invoked once), each outputted line is transmitted over mqtt as payload
                 "$HAROOT/scripts/mqttsenders/$SENDER.sh" $@ | while IFS= read -r PAYLOAD; do
-                    if ! mosquitto_pub -I "$HOSTNAME" -h "$MQTT_HOST" -p "$MQTT_PORT" -u "$MQTT_USER" -P "$MQTT_PASSWORD" --cafile "$CACERT" -t "$TOPIC" -m "$PAYLOAD" -l --qos 1 $MQTT_OPTIONS; then
+                    if ! mosquitto_pub -I "$HOSTNAME" -h "$MQTT_HOST" -p "$MQTT_PORT" -u "$MQTT_USER" -P "$MQTT_PASSWORD" --cafile "$CACERT" -t "$TOPIC" -m "$PAYLOAD" --qos 1 $MQTT_OPTIONS; then
                         error "mqttpub from sender failed ($SENDER.sh $*)..."
                         return 1
                     fi
