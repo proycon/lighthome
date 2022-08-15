@@ -20,7 +20,7 @@ systemctl enable ssh || exit 2
 
 systemctl set-default multi-user.target || exit 2 #no graphical UI by default
 
-apt install aptitude tmux git gcc make zsh kodi python3-virtualenv virtualenv vim cec-utils libcec-dev python3-cec scons swig snapclient libttspico-utils sshfs jq || exit 1
+apt install aptitude tmux git gcc make zsh kodi python3-virtualenv virtualenv vim cec-utils libcec-dev python3-cec scons swig snapclient libttspico-utils sshfs jq golang || exit 1
 apt install kodi-audioencoder-flac
 
 echo "homeautomation    ALL=(ALL) NOPASSWD: ALL" > /etc/sudoers.d/030_homeautomation
@@ -91,8 +91,8 @@ fi
 
 systemctl enable lircd
 
-cd /home/homeautomation/homeassistant
-sudo -u homeautomation ./setup.sh || exit 6
+#cd /home/homeautomation/lighthome
+#sudo -u homeautomation ./setup.sh || exit 6
 
 systemctl enable homeautomation@lighthome
 systemctl disable snapclient  #do not run on boot
