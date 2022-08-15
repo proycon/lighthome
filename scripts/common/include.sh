@@ -57,6 +57,8 @@ if [ -e "$HAROOT/private/secrets.sh" ]; then
     . "$HAROOT/private/secrets.sh"
 fi
 
+havedep mosquitto_pub
+havedep mosquitto_sub
 
 mqttcheck() {
     [ -n "$MQTT_USER" ] || die "No MQTT user defined"
