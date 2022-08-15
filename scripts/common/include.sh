@@ -74,10 +74,15 @@ mqttpub() {
     #Publish a single message
     mqttcheck
 
-    if [ -n "$TOPIC" ]; then
-        #topic already set in environment
+    if [ $# -eq 2 ]; then
+        #explicit topic and payload
+        TOPIC="$1"
+        shift
+    elif [ -n "$TOPIC" ]; then
+        #only one argument, topic already set in environment, assume argument is payload
         true #noop, nothing to do
     elif [ -n "$1" ]; then
+        #only one argument, no topic provided yet so assume argument is topic, set automatic payload
         TOPIC="$1"
         shift
     else
