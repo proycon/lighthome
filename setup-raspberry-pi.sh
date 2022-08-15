@@ -74,12 +74,10 @@ if [ ! -d /home/homeautomation/WiringPi ]; then
     ldconfig
 fi
 
-if [ ! -d /home/homeautomation/rpi_ws281x ]; then
+if [ ! -d /home/homeautomation/rpi_ws281x-python ]; then
     cd /home/homeautomation
-    sudo -u homeautomation git clone https://github.com/jgarff/rpi_ws281x || exit 3
-    cd /home/homeautomation/rpi_ws281x
-    sudo -u homeautomation scons || exit 3
-    cd /home/homeautomation/rpi_ws281x/python
+    sudo -u homeautomation git clone --recursive https://github.com/rpi-ws281x/rpi-ws281x-python
+    cd /home/homeautomation/rpi_ws281x-python/library
     python setup.py install  || exit 3
 fi
 
