@@ -31,7 +31,6 @@ do
 	RECEIVETIME=${fields[0]} #time of reception
 	TOPIC=${fields[1]}
 	PAYLOAD="${fields[2]}"
-    echo "MQTT IN> $TOPIC" >&2
 
     NOW=$(date +%s | tr -d '\n')
 
@@ -45,11 +44,11 @@ do
         shift
         MSGTIME=$1
         PAYLOAD=$(echo -e "$@" | sed -e 's/^[[:space:]]*//' -e 's/[[:space:]]*$//') #trim
-        echo "MQTT IN [@$MSGTIME]> $PAYLOAD" >&2
+        echo "MQTT IN [@$MSGTIME] $TOPIC> $PAYLOAD" >&2
         TIMEDELTA=$(( NOW - MSGTIME ))
     else
         #no timestamp
-        echo "MQTT IN> $PAYLOAD" >&2
+        echo "MQTT IN $TOPIC> $PAYLOAD" >&2
     fi
 
     for handler in $HANDLERS; do
