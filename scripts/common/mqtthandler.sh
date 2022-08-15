@@ -39,22 +39,14 @@ do
     IFS=":" read -ra payloadfields <<< "$PAYLOAD";
     set -- "${payloadfields[@]}"
     MSGTIME=$NOW
-    TEST="$1" #first argument may be a timestamp? check:
     TIMEDELTA=0
-    if [ $# -gt 1 ]; then
-        case $TEST in
-             [0-9]+)
-                #assume to be a timestamp if numeric
-                shift
-                MSGTIME=$TEST
-                PAYLOAD=$(echo -e "$@" | sed -e 's/^[[:space:]]*//' -e 's/[[:space:]]*$//') #trim
-                echo "MQTT IN [@$MSGTIME]> $PAYLOAD" >&2
-                TIMEDELTA=$(( NOW - MSGTIME ))
-                ;;
-            *)
-                #no timestamp
-                echo "MQTT IN> $PAYLOAD" >&2
-        esac
+    if [ $# -gt 1 ] && [[ "$1" =~ ^[0-9]+$ ]]; then
+        #assume to be a timestamp if first is numeric and NOT the only argument
+        shift
+        MSGTIME=$1
+        PAYLOAD=$(echo -e "$@" | sed -e 's/^[[:space:]]*//' -e 's/[[:space:]]*$//') #trim
+        echo "MQTT IN [@$MSGTIME]> $PAYLOAD" >&2
+        TIMEDELTA=$(( NOW - MSGTIME ))
     else
         #no timestamp
         echo "MQTT IN> $PAYLOAD" >&2
