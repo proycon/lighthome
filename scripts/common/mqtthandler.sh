@@ -38,21 +38,27 @@ do
     #parse payload
     IFS=":" read -ra payloadfields <<< "$PAYLOAD";
     set -- "${payloadfields[@]}"
-    MSGTIME="$1" #first argument may be a timestamp? check:
-    case $MSGTIME in
-         [0-9]+)
-            #assume to be a timestamp if numeric
-            shift
-            PAYLOAD=$(echo -e "$@" | sed -e 's/^[[:space:]]*//' -e 's/[[:space:]]*$//') #trim
-            echo "MQTT IN [@$MSGTIME]> $PAYLOAD" >&2
-            TIMEDELTA=$(( NOW - MSGTIME ))
-            ;;
-        *)
-            #no timestamp
-            MSGTIME=$NOW
-            TIMEDELTA=0
-            echo "MQTT IN> $PAYLOAD" >&2
-    esac
+    MSGTIME=$NOW
+    TEST="$1" #first argument may be a timestamp? check:
+    TIMEDELTA=0
+    if [ $# -gt 1 ]; then
+        case $TEST in
+             [0-9]+)
+                #assume to be a timestamp if numeric
+                shift
+                MSGTIME=$TEST
+                PAYLOAD=$(echo -e "$@" | sed -e 's/^[[:space:]]*//' -e 's/[[:space:]]*$//') #trim
+                echo "MQTT IN [@$MSGTIME]> $PAYLOAD" >&2
+                TIMEDELTA=$(( NOW - MSGTIME ))
+                ;;
+            *)
+                #no timestamp
+                echo "MQTT IN> $PAYLOAD" >&2
+        esac
+    else
+        #no timestamp
+        echo "MQTT IN> $PAYLOAD" >&2
+    fi
 
     for handler in $HANDLERS; do
         #A handler may contain contain arguments, separated by @
