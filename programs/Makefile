@@ -10,5 +10,4 @@ mhz19/mhz19: mhz19/mhz19.go
 
 mhz19: mhz19/mhz19
 
-
-all: gpio_binary_sensor
+all: gpio_binary_sensor dht22 mhz19
