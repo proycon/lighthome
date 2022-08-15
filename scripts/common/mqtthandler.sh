@@ -40,7 +40,7 @@ do
     set -- "${payloadfields[@]}"
     MSGTIME="$1" #first argument may be a timestamp? check:
     case $MSGTIME in
-         *[0-9]*)
+         [0-9]+)
             #assume to be a timestamp if numeric
             shift
             PAYLOAD=$(echo -e "$@" | sed -e 's/^[[:space:]]*//' -e 's/[[:space:]]*$//') #trim
