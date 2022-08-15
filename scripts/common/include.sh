@@ -64,7 +64,7 @@ mqttcheck() {
     [ -n "$MQTT_USER" ] || die "No MQTT user defined"
     [ -n "$MQTT_PASSWORD" ] || die "No MQTT password defined"
     [ -n "$MQTT_HOST" ] || MQTT_HOST="anaproy.nl"
-    [ -n "$MQTT_PORT" ] || MQTT_PORT=8333
+    [ -n "$MQTT_PORT" ] || MQTT_PORT=8883
     if [ -e /etc/ssl/certs/ca-cert-ISRG_Root_X1.pem ]; then
         CACERT="/etc/ssl/certs/ca-cert-ISRG_Root_X1.pem"
     elif [ -e /etc/ssl/certs/ISRG_Root_X1.pem ]; then
