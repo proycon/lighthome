@@ -38,14 +38,14 @@ do
     IFS=":" read -ra payloadfields <<< "$PAYLOAD";
     set -- "${payloadfields[@]}"
     MSGTIME=$NOW
-    TIMEDELTA=0
+    #TIMEDELTA=0
     if [ $# -gt 1 ] && [[ "$1" =~ ^[0-9]+$ ]]; then
         #assume to be a timestamp if first is numeric and NOT the only argument
         MSGTIME=$1
         shift
         PAYLOAD=$(echo -e "$@" | sed -e 's/^[[:space:]]*//' -e 's/[[:space:]]*$//') #trim
         info "MQTT IN [@$MSGTIME] $TOPIC: $PAYLOAD"
-        TIMEDELTA=$(( NOW - MSGTIME ))
+        #TIMEDELTA=$(( NOW - MSGTIME ))
     else
         #no timestamp
         info "MQTT IN $TOPIC: $PAYLOAD"
