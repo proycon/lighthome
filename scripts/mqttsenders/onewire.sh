@@ -5,7 +5,7 @@
 . "$HAROOT/scripts/common/include.sh"
 
 havedep bc
-havevar ONEWIRE_DEVICE_ID
+havevar "$ONEWIRE_DEVICE_ID"
 ONEWIRE_FILE="/sys/devices/w1_bus_master1/$ONEWIRE_DEVICE_ID/temperature"
 
 if [ -e "$ONEWIRE_FILE" ]; then

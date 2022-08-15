@@ -2,7 +2,7 @@
 
 #take care to run everything asynchronously from this point onward!
 
-havevar "GPIO_PIN_433SEND"
+havevar "$GPIO_PIN_433SEND"
 
 handle_433send() {
     case $TOPIC in
