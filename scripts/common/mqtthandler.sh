@@ -44,11 +44,11 @@ do
         MSGTIME=$1
         shift
         PAYLOAD=$(echo -e "$@" | sed -e 's/^[[:space:]]*//' -e 's/[[:space:]]*$//') #trim
-        echo "MQTT IN [@$MSGTIME] $TOPIC> $PAYLOAD" >&2
+        info "MQTT IN [@$MSGTIME] $TOPIC: $PAYLOAD"
         TIMEDELTA=$(( NOW - MSGTIME ))
     else
         #no timestamp
-        echo "MQTT IN $TOPIC> $PAYLOAD" >&2
+        info "MQTT IN $TOPIC: $PAYLOAD"
     fi
 
     for handler in $HANDLERS; do
