@@ -6,7 +6,7 @@ export HAROOT="/home/homeautomation/lighthome"
 
 settrap #kill all children when dying
 
-export GPIO_PIN_433SEND=4
+export GPIO_PIN_433SEND=23
 export SNAPCAST_SOUNDCARD=17
 export ONEWIRE_DEVICE_ID=28-0000059319c4
 

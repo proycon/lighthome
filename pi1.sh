@@ -6,7 +6,7 @@ export HAROOT="/home/homeautomation/lighthome"
 
 settrap #kill all children when dying
 
-export GPIO_PIN_433SEND=7
+export GPIO_PIN_433SEND=4
 export SNAPCAST_SOUNDCARD=36
 
 #runs asynchronously
