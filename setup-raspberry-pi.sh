@@ -74,7 +74,7 @@ if [ ! -d /home/homeautomation/WiringPi ]; then
     ldconfig
 fi
 
-sudo pip install rpi_ws281x
+pip install rpi_ws281x
 
 if [ ! -d /home/homeautomation/lighthome ]; then
     cd /home/homeautomation
