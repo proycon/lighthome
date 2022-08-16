@@ -180,10 +180,12 @@ mqtt_transmitter() {
             else
                 info "mqtt_transmitter: $SENDER $*; interval=0; topic=$TOPIC"
                 #sender runs continuously (invoked once), each outputted line is transmitted over mqtt as payload
-                if ! "$HAROOT/scripts/mqttsenders/$SENDER.sh" $@ | mosquitto_pub -I "$HOSTNAME" -h "$MQTT_HOST" -p "$MQTT_PORT" -u "$MQTT_USER" -P "$MQTT_PASSWORD" --cafile "$CACERT" -t "$TOPIC" -l --qos 1 $MQTT_OPTIONS; then
-                    error "mqttpub from sender failed ($SENDER.sh $*)..."
-                    return 1
-                fi
+                "$HAROOT/scripts/mqttsenders/$SENDER.sh" $@ | while IFS= read -r PAYLOAD; do
+                    if ! mosquitto_pub -I "$HOSTNAME" -h "$MQTT_HOST" -p "$MQTT_PORT" -u "$MQTT_USER" -P "$MQTT_PASSWORD" --cafile "$CACERT" -t "$TOPIC" -m "$PAYLOAD" --qos 1 $MQTT_OPTIONS; then
+                        error "mqttpub from sender failed ($SENDER.sh $*)..."
+                        return 1
+                    fi
+                done
                 #shellcheck disable=SC2181 #--> usage of $?
                 error "mqtt sender failed ($SENDER.sh $*), reconnecting after 10s grace period..."
                 sleep 10
