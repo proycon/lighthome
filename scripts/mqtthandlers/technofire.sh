@@ -19,6 +19,7 @@ handle_technofire() {
     case $TOPIC in
         "home/technofire/$HOSTNAME/set/"*)
             SCENE=$(echo "$TOPIC" | cut -d'/' -f5 | tr " " "_" | tr "[:upper:]" "[:lower:]")
+            [ "$PAYLOAD" = "OFF" ] && SCENE="off"
             BRIGHTNESS=$(echo "$TOPIC" | cut -d'/' -f6)
             ITERATIONS=0
             run_technofire
@@ -26,6 +27,7 @@ handle_technofire() {
             ;;
         "home/technofire/$HOSTNAME/jsonset")
             SCENE=$(echo "$PAYLOAD" | jq '.scene' | tr " " "_" | tr "[:upper:]" "[:lower:]")
+            [ "$PAYLOAD" = "OFF" ] && SCENE="off"
             BRIGHTNESS=$(echo "$PAYLOAD" | jq '.brightness')
             ITERATIONS=$(echo "$PAYLOAD" | jq '.iterations')
             run_technofire
