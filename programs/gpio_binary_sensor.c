@@ -69,6 +69,7 @@ int main(int argc, char *argv[]) {
         state[0] = digitalRead(pin);
         if ((state[0] == state[1]) && (state[1] != state[2])) {
             printf("%d\n", state[0]);
+            fflush(stdout);
         }
         for (int i = 2; i > 0; i--) state[i] = state[i-1];
         delay(60);
