@@ -1,8 +1,5 @@
 #!/usr/bin/env python3
 
-from __future__ import print_function, unicode_literals, division, absolute_import
-
-# NeoPixel library strandtest example
 import time
 import random
 import sys
@@ -11,7 +8,7 @@ import argparse
 
 HOST = os.uname()[1]
 
-from neopixel import *
+from rpi_ws281x import Adafruit_NeoPixel, Color, WS2811_STRIP_GRB
 
 colorstate = {}
 
@@ -185,7 +182,7 @@ def colorFade(strip, color, maxbrightness=255, wait_ms=250, wait_fade_ms=0):
 # Main program logic follows:
 if __name__ == '__main__':
     # Create NeoPixel object with appropriate configuration.
-    strip = Adafruit_NeoPixel(LED_COUNT, LED_PIN, LED_FREQ_HZ, LED_DMA, LED_INVERT, LED_BRIGHTNESS, 0 , ws.WS2811_STRIP_GRB)
+    strip = Adafruit_NeoPixel(LED_COUNT, LED_PIN, LED_FREQ_HZ, LED_DMA, LED_INVERT, LED_BRIGHTNESS, 0 , WS2811_STRIP_GRB)
     # Intialize the library (must be called once before other functions).
     strip.begin()
 
