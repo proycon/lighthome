@@ -4,8 +4,10 @@ package main
 
 import (
 	"log"
+    "fmt"
     "github.com/tarm/serial"
     "io"
+    "os"
 )
 
 
@@ -55,5 +57,5 @@ func main() {
 	if err != nil {
 		log.Fatal(err)
 	}
-	log.Printf("%d\n", v)
+	fmt.Printf("%d\n", v)
 }
