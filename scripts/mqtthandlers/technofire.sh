@@ -6,9 +6,9 @@ havedep jq
 
 run_technofire() {
     if [ "$SCENE" = "off" ]; then
-        STATE="off"
+        STATE="OFF"
     else
-        STATE="on"
+        STATE="ON"
     fi
     mqttpub "home/technofire/$HOSTNAME/state" "$STATE" & #feedback
     #sudo must be set up to allow passwordless access for technofire.sh
