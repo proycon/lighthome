@@ -181,6 +181,7 @@ mqtt_transmitter() {
                 info "mqtt_transmitter: $SENDER $*; interval=0; topic=$TOPIC"
                 #sender runs continuously (invoked once), each outputted line is transmitted over mqtt as payload
                 "$HAROOT/scripts/mqttsenders/$SENDER.sh" $@ | while IFS= read -r PAYLOAD; do
+                    info "mqtt_transmitter: $SENDER $*; interval=$INTERVAL; topic=$TOPIC; payload=$PAYLOAD"
                     if ! mosquitto_pub -I "$HOSTNAME" -h "$MQTT_HOST" -p "$MQTT_PORT" -u "$MQTT_USER" -P "$MQTT_PASSWORD" --cafile "$CACERT" -t "$TOPIC" -m "$PAYLOAD" --qos 1 $MQTT_OPTIONS; then
                         error "mqttpub from sender failed ($SENDER.sh $*)..."
                         return 1
