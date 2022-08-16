@@ -22,7 +22,7 @@ esac
 [ -z "$PAYLOAD_OFF" ] && PAYLOAD_OFF=OFF
 
 #shellcheck disable=SC2086
-"$HAROOT/programs/gpio_binary_sensor" $OPTS -p $GPIO_PIN | while IFS= read -r line
+"$HAROOT/programs/gpio_binary_sensor" $OPTS -p $GPIO_PIN | while read -r line
 do
     case "$line" in
         0)
