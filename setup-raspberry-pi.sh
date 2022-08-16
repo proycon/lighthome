@@ -74,6 +74,13 @@ if [ ! -d /home/homeautomation/WiringPi ]; then
     ldconfig
 fi
 
+if [ ! -d /home/homeautomation/WiringPi-Python ]; then
+    cd /home/homeautomation
+    sudo -u homeautomation git clone https://github.com/WiringPi/WiringPi-Python
+    cd /home/homeautomation/WiringPi-Python
+    python3 setup.py install || exit 3
+fi
+
 pip install rpi_ws281x
 
 if [ ! -d /home/homeautomation/lighthome ]; then
