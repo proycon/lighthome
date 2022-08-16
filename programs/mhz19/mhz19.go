@@ -7,7 +7,6 @@ import (
     "fmt"
     "github.com/tarm/serial"
     "io"
-    "os"
 )
 
 
