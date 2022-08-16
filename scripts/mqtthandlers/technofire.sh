@@ -17,14 +17,14 @@ run_technofire() {
 
 handle_technofire() {
     case $TOPIC in
-        "home/technofire/set/$HOSTNAME/"*)
+        "home/technofire/$HOSTNAME/set/"*)
             SCENE=$(echo "$TOPIC" | cut -d'/' -f5 | tr " " "_" | tr "[:upper:]" "[:lower:]")
             BRIGHTNESS=$(echo "$TOPIC" | cut -d'/' -f6)
             ITERATIONS=0
             run_technofire
             return 0
             ;;
-        "home/technofire/jsonset/$HOSTNAME")
+        "home/technofire/$HOSTNAME/jsonset")
             SCENE=$(echo "$PAYLOAD" | jq '.scene' | tr " " "_" | tr "[:upper:]" "[:lower:]")
             BRIGHTNESS=$(echo "$PAYLOAD" | jq '.brightness')
             ITERATIONS=$(echo "$PAYLOAD" | jq '.iterations')
