@@ -9,7 +9,7 @@ fi
 havedep "rflink"
 
 #shellcheck disable=SC2086
-rflink | tr -s " " | while read -r line
+stdbuf --output=L "$(which rflink)" | tr -s " " | while read -r line
 do
     DEVICE="$(echo "$line" | cut -f 1)"
     PAYLOAD="$(echo "$line" | cut -f 2)"
