@@ -205,7 +205,7 @@ mqtt_transmitter() {
 mqtt_say() {
     TARGETHOST=$1
     shift
-    mqttpub "home/say/$TOPIC" "$@"
+    mqttpub "home/say/$TARGETHOST" "$@"
 }
 
 mqtt_sound() {
