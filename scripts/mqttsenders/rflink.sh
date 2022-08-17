@@ -12,11 +12,12 @@ havedep nc
 [ -n "$RFLINK_DEVICE" ] || RFLINK_DEVICE=/dev/ttyACM0
 [ -n "$RFLINK_PORT" ] ||  RFLINK_PORT=1770
 killall rflinkproxy 2>/dev/null #there can be only one
+info "rflink: startig background daemon: rflinkproxy --port $RFLINK_DEVICE --listenport $RFLINK_PORT"
 rflinkproxy --port $RFLINK_DEVICE --listenport $RFLINK_PORT &
 PID=$!
 
-sleep 5
-info "rflink: starting"
+sleep 10
+info "rflink: attaching to daemon"
 pidof -q rflinkproxy || die "rflinkproxy didn't init correctly"
 
 #shellcheck disable=SC2086
