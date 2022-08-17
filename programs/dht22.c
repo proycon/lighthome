@@ -95,7 +95,7 @@ int read_dht_data() {
 		if (DEBUG) printf( "read_dht_data() Humidity = %.1f %% Temperature = %.1f *C (%.1f *F)\n", humidity, temp_cels, temp_fahr );
 		return 0; // OK
 	} else {
-		fprintf(stderr, "read_dht_data() Data not good, skip (may happen)\n" );
+		if (DEBUG) fprintf(stderr, "read_dht_data() Data not good, skip (may happen)\n" );
 		temp_cels = temp_fahr = humidity = -1;
 		return 1; // NOK
 	}
