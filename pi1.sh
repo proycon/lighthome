@@ -10,7 +10,7 @@ export GPIO_PIN_433SEND=4
 export SNAPCAST_SOUNDCARD=36
 
 #runs asynchronously
-mqtt_receiver 433send sound musicplayer tts kodi
+mqtt_receiver 433send sound musicplayer tts kodi hdmi_cec_send
 
 export GPIO_PIN=25
 export GPIO_INVERT=1
