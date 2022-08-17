@@ -13,7 +13,7 @@ mqtt_receiver technofire
 #         TOPIC
 #         POLL-INTERVAL (seconds, 0=one-run)
 #         SENDER
-mqtt_transmitter "home/sensor/mhz19_co2" 60 mhz19
+mqtt_transmitter "home/sensor/co2_living_room" 60 mhz19
 
 export GPIO_PIN_DHT22=4
 export DHT22_MODE=c
