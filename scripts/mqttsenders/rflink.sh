@@ -6,33 +6,43 @@ if [ -z "$HAROOT" ]; then
 fi
 . "$HAROOT/scripts/common/include.sh"
 
-havedep "rflink"
+havedep rflinkproxy
+havedep nc
+
+[ -n "$RFLINK_DEVICE" ] || RFLINK_DEVICE=/dev/ttyACM0
+[ -n "$RFLINK_PORT" ] ||  RFLINK_PORT=1770
+killall rflinkproxy 2>/dev/null #there can be only one
+rflinkproxy --port $RFLINK_DEVICE --port $RFLINK_PORT &
+PID=$!
 
 #shellcheck disable=SC2086
-stdbuf --output=0 "$(which rflink)" | while read -r line
+nc localhost $RFLINK_PORT | while read -r line
 do
-    DEVICE="$(echo "$line" | tr -s ' ' | cut -f 1)"
-    PAYLOAD="$(echo "$line" | tr -s ' ' | cut -f 2)"
-    info "rflink: $DEVICE $PAYLOAD"
+    VENDOR="$(echo "$line" | cut -d";" -f 3)"
+    ID="$(echo "$line" | cut -d";" -f 4 | sed 's/ID=//')"
+    DEVICE="${VENDOR}_${ID}"
+    PAYLOAD="$(echo "$line" | cut -d" " -f 2-)"
+    info "rflink IN: $DEVICE $PAYLOAD"
     case "$DEVICE" in
-        xiron_4c01_temp)
-            #op balkon bij insectenhotel   (zwarte receiver unit boven)
-            mqttpub "home/weatherstation/temp" "$PAYLOAD"
+        Xiron_4C01)
+            #weersensor op balkon bij insectenhotel   (zwarte receiver unit boven)
+            info "rflink: handling $DEVICE"
+            TEMP="$(echo "$PAYLOAD" | cut -d";" -f 1 | sed 's/TEMP=//')"
+            TEMP=$(printf '%d\n' 0x$TEMP) #hex to decimal
+            TEMP=$(echo "scale=1; $TEMP / 10" | bc -l)
+            HUM="$(echo "$PAYLOAD" | cut -d";" -f 2 | sed 's/HUM=//')"
+            mqttpub "home/weatherstation/temp" "$TEMP"
+            mqttpub "home/weatherstation/hum" "$HUM"
             ;;
-        xiron_4c01_hum)
-            #op balkon bij insectenhotel  (zwarte receiver unit boven)
-            mqttpub "home/weatherstation/hum" "$PAYLOAD"
-            ;;
-        lacrossev4_0009_temp)
-            #greenhouse
-            mqttpub "home/greenhouse/temp" "$PAYLOAD"
-            ;;
-        tristate_0008aa*|tristate_000a2a*|tristate_0002a8*|tristate_0000aa*|kaku_000041*|newkaku_00000079*|newkaku_00000078*|tristate_00022a*)
+        TriState_0008aa|TriState_000a2a|TriState_0002a8|TriState_0000aa*|kaku_000041|newkaku_00000079|newkaku_00000078|TriState_00022a)
             #feedback from own lights: office light, hall, backroom, back corner, balcony, midspots...
-            info "rflink feedback from own lights ($DEVICE)"
+            info "rflink: feedback from own lights ($DEVICE)"
             ;;
         *)
-            info "rflink unhandled ($DEVICE)"
+            info "rflink: unhandled ($DEVICE)"
             ;;
     esac
 done
+
+kill $PID
+exit 0
