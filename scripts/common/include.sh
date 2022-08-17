@@ -221,10 +221,6 @@ if [ -z "$HOSTNAME" ]; then
     HOSTNAME="$(hostname)"
 fi
 
-if command -v aplay > /dev/null; then
-    export PLAY="aplay"
-else
-    export PLAY="mpv --no-video --really-quiet"
-fi
+export PLAY="mpv --no-video --really-quiet"
 
 [ -z "$TMPDIR" ] && export TMPDIR=/tmp
