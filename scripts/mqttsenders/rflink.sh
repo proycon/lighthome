@@ -39,7 +39,7 @@ do
             mqttpub "home/weatherstation/temp" "$TEMP"
             mqttpub "home/weatherstation/hum" "$HUM"
             ;;
-        TriState_0008aa|TriState_000a2a|TriState_0002a8|TriState_0000aa*|kaku_000041|newkaku_00000079|newkaku_00000078|TriState_00022a)
+        TriState_0008aa|TriState_000a2a|TriState_0002a8|TriState_0000aa*|Kaku_000041|NewKaku_00000079|NewKaku_00000078|TriState_00022a)
             #feedback from own lights: office light, hall, backroom, back corner, balcony, midspots...
             info "rflink: feedback from own lights ($DEVICE)"
             ;;
