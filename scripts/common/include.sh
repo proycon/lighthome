@@ -177,6 +177,13 @@ mqtt_transmitter() {
                     #normal behaviour
                     sleep $INTERVAL
                 fi
+            elif [ $TOPIC = "CUSTOM" ]; then
+                info "mqtt_transmitter: $SENDER $*; interval=0; topic=$TOPIC"
+                #sender runs continuously (invoked once) and takes care of its own mqtt sending
+                "$HAROOT/scripts/mqttsenders/$SENDER.sh" $@ 
+                #shellcheck disable=SC2181 #--> usage of $?
+                error "mqtt sender failed ($SENDER.sh $*), reconnecting after 10s grace period..."
+                sleep 10
             else
                 info "mqtt_transmitter: $SENDER $*; interval=0; topic=$TOPIC"
                 #sender runs continuously (invoked once), each outputted line is transmitted over mqtt as payload
