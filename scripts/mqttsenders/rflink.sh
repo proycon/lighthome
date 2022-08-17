@@ -9,10 +9,10 @@ fi
 havedep "rflink"
 
 #shellcheck disable=SC2086
-stdbuf --output=0 "$(which rflink)" | tr -s " " | while read -r line
+stdbuf --output=0 "$(which rflink)" | while read -r line
 do
-    DEVICE="$(echo "$line" | cut -f 1)"
-    PAYLOAD="$(echo "$line" | cut -f 2)"
+    DEVICE="$(echo "$line" | tr -s ' ' | cut -f 1)"
+    PAYLOAD="$(echo "$line" | tr -s ' ' | cut -f 2)"
     info "rflink: $DEVICE $PAYLOAD"
     case "$DEVICE" in
         xiron_4c01_temp)
