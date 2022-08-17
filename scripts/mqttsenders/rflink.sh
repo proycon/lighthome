@@ -26,7 +26,7 @@ do
     VENDOR="$(echo "$line" | cut -d";" -f 3)"
     ID="$(echo "$line" | cut -d";" -f 4 | sed 's/ID=//')"
     DEVICE="${VENDOR}_${ID}"
-    PAYLOAD="$(echo "$line" | cut -d" " -f 2-)"
+    PAYLOAD="$(echo "$line" | cut -d";" -f 5-)"
     info "rflink IN: $DEVICE $PAYLOAD"
     case "$DEVICE" in
         Xiron_4C01)
