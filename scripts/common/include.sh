@@ -203,11 +203,11 @@ mqtt_transmitter() {
 }
 
 mqtt_say() {
-    mqttpub "/home/say/$1" "$2"
+    mqttpub "home/say/$1" "$2"
 }
 
 mqtt_sound() {
-    mqttpub "/home/sound/$1" "$2"
+    mqttpub "home/sound/$1" "$2"
 }
 
 if [ -z "$USER" ]; then
