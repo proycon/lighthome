@@ -13,6 +13,7 @@ stdbuf --output=0 "$(which rflink)" | tr -s " " | while read -r line
 do
     DEVICE="$(echo "$line" | cut -f 1)"
     PAYLOAD="$(echo "$line" | cut -f 2)"
+    info "rflink: $DEVICE $PAYLOAD"
     case "$DEVICE" in
         xiron_4c01_temp)
             #op balkon bij insectenhotel   (zwarte receiver unit boven)
@@ -28,10 +29,10 @@ do
             ;;
         tristate_0008aa*|tristate_000a2a*|tristate_0002a8*|tristate_0000aa*|kaku_000041*|newkaku_00000079*|newkaku_00000078*|tristate_00022a*)
             #feedback from own lights: office light, hall, backroom, back corner, balcony, midspots...
-            info "rflink: got feedback from own lights ($DEVICE)"
+            info "rflink feedback from own lights ($DEVICE)"
             ;;
         *)
-            info "unhandled rflink: $DEVICE $PAYLOAD"
+            info "rflink unhandled ($DEVICE)"
             ;;
     esac
 done
