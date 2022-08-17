@@ -15,6 +15,10 @@ killall rflinkproxy 2>/dev/null #there can be only one
 rflinkproxy --port $RFLINK_DEVICE --listenport $RFLINK_PORT &
 PID=$!
 
+sleep 5
+info "rflink: starting"
+pidof -q rflinkproxy || die "rflinkproxy didn't init correctly"
+
 #shellcheck disable=SC2086
 nc localhost $RFLINK_PORT | while read -r line
 do
@@ -43,6 +47,7 @@ do
             ;;
     esac
 done
+RET=$?
 
 kill $PID
-exit 0
+exit $RET
