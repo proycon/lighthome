@@ -12,7 +12,7 @@ havedep nc
 [ -n "$RFLINK_DEVICE" ] || RFLINK_DEVICE=/dev/ttyACM0
 [ -n "$RFLINK_PORT" ] ||  RFLINK_PORT=1770
 killall rflinkproxy 2>/dev/null #there can be only one
-rflinkproxy --port $RFLINK_DEVICE --port $RFLINK_PORT &
+rflinkproxy --port $RFLINK_DEVICE --listenport $RFLINK_PORT &
 PID=$!
 
 #shellcheck disable=SC2086
