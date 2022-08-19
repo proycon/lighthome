@@ -39,6 +39,14 @@ do
             mqttpub "home/weatherstation/temp" "$TEMP"
             mqttpub "home/weatherstation/hum" "$HUM"
             ;;
+        LacrosseV4_0009)
+            #Sensor in kasje tegen buitenmuur
+            info "rflink: handling $DEVICE"
+            TEMP="$(echo "$PAYLOAD" | cut -d";" -f 1 | sed 's/TEMP=//')"
+            TEMP=$(printf '%d\n' 0x$TEMP) #hex to decimal
+            TEMP=$(echo "scale=1; $TEMP / 10" | bc -l)
+            mqttpub "home/greenhouse/temp" "$TEMP"
+            ;;
         TriState_0008aa|TriState_000a2a|TriState_0002a8|TriState_0000aa*|Kaku_000041|NewKaku_00000079|NewKaku_00000078|TriState_00022a)
             #feedback from own lights: office light, hall, backroom, back corner, balcony, midspots...
             info "rflink: feedback from own lights ($DEVICE)"
