@@ -12,9 +12,10 @@ run_technofire() {
     fi
     mqttpub "home/technofire/$HOSTNAME/state" "$STATE" & #feedback
     #sudo must be set up to allow passwordless access for technofire.sh
-    if [ $ITERATIONS = "null" ]; then
+    if [ -z "$ITERATIONS" ] || [ $ITERATIONS = "null" ]; then
         ITERATIONS=0
     fi
+    info "Calling technofire.sh --brightness \"$BRIGHTNESS\" --iter $ITERATIONS \"$SCENE\""
     sudo HAROOT=$HAROOT "$HAROOT/scripts/technofire/technofire.sh" --brightness "$BRIGHTNESS" --iter $ITERATIONS "$SCENE" &
 }
 
