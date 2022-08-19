@@ -29,7 +29,7 @@ handle_technofire() {
             return 0
             ;;
         "home/technofire/$HOSTNAME/jsonset")
-            SCENE=$(echo "$PAYLOAD" | jq '.scene' | tr " " "_" | tr "[:upper:]" "[:lower:]")
+            SCENE=$(echo "$PAYLOAD" | jq '.scene' | tr -d '"' | tr " " "_" | tr "[:upper:]" "[:lower:]")
             [ "$PAYLOAD" = "OFF" ] && SCENE="off"
             BRIGHTNESS=$(echo "$PAYLOAD" | jq '.brightness' | tr -d '"' )
             ITERATIONS=$(echo "$PAYLOAD" | jq '.iterations' | tr -d '"' )
