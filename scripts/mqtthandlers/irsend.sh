@@ -7,8 +7,8 @@ havedep jq
 handle_irsend() {
     case $TOPIC in
         "home/irsend/$HOSTNAME"|"home/ir_send/$HOSTNAME")
-            DEVICE=$(echo "$PAYLOAD" | jq '.device')
-            KEY=$(echo "$PAYLOAD" | jq '.key')
+            DEVICE=$(echo "$PAYLOAD" | jq '.device' | tr -d '"')
+            KEY=$(echo "$PAYLOAD" | jq '.key' | tr -d '"')
             "$HAROOT/scripts/media/irsend.sh" "$DEVICE" "$KEY" &
             return 0
             ;;
