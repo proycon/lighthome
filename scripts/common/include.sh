@@ -222,6 +222,7 @@ if [ -z "$HOSTNAME" ]; then
 fi
 
 export PLAY="mpv --no-video --really-quiet"
+havedep mpv
 
 [ -z "$TMPDIR" ] && export TMPDIR=/tmp
 
