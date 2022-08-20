@@ -12,7 +12,7 @@ handle_tts() {
             ;;
         *)
             #unhandled
-            return 1
+            return 9
             ;;
     esac
 }
