@@ -20,7 +20,7 @@ handle_kodi() {
             return 0
             ;;
         *)
-            return 1
+            return 9
             ;;
     esac
 }
