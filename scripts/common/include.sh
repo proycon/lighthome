@@ -224,3 +224,5 @@ fi
 export PLAY="mpv --no-video --really-quiet"
 
 [ -z "$TMPDIR" ] && export TMPDIR=/tmp
+
+[ -z "$HASTATEDIR" ] && export HASTATEDIR="$TMPDIR/homestatus"
