@@ -63,7 +63,7 @@ do
                 ;;
         esac
         #shellcheck disable=SC2086
-        handle_$handler $args && info "  (handled by $handler $args)" && break   #break as soon as a handler completes successfully
+        handle_$handler $args && info "  (handled by $handler $args)"
     done
 
 done < /dev/stdin
