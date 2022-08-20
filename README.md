@@ -7,7 +7,7 @@ This repository contains part of my home automation configuration.
 Though I'm using [Home Assistant](https://home-assistant.io) on the central
 server at the heart of my home automation ([configuration
 here](https://github.com/proycon/homeassistant-config), I have various
-Raspberry Pis and other devices that are part of or connected to my home
+Raspberry Pis and other devices that are an integral part my home
 automation system.
 
 To keep things on the various devices as lightweight and as portable as
@@ -19,7 +19,7 @@ between all devices is the MQTT broker.
 
 * `scripts/common/include.sh` - Defines common functions, including:
     * ``mqtt_receiver *[handlers]*`` - Subscribes to MQTT and registers one or more handler scripts, takes care of reconnect logic in case of failures, parallelisation, and runs asynchronously
-    * ``mqtt_transmitter *[senders]*`` - Takes input and publishes it on MQTT, takes care of reconnect logic in case of failures, parallelisation, and runs asynchronously
+    * ``mqtt_transmitter *[topic] [interval] [sender]* `` - Takes input and publishes it on MQTT, takes care of reconnect logic in case of failures, parallelisation, and runs asynchronously
     * ``mqttpub *[topic]* *[payload]*``- Publish a single MQTT message
 * **handler scripts** (``scripts/mqtthandlers/*``) - Receives MQTT stream on standard input and should invoke scripts that perform the action by calling an action script. 
     * These scripts are sourced and everything inside should be run asynchronously!
@@ -28,6 +28,16 @@ between all devices is the MQTT broker.
     * These scripts are run normally, either over and over at a specified interval or as a one-shot script that runs indefinitely by itself.
     * Standard output serves as payload for MQTT (the script doesn't have to deal with MQTT itself)
 * **actions scripts and programs** (``scripts/``, ``programs/``) - Perform any action, completely MQTT unaware, can also be invoked independently from command line for low-level testing
+
+I decided on simple shell scripts to act as the glue between components and not
+opt for another layer in for example Python. In true UNIX-fashion each tool
+should have a well defined task, be efficient, communicate over standard input
+and output, and not add any unnecessary complexity. I also tried to separate
+the MQTT-logic from the logic addressing various sensors, so the latter can also be used independently.
+
+The actual communication with MQTT is done via the excellent
+[mosquitto](https://mosquitto.org/) clients (`mosquitto_sub` and
+`mosquitto_pub`) communicating with the mosquitto daemon running on the main server.
 
 ## Devices
 
@@ -63,3 +73,13 @@ between all devices is the MQTT broker.
 * GPIO: Neopixels LED (WS2912B)
 
 ![GPIO wiring schematic](docs/pi4.svg)
+
+
+## History
+
+Initially I ran Home Assistant on these devices as well, but due to their
+decision to remove GPIO support and the increased amount of unnecessary bloat
+which I don't need, I desired to go for a more lightweight approach and just
+write things from scratch.
+
+
