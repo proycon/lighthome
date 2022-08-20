@@ -36,7 +36,7 @@ and output, and not add any unnecessary complexity. I also tried to separate
 the MQTT-logic from the logic addressing various sensors, so the latter can also be used independently.
 
 The actual communication with MQTT is done via the excellent
-[mosquitto](https://mosquitto.org/) clients (`mosquitto_sub` and
+[mosquitto](https://mosquitto.org/) CLI clients (`mosquitto_sub` and
 `mosquitto_pub`) communicating with the mosquitto daemon running on the main server.
 
 ## Devices

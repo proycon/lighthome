@@ -21,7 +21,7 @@ export GPIO22_INVERT=1
 export GPIO22_PULL=down
 
 #runs asynchronously, calls specified handlers
-mqtt_receiver 433send sound musicplayer tts kodi technofire irsend hdmi_cec_send
+mqtt_receiver 433send sound musicplayer tts kodi technofire irsend hdmi_cec_send statefiles
 
 #runs asynchronously, calls specified sender
 #         TOPIC
