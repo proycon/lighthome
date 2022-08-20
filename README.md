@@ -6,7 +6,7 @@ This repository contains part of my home automation configuration.
 
 Though I'm using [Home Assistant](https://home-assistant.io) on the central
 server at the heart of my home automation ([configuration
-here](https://github.com/proycon/homeassistant-config), I have various
+here](https://github.com/proycon/homeassistant-config)), I have various
 Raspberry Pis and other devices that are an integral part my home
 automation system.
 
