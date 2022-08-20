@@ -2,7 +2,7 @@
 
 #take care to run everything asynchronously from this point onward!
 
-havevar "$HOSTNAME"
+havevar HOSTNAME
 
 handle_tts() {
     case $TOPIC in

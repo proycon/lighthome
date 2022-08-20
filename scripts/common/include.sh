@@ -35,7 +35,8 @@ havedep() {
 }
 
 havevar() {
-    [ -n "${1}" ] || die "missing variable: $1"
+    VALUE=$(eval "\$$1")
+    [ -n "$VALUE" ] || die "missing variable: $1"
 }
 
 

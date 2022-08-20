@@ -1,7 +1,7 @@
 #!/bin/sh
 
-havevar "$PLAY"
-havevar "$HOSTNAME"
+havevar PLAY
+havevar HOSTNAME
 
 handle_sound() {
     case $TOPIC in

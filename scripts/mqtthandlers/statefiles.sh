@@ -13,6 +13,10 @@ handle_statefiles() {
             echo "$PAYLOAD" > "$HASTATEDIR/$TYPE/$SENSOR"
             return 0
             ;;
+        "home/musicplayer/get/$HOSTNAME"|"home/kodi/get/$HOSTNAME")
+            TYPE=$(echo "$TOPIC" | cut -d "/" -f 2)
+            echo "$PAYLOAD" > "$HASTATEDIR/$TYPE/$HOSTNAME"
+            ;;
         *)
             #unhandled
             return 9

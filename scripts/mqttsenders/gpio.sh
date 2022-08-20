@@ -6,7 +6,7 @@ if [ -z "$HAROOT" ]; then
 fi
 . "$HAROOT/scripts/common/include.sh"
 
-havevar "$GPIO_PIN"
+havevar GPIO_PIN
 havedep "$HAROOT/programs/gpio_binary_sensor"
 
 case "$GPIO_PULL" in
