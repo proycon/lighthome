@@ -26,14 +26,14 @@ esac
 do
     case "$line" in
         0)
-            if [ -z "$GPIO_INVERT" ]; then
+            if [ "$GPIO_INVERT" -eq 0 ]; then
                 echo $PAYLOAD_OFF
             else
                 echo $PAYLOAD_ON
             fi
             ;;
         1)
-            if [ -z "$GPIO_INVERT" ]; then
+            if [ "$GPIO_INVERT" -eq 0 ]; then
                 echo $PAYLOAD_ON
             else
                 echo $PAYLOAD_OFF
