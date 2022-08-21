@@ -17,6 +17,7 @@ handle_statefiles() {
             TYPE=$(echo "$TOPIC" | cut -d "/" -f 2)
             [ ! -e "$HASTATEDIR/$TYPE" ] && mkdir -p "$HASTATEDIR/$TYPE"
             echo "$PAYLOAD" > "$HASTATEDIR/$TYPE/$HOSTNAME"
+            return 0
             ;;
         *)
             #unhandled
