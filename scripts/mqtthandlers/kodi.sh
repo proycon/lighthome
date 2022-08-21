@@ -5,7 +5,7 @@ handle_kodi() {
         "home/kodi/set/$HOSTNAME"|"home/kodi/$HOSTNAME")
             STATE=$(echo "$PAYLOAD" | tr '[:lower:]' '[:upper:]')
             if [ "$STATE" = "ON" ]; then
-                pgrep kodi || kodi &
+                pidof -q kodi || kodi &
             elif [ "$STATE" = "OFF" ]; then
                 killall kodi &
             else
