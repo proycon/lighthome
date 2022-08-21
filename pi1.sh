@@ -1,6 +1,7 @@
 #!/bin/sh
 
 export HAROOT="/home/homeautomation/lighthome"
+export PLAY="mpv --audio-device=alsa/default:CARD=Device --no-video --really-quiet"
 
 . "$HAROOT/scripts/common/include.sh"
 

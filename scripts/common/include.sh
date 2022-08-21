@@ -222,8 +222,7 @@ if [ -z "$HOSTNAME" ]; then
     HOSTNAME="$(hostname)"
 fi
 
-export PLAY="mpv --no-video --really-quiet"
-havedep mpv
+[ -z "$PLAY" ] && export PLAY="mpv --no-video --really-quiet"
 
 [ -z "$TMPDIR" ] && export TMPDIR=/tmp
 
