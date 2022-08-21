@@ -15,6 +15,7 @@ handle_statefiles() {
             ;;
         "home/musicplayer/get/$HOSTNAME"|"home/kodi/get/$HOSTNAME")
             TYPE=$(echo "$TOPIC" | cut -d "/" -f 2)
+            [ ! -e "$HASTATEDIR/$TYPE" ] && mkdir -p "$HASTATEDIR/$TYPE"
             echo "$PAYLOAD" > "$HASTATEDIR/$TYPE/$HOSTNAME"
             ;;
         *)
