@@ -8,7 +8,7 @@ export PLAY="mpv --audio-device=alsa/default:CARD=Device --no-video --really-qui
 settrap #kill all children when dying
 
 export GPIO_PIN_433SEND=4
-export SNAPCAST_SOUNDCARD=36
+export SNAPCAST_SOUNDCARD=24
 
 #runs asynchronously
 mqtt_receiver 433send sound musicplayer tts kodi irsend hdmi_cec_send statefiles
