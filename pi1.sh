@@ -9,6 +9,9 @@ settrap #kill all children when dying
 
 export GPIO_PIN_433SEND=4
 export SNAPCAST_SOUNDCARD=24
+#^-- 24: hdmi:CARD=vc4hdmi1,DEV=0
+#    vc4-hdmi-1, MAI PCM i2s-hifi-0
+#    HDMI Audio Output
 
 #runs asynchronously
 mqtt_receiver 433send sound musicplayer tts kodi irsend hdmi_cec_send statefiles
