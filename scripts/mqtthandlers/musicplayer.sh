@@ -6,7 +6,7 @@ handle_musicplayer() {
             STATE=$(echo "$PAYLOAD" | tr '[:lower:]' '[:upper:]')
             if [ "$STATE" = "ON" ]; then
                 killall snapclient
-                snapclient -s "${SNAPCAST_SOUNDCARD:-default}" -h anaproy.nl >/dev/null 2>/dev/null &
+                snapclient -s "${SNAPCAST_SOUNDCARD:-default}" -h anaproy.nl &
             elif [ "$STATE" = "OFF" ]; then
                 killall snapclient &
             else
