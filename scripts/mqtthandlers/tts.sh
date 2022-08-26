@@ -8,7 +8,7 @@ havedep "$(echo "$PLAY" | cut -d " " -f 1)"
 
 handle_tts() {
     case $TOPIC in
-        "home/say/$HOSTNAME")
+        "home/say/$HOSTNAME"|"home/say/everywhere")
             "$HAROOT/scripts/voice/picotts.sh" "$PAYLOAD" &
             return 0
             ;;
