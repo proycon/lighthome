@@ -20,6 +20,50 @@ handle_433send() {
                 else
                     error "433send failed: $HAROOT/scripts/switch/433send.sh $GPIO_PIN_433SEND $PROTOCOL $GROUP $UNIT $STATE"
                 fi
+                case "$PROTOCOL/$GROUP/$UNIT" in
+                     elro/31/E)
+                        mqttpub "home/lights/tv_spots" "$STATE"
+                        ;;
+                     elro/15/A)
+                        mqttpub "home/lights/office" "$STATE"
+                        ;;
+                     oldkaku/M/10)
+                        mqttpub "home/lights/front_room" "$STATE"
+                        ;;
+                     elro/31/B)
+                        mqttpub "home/lights/midspots" "$STATE"
+                        ;;
+                     elro/31/A)
+                        mqttpub "home/lights/back_room" "$STATE"
+                        ;;
+                     elro/31/C)
+                        mqttpub "home/lights/back_corner" "$STATE"
+                        ;;
+                     newkaku/120/7)
+                        mqttpub "home/lights/kitchen" "$STATE"
+                        ;;
+                     elro/15/C)
+                        mqttpub "home/lights/bedroom" "$STATE"
+                        ;;
+                     elro/23/A)
+                        mqttpub "home/lights/garden" "$STATE"
+                        ;;
+                     newkaku/121/9)
+                        mqttpub "home/lights/balcony" "$STATE"
+                        ;;
+                     elro/15/B)
+                        mqttpub "home/lights/hall" "$STATE"
+                        ;;
+                     newkaku/121/8)
+                        mqttpub "home/lights/roof" "$STATE"
+                        ;;
+                     oldkaku/M/11)
+                        mqttpub "home/lights/porch" "$STATE"
+                        ;;
+                     newkaku/121/7)
+                        mqttpub "home/bathroom_vent" "$STATE"
+                        ;;
+                esac
             ) &
             return 0
             ;;
