@@ -12,5 +12,7 @@ settrap #kill all children when dying
 #runs asynchronously
 mqtt_receiver sound tts notify statefiles
 
+mqttpub "home/command/ping" "$HOSTNAME" &
+
 #wait for all processes to end
 wait

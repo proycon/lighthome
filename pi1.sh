@@ -26,5 +26,7 @@ export GPIO_INVERT=0
 export GPIO_PULL=down
 mqtt_transmitter "home/binary_sensor/doorbell" 0 gpio
 
+mqttpub "home/command/ping" "$HOSTNAME" &
+
 #wait for all processes to end
 wait

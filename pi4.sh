@@ -18,4 +18,6 @@ export GPIO_PIN_DHT22=4
 export DHT22_MODE=h
 mqtt_transmitter "home/sensor/humidity_attic" 360 dht22
 
+mqttpub "home/command/ping" "$HOSTNAME" &
+
 wait #wait for all children
