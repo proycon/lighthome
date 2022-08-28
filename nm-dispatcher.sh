@@ -7,7 +7,6 @@ if [ -z "$HAROOT" ]; then
 fi
 . "$HAROOT/scripts/common/include.sh"
 
-PLAY=play
 IFACE=$1
 ACTION=$2
 [ -n "$ACTION" ] || die "no action received"
