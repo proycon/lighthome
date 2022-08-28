@@ -26,7 +26,7 @@ debug() {
 settrap() {
     #kill all chlidren on when dying
     [ "$EXIT" = "" ] && EXIT=0
-    trap "EXIT=1 && trap - TERM && kill -- 0" INT TERM EXIT
+    trap "EXIT=1 && trap - TERM && info \"exiting on signal\" && kill -- 0" INT TERM EXIT
 }
 
 
@@ -120,10 +120,11 @@ mqtt_receiver() {
             fi
             #note: mqtthandler is a separate script rather than inline here because it requires bash rather than posix shell
             if [ $EXIT -ne 0 ]; then
-                error "reconnecting after 10s grace period..."
+                error "mqtt_receiver $*: reconnecting after 10s grace period..."
                 sleep 10
             fi
         done
+        info "mqtt_receiver $*: exiting after signal"
     ) &
 }
 
@@ -200,6 +201,7 @@ mqtt_transmitter() {
                 sleep 10
             fi
         done
+        info "mqtt_transmitter $SENDER $*: exiting after signal"
     ) &
 }
 
