@@ -6,7 +6,7 @@ havedep "$(echo "$PLAY" | cut -d " " -f 1)"
 
 handle_sound() {
     case $TOPIC in
-        "home/sound/$HOSTNAME"|"home/sound/everywhere")
+        "home/sound/$HOSTNAME"|"home/sound/all"|"home/sound/everywhere")
             FILENAME="$HAROOT/media/$PAYLOAD"
             if [ -e "$FILENAME" ]; then
                 $PLAY "$FILENAME" &
