@@ -17,6 +17,7 @@ case $ACTION in
     up)
         $PLAY $HAROOT/media/connect.wav
         mqttpub "home/command/ping" "$HOSTNAME"
+        mqttpub "home/command/status" "$HOSTNAME"
         ;;
     down)
         $PLAY $HAROOT/media/disconnect.wav
