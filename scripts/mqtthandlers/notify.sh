@@ -6,7 +6,7 @@ havedep notify-send
 
 handle_notify() {
     case $TOPIC in
-        "home/notify/$HOSTNAME"|"home/notify/everywhere")
+        "home/notify/$HOSTNAME"|"home/notify/all"|"home/notify/everywhere")
             notify-send "Home Automation" "$PAYLOAD"
             return 0
             ;;
