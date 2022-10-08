@@ -76,7 +76,7 @@ fi
 
 if [ ! -d /home/homeautomation/WiringPi-Python ]; then
     cd /home/homeautomation
-    sudo -u homeautomation git clone https://github.com/WiringPi/WiringPi-Python
+    sudo -u homeautomation git clone --recursive https://github.com/WiringPi/WiringPi-Python
     cd /home/homeautomation/WiringPi-Python
     python3 setup.py install || exit 3
 fi
@@ -87,12 +87,11 @@ if [ ! -d /home/homeautomation/lighthome ]; then
     cd /home/homeautomation
     chmod o+x /home/homeautomation
     sudo -u homeautomation git clone --recursive https://github.com/proycon/lighthome lighthome || exit 1
-    cd /home/homeautomation/lighthome
+    cd /home/homeautomation/lighthome/programs
     sudo -u homeautomation make || exit 3
-    make install || exit 4
     cd /home/homeautomation/lighthome
     ln -s /home/homeautomation/lighthome/config/my.lircd.conf /etc/lirc/lircd.conf.d/my.lircd.conf || exit 5
-    cp -f homeassistant/config/homeautomation@lighthome.service /etc/systemd/system/
+    cp -f config/homeautomation@lighthome.service /etc/systemd/system/
     systemctl daemon-reload
 fi
 
@@ -105,4 +104,5 @@ systemctl enable homeautomation@lighthome
 systemctl disable snapclient  #do not run on boot
 
 echo "Note: copy SSH keys manually from another raspberry pi!"
+echo "Note: copy secrets manually (in lighthome dir): git clone proycon@anaproy.nl:/home/proycon/gitrepos/homeautomation.private private
 echo "Done, please reboot first now"
