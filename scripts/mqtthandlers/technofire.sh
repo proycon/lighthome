@@ -15,7 +15,14 @@ run_technofire() {
     if [ -z "$ITERATIONS" ] || [ $ITERATIONS = "null" ]; then
         ITERATIONS=0
     fi
-    info "Calling technofire.sh --brightness \"$BRIGHTNESS\" --iter $ITERATIONS \"$SCENE\""
+    if [ -z "$LEDS" ]; then
+        if [ "$HOSTNAME" = "pi4" ]; then
+            LEDS=60
+        else
+            LEDS=30
+        fi
+    fi
+    info "Calling technofire.sh --brightness \"$BRIGHTNESS\" --iter $ITERATIONS --leds $LEDS \"$SCENE\""
     sudo HAROOT=$HAROOT "$HAROOT/scripts/technofire/technofire.sh" --brightness "$BRIGHTNESS" --iter $ITERATIONS "$SCENE" &
 }
 
