@@ -23,7 +23,7 @@ run_technofire() {
         fi
     fi
     info "Calling technofire.sh --brightness \"$BRIGHTNESS\" --iter $ITERATIONS --leds $LEDS \"$SCENE\""
-    sudo HAROOT=$HAROOT "$HAROOT/scripts/technofire/technofire.sh" --brightness "$BRIGHTNESS" --iter $ITERATIONS "$SCENE" &
+    sudo HAROOT=$HAROOT "$HAROOT/scripts/technofire/technofire.sh" --brightness "$BRIGHTNESS" --iter $ITERATIONS --leds $LEDS "$SCENE" &
 }
 
 handle_technofire() {
