@@ -63,7 +63,19 @@ do
                 ;;
         esac
         #shellcheck disable=SC2086
-        handle_$handler $args && info "  (handled by $handler $args)"
+        handle_$handler $args
+        case $? in 
+            0) 
+                #as mqtt handlers run asyncrhonously this doesn't mean things may not go wrong at a later point
+                info "  (handled successfully by $handler $args)"
+                ;;
+            9)
+                #not handled by this handler, pass on to the next
+                ;;
+            *) 
+                info "  (handled with error by $handler $args)"
+                ;;
+        esac
     done
 
 done < /dev/stdin

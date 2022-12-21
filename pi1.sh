@@ -9,6 +9,8 @@ settrap #kill all children when dying
 
 export GPIO_PIN_433SEND=4
 export SNAPCAST_SOUNDCARD="hdmi:CARD=vc4hdmi1"
+export MPD_HOST="192.168.0.1"
+export DEFAULT_MPC_SEARCH="Instrumental/Calm Piano"
 
 #runs asynchronously
 mqtt_receiver 433send sound musicplayer tts kodi irsend hdmi_cec_send statefiles
