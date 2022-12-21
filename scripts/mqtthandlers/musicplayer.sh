@@ -9,13 +9,13 @@ handle_musicplayer() {
             STATE=$(echo "$PAYLOAD" | tr '[:lower:]' '[:upper:]')
             if [ "$STATE" = "ON" ]; then
                 if ! mpc -q status; then
-                    mqttpub "home/say/$HOSTNAME" "Error: Unable to connect to music player" &
+                    mqtt_say "$HOSTNAME" "Error: Unable to connect to music player" &
                     return 1
                 fi
                 if [ "$(mpc playlist | wc -l)" = "0" ]; then
                     #empty playlist, load the default
                     if ! mpc search filename "$DEFAULT_MPC_SEARCH" | mpc add; then
-                        mqttpub "home/say/$HOSTNAME" "Error: Unable to find and add default songs" &
+                        mqtt_say "$HOSTNAME" "Error: Unable to find and add default songs" &
                         return 1
                     fi
                 fi
@@ -23,11 +23,11 @@ handle_musicplayer() {
                 killall snapclient
                 (
                     if ! snapclient -s "${SNAPCAST_SOUNDCARD:-default}" -h anaproy.nl; then
-                        mqttpub "home/say/$HOSTNAME" "Error: Music streamer failed"
+                        mqtt_say "$HOSTNAME" "Error: Music streamer failed"
                     else
-                        mqttpub "home/say/$HOSTNAME" "Music streamer finished"
-                        mqttpub "home/musicplayer/get/$HOSTNAME" "OFF"
+                        mqtt_say "$HOSTNAME" "Music streamer finished"
                     fi
+                    mqttpub "home/musicplayer/get/$HOSTNAME" "OFF"
                 ) &
             elif [ "$STATE" = "OFF" ]; then
                 killall snapclient &
