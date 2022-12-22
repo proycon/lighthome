@@ -40,7 +40,10 @@ handle_433send() {
                         mqttpub "home/lights/back_corner" "$STATE"
                         ;;
                      newkaku/120/7)
-                        mqttpub "home/lights/kitchen" "$STATE"
+                        mqttpub "home/lights/kitchen" "$STATE" #old
+                        ;;
+                     newkaku/120/8)
+                        mqttpub "home/lights/kitchen" "$STATE" #new
                         ;;
                      elro/15/C)
                         mqttpub "home/lights/bedroom" "$STATE"
