@@ -4,3 +4,6 @@
 [submodule "programs/433send"]
 	path = programs/433send
 	url = git@github.com:proycon/433mhzforrpi
+[submodule "programs/nfc-daemon"]
+	path = programs/nfc-daemon
+	url = git@github.com:proycon/nfc-daemon
