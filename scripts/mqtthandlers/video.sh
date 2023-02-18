@@ -28,7 +28,7 @@ playqueue() {
     $PLAYVIDEO "$TMPDIR/videoqueue/"* || "$HAROOT/scripts/voice/picotts.sh" "Video playback failed"
 }
 
-handle_sound() {
+handle_video() {
     case $TOPIC in
         "home/video/$HOSTNAME/clear")
             clearqueue
