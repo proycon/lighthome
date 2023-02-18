@@ -27,6 +27,7 @@ download() {
             ;;
         *)
             yt-dlp "$1" || (sleep 3 && "$HAROOT/scripts/voice/picotts.sh" "Download failed")
+            yt-dlp -f "bestvideo[height<=1080]+bestaudio" "$1" || (sleep 3 && "$HAROOT/scripts/voice/picotts.sh" "Download failed")
             ;;
     esac
 }
