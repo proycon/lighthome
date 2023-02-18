@@ -30,50 +30,50 @@ playqueue() {
 
 handle_video() {
     case $TOPIC in
-        "home/video/$HOSTNAME/clear")
+        "home/video/$HOSTNAME/clear"|"home/command/video/$HOSTNAME/clear")
             clearqueue
             return 0
             ;;
-        "home/video/$HOSTNAME/pause")
+        "home/video/$HOSTNAME/pause"|"home/command/video/$HOSTNAME/pause")
             playerctl play-pause &
             return 0
             ;;
-        "home/video/$HOSTNAME/stop")
+        "home/video/$HOSTNAME/stop"|"home/command/video/$HOSTNAME/stop")
             playerctl stop && clearqueue
             return 0
             ;;
-        "home/video/$HOSTNAME/next")
+        "home/video/$HOSTNAME/next"|"home/command/video/$HOSTNAME/next")
             playerctl next
             return 0
             ;;
-        "home/video/$HOSTNAME/forward")
+        "home/video/$HOSTNAME/forward"|"home/command/video/$HOSTNAME/forward")
             playerctl position 30+
             return 0
             ;;
-        "home/video/$HOSTNAME/rewind")
+        "home/video/$HOSTNAME/rewind"|"home/command/video/$HOSTNAME/rewind")
             playerctl position 30-
             return 0
             ;;
-        "home/video/$HOSTNAME/previous")
+        "home/video/$HOSTNAME/previous"|"home/command/video/$HOSTNAME/previous")
             playerctl previous
             return 0
             ;;
-        "home/video/$HOSTNAME/loop")
+        "home/video/$HOSTNAME/loop"|"home/command/video/$HOSTNAME/loop")
             playerctl loop Track && "$HAROOT/scripts/voice/picotts.sh" "Loop enabled" &
             return 0
             ;;
-        "home/video/$HOSTNAME/noloop")
+        "home/video/$HOSTNAME/noloop"|"home/command/video/$HOSTNAME/noloop")
             playerctl loop None && "$HAROOT/scripts/voice/picotts.sh" "Loop disabled" &
             return 0
             ;;
-        "home/video/$HOSTNAME/add")
+        "home/video/$HOSTNAME/add"|"home/command/video/$HOSTNAME/add")
             case $PAYLOAD in
                 http*)
                     download "$PAYLOAD" &
                     ;;
             esac
             ;;
-        "home/video/$HOSTNAME/play")
+        "home/video/$HOSTNAME/play"|"home/command/video/$HOSTNAME/play")
             case $PAYLOAD in
                 "")
                     "$HAROOT/scripts/voice/picotts.sh" "Playing existing video queue" &
