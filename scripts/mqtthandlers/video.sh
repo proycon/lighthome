@@ -21,7 +21,14 @@ download() {
     mkdir -p "$TMPDIR/videoqueue/"
     cd "$TMPDIR/videoqueue/" || error "videoqueue not created"
     "$HAROOT/scripts/voice/picotts.sh" "Downloading video" &
-    yt-dlp "$PAYLOAD" || (sleep 3 && "$HAROOT/scripts/voice/picotts.sh" "Download failed")
+    case $1 in 
+        *jpg|*jpeg|*JPG|*gif|*png|*mp3|*MP3|*ogg|*flac|*opus|*m4a|*webp)
+            wget "$1" || (sleep 3 && "$HAROOT/scripts/voice/picotts.sh" "Download failed")
+            ;;
+        *)
+            yt-dlp "$1" || (sleep 3 && "$HAROOT/scripts/voice/picotts.sh" "Download failed")
+            ;;
+    esac
 }
 
 playqueue() {
