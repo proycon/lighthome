@@ -13,6 +13,7 @@ NFCDAEMON=$(which nfc-daemon)
 # homeautomation ALL=(root) NOPASSWD: /usr/local/bin/nfc-daemon
 
 #shellcheck disable=SC2086
+sleep 5 #delay to prevent Unable to write to USB error when reconnecting rapidly
 sudo -n "$NFCDAEMON" | while read -r line
 do
     if echo "$line" | grep -q UID; then
