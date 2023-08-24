@@ -2,8 +2,9 @@
 
 #main server script (in lxc container)
 
-export HAROOT="/home/homeautomation/lighthome"
-export PLAY="mpv -ao pulse --pulse-host=10.252.116.1 --no-video --really-quiet"
+[ -n "$HAROOT" ] && export HAROOT="/home/homeautomation/lighthome"
+[ -n "$PULSE_HOST" ] && export PULSE_HOST=192.168.0.1
+export PLAY="mpv -ao pulse --pulse-host=$PULSE_HOST--no-video --really-quiet"
 
 . "$HAROOT/scripts/common/include.sh"
 
