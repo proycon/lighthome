@@ -1,3 +1,4 @@
+house dismissed: eval ~/lighthome/scripts/numen/numen_idle.sh
 house mute: run ~/lighthome/send.sh --notify home/command/mute
 house volume up: run ~/lighthome/send.sh --notify home/command/volup
 house volume down: run ~/lighthome/send.sh --notify home/command/voldown

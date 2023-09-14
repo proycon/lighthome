@@ -1,0 +1,2 @@
+house listen: eval ~/lighthome/scripts/numen/numen_wake.sh
+house standby: eval ~/lighthome/scripts/numen/numen_wake.sh
