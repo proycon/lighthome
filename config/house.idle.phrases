@@ -33,3 +33,6 @@ call: ignore
 hall: ignore
 whole: ignore
 horse: ignore
+yes: ignore
+no: ignore
+okay: ignore
