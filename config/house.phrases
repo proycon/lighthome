@@ -20,6 +20,14 @@ house garden on: run ~/lighthome/send.sh --notify home/command/lights/garden/on
 house garden off: run ~/lighthome/send.sh --notify home/command/lights/garden/off
 house middle light on: run ~/lighthome/send.sh --notify home/command/lights/midspots/on
 house middle light off: run ~/lighthome/send.sh --notify home/command/lights/midspots/off
+house middle lights on: run ~/lighthome/send.sh --notify home/command/lights/midspots/on
+house middle lights off: run ~/lighthome/send.sh --notify home/command/lights/midspots/off
+house mid lights on: run ~/lighthome/send.sh --notify home/command/lights/midspots/on
+house mid lights off: run ~/lighthome/send.sh --notify home/command/lights/midspots/off
+house mid spots on: run ~/lighthome/send.sh --notify home/command/lights/midspots/on
+house mid spots off: run ~/lighthome/send.sh --notify home/command/lights/midspots/off
+house spots on: run ~/lighthome/send.sh --notify home/command/lights/midspots/on
+house spots off: run ~/lighthome/send.sh --notify home/command/lights/midspots/off
 house back light on: run ~/lighthome/send.sh --notify home/command/lights/back_room/on
 house back light off: run ~/lighthome/send.sh --notify home/command/lights/back_room/off
 house corner light on: run ~/lighthome/send.sh --notify home/command/lights/back_corner/on
@@ -125,6 +133,14 @@ house in: ignore
 house list: ignore
 house stand: ignore
 house bye: ignore
+listen: ignore
+is listening: ignore
+has listened: ignore
+has to listen: ignore
+listen to: ignore
+has a list: ignore
+in house: ignore
+at house: ignore
 can: ignore
 well: ignore
 put: ignore
