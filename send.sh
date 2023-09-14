@@ -14,9 +14,9 @@ mqttpub $@
 ret=$?
 if [ $NOTIFY -eq 1 ]; then
     if [ $ret -eq 0 ]; then
-        mpv --no-video --quiet ~/lighthome/media/computerbeep_5.wav
+        $PLAY ~/lighthome/media/computerbeep_5.wav
     else
-        mpv --no-video --quiet ~/lighthome/media/computerbeep_9.wav
+        $PLAY ~/lighthome/media/computerbeep_9.wav
     fi
 fi
 exit $ret
