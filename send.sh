@@ -10,7 +10,7 @@ if [ "$1" = "--notify" ]; then
     NOTIFY=1
 fi
 
-mqttpub $@
+mqttpub "$@"
 ret=$?
 if [ $NOTIFY -eq 1 ]; then
     if [ $ret -eq 0 ]; then
