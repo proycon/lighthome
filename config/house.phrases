@@ -42,6 +42,8 @@ house balcony off: run ~/lighthome/send.sh --notify home/command/lights/balcony/
 house night lights: run ~/lighthome/send.sh --notify home/command/lights/night
 house night scene: run ~/lighthome/send.sh --notify home/command/lights/night
 house start tv: run ~/lighthome/send.sh --notify home/command/media/tv
+house tv on: run ~/lighthome/send.sh --notify home/command/media/tv
+house watch tv: run ~/lighthome/send.sh --notify home/command/media/tv
 house start music: run ~/lighthome/send.sh --notify home/command/media/music
 house start music upstairs: run ~/lighthome/send.sh --notify home/command/media/music2
 house start media center: run ~/lighthome/send.sh --notify home/command/kodi/on
@@ -56,8 +58,8 @@ house resume music: run ~/lighthome/send.sh --notify home/command/music/pausepla
 house music pause: run ~/lighthome/send.sh --notify home/command/music/pauseplay
 house music resume: run ~/lighthome/send.sh --notify home/command/music/pauseplay
 house media off: run ~/lighthome/send.sh --notify home/command/media/off
-house decoder on: run ~/lighthome/send.sh --notify home/command/decoder/on
-house decoder off: run ~/lighthome/send.sh --notify home/command/decoder/off
+house decoder on: run ~/lighthome/send.sh --notify home/command/tvdecoder/on
+house decoder off: run ~/lighthome/send.sh --notify home/command/tvdecoder/off
 house next channel: run ~/lighthome/send.sh --notify home/command/tvdecoder/next
 house previous channel: run ~/lighthome/send.sh --notify home/command/tvdecoder/previous
 house tv next: run ~/lighthome/send.sh --notify home/command/tvdecoder/next
