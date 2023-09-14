@@ -1,2 +1,27 @@
 house listen: eval ~/lighthome/scripts/numen/numen_wake.sh
 house standby: eval ~/lighthome/scripts/numen/numen_wake.sh
+
+choice: ignore
+out: ignore
+mouse: ignore
+louse: ignore
+house set: ignore
+houser: ignore
+houses: ignore
+house is: ignore
+house in: ignore
+house list: ignore
+house stand: ignore
+house bye: ignore
+can: ignore
+well: ignore
+put: ignore
+good: ignore
+is: ignore
+the: ignore
+change: ignore
+old: ignore
+call: ignore
+hall: ignore
+whole: ignore
+horse: ignore
