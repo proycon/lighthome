@@ -43,6 +43,8 @@ front light on: run ~/lighthome/send.sh --notify home/command/lights/front_room/
 front light off: run ~/lighthome/send.sh --notify home/command/lights/front_room/off && touch $NUMEN_STATE_DIR/acted
 bedroom light on: run ~/lighthome/send.sh --notify home/command/lights/bedroom/on  && touch $NUMEN_STATE_DIR/acted
 bedroom light off: run ~/lighthome/send.sh --notify home/command/lights/bedroom/off  && touch $NUMEN_STATE_DIR/acted
+bedroom on: run ~/lighthome/send.sh --notify home/command/lights/bedroom/on  && touch $NUMEN_STATE_DIR/acted
+bedroom off: run ~/lighthome/send.sh --notify home/command/lights/bedroom/off  && touch $NUMEN_STATE_DIR/acted
 kitchen light on: run ~/lighthome/send.sh --notify home/command/lights/kitchen/on  && touch $NUMEN_STATE_DIR/acted
 kitchen light off: run ~/lighthome/send.sh --notify home/command/lights/kitchen/off  && touch $NUMEN_STATE_DIR/acted
 kitchen on: run ~/lighthome/send.sh --notify home/command/lights/kitchen/on  && touch $NUMEN_STATE_DIR/acted
