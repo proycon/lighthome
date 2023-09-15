@@ -1,9 +1,10 @@
-dismissed: touch $NUMEN_STATE_DIR/acted
-dismiss: touch $NUMEN_STATE_DIR/acted
-never mind: touch $NUMEN_STATE_DIR/acted
-cancel: touch $NUMEN_STATE_DIR/acted
-abort: touch $NUMEN_STATE_DIR/acted
 <complete>: eval ~/lighthome/scripts/numen/numen_complete.sh
+
+dismissed: run touch $NUMEN_STATE_DIR/acted
+dismiss: run touch $NUMEN_STATE_DIR/acted
+never mind: run touch $NUMEN_STATE_DIR/acted
+cancel: run touch $NUMEN_STATE_DIR/acted
+abort: run touch $NUMEN_STATE_DIR/acted
 
 mute: run ~/lighthome/send.sh --notify home/command/mute && touch $NUMEN_STATE_DIR/acted
 volume up: run ~/lighthome/send.sh --notify home/command/volup && touch $NUMEN_STATE_DIR/acted
