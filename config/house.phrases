@@ -1,10 +1,8 @@
-<complete>: eval ~/lighthome/scripts/numen/numen_complete.sh
-
-dismissed: run touch $NUMEN_STATE_DIR/acted && ~/lighthome/send.sh home/say/$(hostname) Okay
-dismiss: run touch $NUMEN_STATE_DIR/acted && ~/lighthome/send.sh home/say/$(hostname) Okay
-never mind: run touch $NUMEN_STATE_DIR/acted && ~/lighthome/send.sh home/say/$(hostname) Okay
-cancel: run touch $NUMEN_STATE_DIR/acted && ~/lighthome/send.sh home/say/$(hostname) Okay
-abort: run touch $NUMEN_STATE_DIR/acted && ~/lighthome/send.sh home/say/$(hostname) Okay
+dismissed: run ~/lighthome/scripts/numen/send_wrapper.sh home/say/$(hostname) Okay
+dismiss: run ~/lighthome/scripts/numen/send_wrapper.sh home/say/$(hostname) Okay
+never mind: run ~/lighthome/scripts/numen/send_wrapper.sh home/say/$(hostname) Okay
+cancel: run ~/lighthome/scripts/numen/send_wrapper.sh home/say/$(hostname) Okay
+abort: run ~/lighthome/scripts/numen/send_wrapper.sh home/say/$(hostname) Okay
 
 mute: run ~/lighthome/scripts/numen/send_wrapper.sh MUTE 
 mute downstairs: run ~/lighthome/scripts/numen/send_wrapper.sh home/command/mute 
@@ -171,9 +169,9 @@ set temperature eighteen: run ~/lighthome/scripts/numen/send_wrapper.sh home/com
 set temperature nineteen: run ~/lighthome/scripts/numen/send_wrapper.sh home/command/heating/19
 set temperature twenty: run ~/lighthome/scripts/numen/send_wrapper.sh home/command/heating/20
 set temperature twenty one: run ~/lighthome/scripts/numen/send_wrapper.sh home/command/heating/21
-time: run ~/lighthome/send.sh home/say/$(hostname) "$(date +"%H %M")" 
-date: run ~/lighthome/send.sh home/say/$(hostname) "$(date +"%B %d")" 
-temperature: run ~/lighthome/send.sh home/say/$(hostname) "outside $(cat /tmp/homestatus/sensor/outside_temperature), living room $(cat /tmp/homestatus/sensor/temperature_living_room_2), bedroom $(cat /tmp/homestatus/sensor/bedroom_temperature)" 
+time: run ~/lighthome/scripts/numen/send_wrapper.sh home/say/$(hostname) "$(date +"%H %M")" 
+date: run ~/lighthome/scripts/numen/send_wrapper.sh home/say/$(hostname) "$(date +"%B %d")" 
+temperature: run ~/lighthome/scripts/numen/send_wrapper.sh home/say/$(hostname) "outside $(cat /tmp/homestatus/sensor/outside_temperature), living room $(cat /tmp/homestatus/sensor/temperature_living_room_2), bedroom $(cat /tmp/homestatus/sensor/bedroom_temperature)" 
 status: run ~/lighthome/scripts/numen/status.sh &
 
 choice:

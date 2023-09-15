@@ -1,13 +1,13 @@
 #!/bin/sh
-touch "$NUMEN_STATE_DIR/acted"
+~/lighthome/scripts/numen/numen_idle.sh | numenc
 case $1 in #upper case parameter indicated something contextual
     NIGHT)
         case "$(hostname)" in
             pi2)
-                ~/scripts/numen/send_wrapper.sh home/command/lights/bedroom_ambilight/on
+                ~/lighthome/scripts/numen/send_wrapper.sh home/command/lights/bedroom_ambilight/on
                 ;;
             *)
-                ~/scripts/numen/send_wrapper.sh home/command/lights/night
+                ~/lighthome/scripts/numen/send_wrapper.sh home/command/lights/night
                 ;;
         esac
         ;;

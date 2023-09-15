@@ -1,7 +1,8 @@
 #!/bin/sh
 HANS=0
 MAARTEN=0
-touch $NUMEN_STATE_DIR/acted
+~/lighthome/scripts/numen/numen_idle.sh | numenc
+#touch $NUMEN_STATE_DIR/acted
 if [ "$(cat /tmp/homestatus/presence/hans)" = "ON" ]; then
     HANS=1
 fi
