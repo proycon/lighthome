@@ -134,6 +134,7 @@ set temperature twenty one: run ~/lighthome/send.sh --notify home/command/heatin
 time: run ~/lighthome/send.sh home/say/$(hostname) "$(date +"%H %M")" && touch $NUMEN_STATE_DIR/acted
 date: run ~/lighthome/send.sh home/say/$(hostname) "$(date +"%B %d")" && touch $NUMEN_STATE_DIR/acted
 temperature: run ~/lighthome/send.sh home/say/$(hostname) "outside $(cat /tmp/homestatus/sensor/outside_temperature), living room $(cat /tmp/homestatus/sensor/temperature_living_room_2), bedroom $(cat /tmp/homestatus/sensor/bedroom_temperature)" && touch $NUMEN_STATE_DIR/acted
+status: run ~/lighthome/scripts/numen/status.sh &
 
 choice:
 out:
