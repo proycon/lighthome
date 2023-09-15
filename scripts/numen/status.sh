@@ -14,6 +14,6 @@ fi
 if [ $MAARTEN -eq 0 ]; then
     run ~/lighthome/send.sh home/say/$(hostname) "Maarten is away"
 fi
-if grep -q ON /tmp/homestatus/binary_sensor; then
+if grep -q ON /tmp/homestatus/binary_sensor/*; then
     run ~/lighthome/send.sh home/say/$(hostname) "there are doors or windows open"
 fi
