@@ -1,6 +1,5 @@
 #!/bin/sh
 PHRASES=~/lighthome/config/house.phrases
-echo "numen wake">&2
 echo "load $PHRASES"
 ./send.sh home/say/$(hostname) "yes?" >/dev/null 2>/dev/null
 #if [ -n "$1" ]; then
