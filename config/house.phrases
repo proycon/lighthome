@@ -6,171 +6,171 @@ never mind: run touch $NUMEN_STATE_DIR/acted && ~/lighthome/send.sh home/say/$(h
 cancel: run touch $NUMEN_STATE_DIR/acted && ~/lighthome/send.sh home/say/$(hostname) Okay
 abort: run touch $NUMEN_STATE_DIR/acted && ~/lighthome/send.sh home/say/$(hostname) Okay
 
-mute: run ~/scripts/numen/send_wrapper.sh MUTE 
-mute downstairs: run ~/scripts/numen/send_wrapper.sh home/command/mute 
-downstairs mute: run ~/scripts/numen/send_wrapper.sh home/command/mute 
+mute: run ~/lighthome/scripts/numen/send_wrapper.sh MUTE 
+mute downstairs: run ~/lighthome/scripts/numen/send_wrapper.sh home/command/mute 
+downstairs mute: run ~/lighthome/scripts/numen/send_wrapper.sh home/command/mute 
 
-volume up: run ~/scripts/numen/send_wrapper.sh home/command/volup 
-volume down: run ~/scripts/numen/send_wrapper.sh home/command/voldown 
-volume down downstairs: run ~/scripts/numen/send_wrapper.sh home/command/voldown 
+volume up: run ~/lighthome/scripts/numen/send_wrapper.sh home/command/volup 
+volume down: run ~/lighthome/scripts/numen/send_wrapper.sh home/command/voldown 
+volume down downstairs: run ~/lighthome/scripts/numen/send_wrapper.sh home/command/voldown 
 
-lights on: run ~/scripts/numen/send_wrapper.sh home/command/lights/on 
-lights off: run ~/scripts/numen/send_wrapper.sh home/command/lights/off 
-hall light on: run ~/scripts/numen/send_wrapper.sh home/command/lights/hall/on 
-hall light off: run ~/scripts/numen/send_wrapper.sh home/command/lights/hall/off 
-tv light on: run ~/scripts/numen/send_wrapper.sh TV_SPOTS_ON
-tv light off: run ~/scripts/numen/send_wrapper.sh TV_SPOTS_OFF
-tv spots on: run ~/scripts/numen/send_wrapper.sh TV_SPOTS_ON
-tv spots off: run ~/scripts/numen/send_wrapper.sh TV_SPOTS_OFF 
-office light on: run ~/scripts/numen/send_wrapper.sh home/command/lights/office/on 
-office light off: run ~/scripts/numen/send_wrapper.sh home/command/lights/office/off
-office on: run ~/scripts/numen/send_wrapper.sh home/command/lights/office/on
-office off: run ~/scripts/numen/send_wrapper.sh home/command/lights/office/off
-garden light on: run ~/scripts/numen/send_wrapper.sh home/command/lights/garden/on
-garden light off: run ~/scripts/numen/send_wrapper.sh home/command/lights/garden/off
-garden on: run ~/scripts/numen/send_wrapper.sh home/command/lights/garden/on
-garden off: run ~/scripts/numen/send_wrapper.sh home/command/lights/garden/off
-middle light on: run ~/scripts/numen/send_wrapper.sh home/command/lights/midspots/on
-middle light off: run ~/scripts/numen/send_wrapper.sh home/command/lights/midspots/off
-middle lights on: run ~/scripts/numen/send_wrapper.sh home/command/lights/midspots/on
-middle lights off: run ~/scripts/numen/send_wrapper.sh home/command/lights/midspots/off
-mid lights on: run ~/scripts/numen/send_wrapper.sh home/command/lights/midspots/on
-mid lights off: run ~/scripts/numen/send_wrapper.sh home/command/lights/midspots/off
-mid spots on: run ~/scripts/numen/send_wrapper.sh home/command/lights/midspots/on
-mid spots off: run ~/scripts/numen/send_wrapper.sh home/command/lights/midspots/off
-spots on: run ~/scripts/numen/send_wrapper.sh SPOTS_ON
-spots off: run ~/scripts/numen/send_wrapper.sh SPOTS_OFF
-back light on: run ~/scripts/numen/send_wrapper.sh home/command/lights/back_room/on 
-back light off: run ~/scripts/numen/send_wrapper.sh home/command/lights/back_room/off 
-corner light on: run ~/scripts/numen/send_wrapper.sh home/command/lights/back_corner/on 
-corner light off: run ~/scripts/numen/send_wrapper.sh home/command/lights/back_corner/off 
-back corner light on: run ~/scripts/numen/send_wrapper.sh home/command/lights/back_corner/on 
-back corner light off: run ~/scripts/numen/send_wrapper.sh home/command/lights/back_corner/off 
-front light on: run ~/scripts/numen/send_wrapper.sh home/command/lights/front_room/on 
-front light off: run ~/scripts/numen/send_wrapper.sh home/command/lights/front_room/off 
-bedroom light on: run ~/scripts/numen/send_wrapper.sh home/command/lights/bedroom/on
-bedroom light off: run ~/scripts/numen/send_wrapper.sh home/command/lights/bedroom/off
-bedroom on: run ~/scripts/numen/send_wrapper.sh home/command/lights/bedroom/on
-bedroom off: run ~/scripts/numen/send_wrapper.sh home/command/lights/bedroom/off
-bedroom high spots on: run ~/scripts/numen/send_wrapper.sh home/command/lights/bedroom_highspots/on
-bedroom high spots off: run ~/scripts/numen/send_wrapper.sh home/command/lights/bedroom_highspots/off
-bedroom low spots on: run ~/scripts/numen/send_wrapper.sh home/command/lights/bedroom_midspots/on
-bedroom low spots off: run ~/scripts/numen/send_wrapper.sh home/command/lights/bedroom_midspots/off
-bedroom color light on: run ~/scripts/numen/send_wrapper.sh home/command/lights/bedroom_ambilight/on
-bedroom color light off: run ~/scripts/numen/send_wrapper.sh home/command/lights/bedroom_ambilight/off
-bedroom colored light on: run ~/scripts/numen/send_wrapper.sh home/command/lights/bedroom_ambilight/on
-bedroom colored light off: run ~/scripts/numen/send_wrapper.sh home/command/lights/bedroom_ambilight/off
-bedroom ambiance light on: run ~/scripts/numen/send_wrapper.sh home/command/lights/bedroom_ambilight/on
-bedroom ambiance light off: run ~/scripts/numen/send_wrapper.sh home/command/lights/bedroom_ambilight/off
-ambiance light on: run ~/scripts/numen/send_wrapper.sh AMBIANCE_ON
-ambiance light off: run ~/scripts/numen/send_wrapper.sh AMBIANCE_OFF
-color light on: run ~/scripts/numen/send_wrapper.sh AMBIANCE_ON
-color light off: run ~/scripts/numen/send_wrapper.sh AMBIANCE_OFF
-colored light on: run ~/scripts/numen/send_wrapper.sh AMBIANCE_ON
-colored light off: run ~/scripts/numen/send_wrapper.sh AMBIANCE_OFF
-kitchen light on: run ~/scripts/numen/send_wrapper.sh home/command/lights/kitchen/on
-kitchen light off: run ~/scripts/numen/send_wrapper.sh home/command/lights/kitchen/off
-kitchen on: run ~/scripts/numen/send_wrapper.sh home/command/lights/kitchen/on
-kitchen off: run ~/scripts/numen/send_wrapper.sh home/command/lights/kitchen/off
-porch light on: run ~/scripts/numen/send_wrapper.sh home/command/lights/porch/on
-porch light off: run ~/scripts/numen/send_wrapper.sh home/command/lights/porch/off
-porch on: run ~/scripts/numen/send_wrapper.sh home/command/lights/porch/on
-porch off: run ~/scripts/numen/send_wrapper.sh home/command/lights/porch/off
-balcony light on: run ~/scripts/numen/send_wrapper.sh home/command/lights/balcony/on
-balcony light off: run ~/scripts/numen/send_wrapper.sh home/command/lights/balcony/off
-balcony on: run ~/scripts/numen/send_wrapper.sh home/command/lights/balcony/on
-balcony off: run ~/scripts/numen/send_wrapper.sh home/command/lights/balcony/off
-night lights: run ~/scripts/numen/send_wrapper.sh NIGHT
-night scene: run ~/scripts/numen/send_wrapper.sh NIGHT
-start tv: run ~/scripts/numen/send_wrapper.sh TV_ON
-tv on: run ~/scripts/numen/send_wrapper.sh TV_ON
-tv off: run ~/scripts/numen/send_wrapper.sh TV_OFF
-watch tv: run ~/scripts/numen/send_wrapper.sh TV_ON
-start music: run ~/scripts/numen/send_wrapper.sh MUSIC_ON
-music on: run ~/scripts/numen/send_wrapper.sh MUSIC_ON
-stop music: run ~/scripts/numen/send_wrapper.sh MUSIC_OFF
-music off: run ~/scripts/numen/send_wrapper.sh MUSIC_OFF
-stop downstairs music: run ~/scripts/numen/send_wrapper.sh home/command/music/off 
-stop upstairs music: run ~/scripts/numen/send_wrapper.sh home/command/music2/off 
-stop bedroom music: run ~/scripts/numen/send_wrapper.sh home/command/music2/off 
-start media center: run ~/scripts/numen/send_wrapper.sh KODI_ON
-stop media center: run ~/scripts/numen/send_wrapper.sh KODI_OFF
-media center on: run ~/scripts/numen/send_wrapper.sh KODI_ON
-media center off: run ~/scripts/numen/send_wrapper.sh KODI_OFF
-start desktop: run ~/scripts/numen/send_wrapper.sh DESKTOP_ON
-stop desktop: ~/scripts/numen/send_wrapper.sh DESKTOP_OFF
-desktop on: run ~/scripts/numen/send_wrapper.sh DESKTOP_ON
-desktop off: ~/scripts/numen/send_wrapper.sh DESKTOP_OFF
-next song: run ~/scripts/numen/send_wrapper.sh home/command/music/next 
-previous song: run ~/scripts/numen/send_wrapper.sh home/command/music/previous 
-next music: run ~/scripts/numen/send_wrapper.sh home/command/music/next 
-previous music: run ~/scripts/numen/send_wrapper.sh home/command/music/previous 
-music next: run ~/scripts/numen/send_wrapper.sh home/command/music/next 
-music previous: run ~/scripts/numen/send_wrapper.sh home/command/music/previous 
-pause music: run ~/scripts/numen/send_wrapper.sh home/command/music/pauseplay
-resume music: run ~/scripts/numen/send_wrapper.sh home/command/music/pauseplay
-music pause: run ~/scripts/numen/send_wrapper.sh home/command/music/pauseplay
-music resume: run ~/scripts/numen/send_wrapper.sh home/command/music/pauseplay
-stop media: run ~/scripts/numen/send_wrapper.sh TV_OFF 
-decoder on: run ~/scripts/numen/send_wrapper.sh TVDECODER:on
-decoder off: run ~/scripts/numen/send_wrapper.sh TVDECODER:off
-next channel: run ~/scripts/numen/send_wrapper.sh TVDECODER:next
-previous channel: run ~/scripts/numen/send_wrapper.sh TVDECODER:previous
-tv next: run ~/scripts/numen/send_wrapper.sh TVDECODER:next
-tv previous: run ~/scripts/numen/send_wrapper.sh TVDECODER:previous
-tv confirm: run ~/scripts/numen/send_wrapper.sh TVDECODER:ok
-tv cancel: run ~/scripts/numen/send_wrapper.sh TVDECODER:back
-tv mute: run ~/scripts/numen/send_wrapper.sh home/command/mute
-tv volume up: run ~/scripts/numen/send_wrapper.sh home/command/volup
-tv volume down: run ~/scripts/numen/send_wrapper.sh home/command/voldown
-tv one: run ~/scripts/numen/send_wrapper.sh TVDECODER:channel/npo1
-tv first: run ~/scripts/numen/send_wrapper.sh TVDECODER:channel/npo1
-tv two: run ~/scripts/numen/send_wrapper.sh TVDECODER:channel/npo2
-tv three: run ~/scripts/numen/send_wrapper.sh TVDECODER:channel/npo3
-tv german: run ~/scripts/numen/send_wrapper.sh TVDECODER:channel/ard
-tv british: run ~/scripts/numen/send_wrapper.sh TVDECODER:channel/bbc1
-tv belgian: run ~/scripts/numen/send_wrapper.sh TVDECODER:channel/een
-tv dutch: run ~/scripts/numen/send_wrapper.sh TVDECODER:channel/npo1
-german tv: run ~/scripts/numen/send_wrapper.sh TVDECODER:channel/ard
-british tv: run ~/scripts/numen/send_wrapper.sh TVDECODER:channel/bbc1
-belgian tv: run ~/scripts/numen/send_wrapper.sh TVDECODER:channel/een
-dutch tv: run ~/scripts/numen/send_wrapper.sh TVDECODER:channel/npo1
-tv pause: run ~/scripts/numen/send_wrapper.sh TVDECODER:pause
-tv resume: run ~/scripts/numen/send_wrapper.sh TVDECODER:pause
-pause tv: run ~/scripts/numen/send_wrapper.sh TVDECODER:pause
-resume tv: run ~/scripts/numen/send_wrapper.sh TVDECODER:pause
-start air conditioning: run ~/scripts/numen/send_wrapper.sh AIRCO_ON
-stop air conditioning: run ~/scripts/numen/send_wrapper.sh AIRCO_OFF 
-air conditioning on: run ~/scripts/numen/send_wrapper.sh AIRCO_ON 
-air conditioning off: run ~/scripts/numen/send_wrapper.sh AIRCO_OFF
-start air conditioning bedroom: run ~/scripts/numen/send_wrapper.sh home/command/airco/bedroom/cool
-stop air conditioning bedroom: run ~/scripts/numen/send_wrapper.sh home/command/airco/bedroom/off
-start air conditioning upstairs: run ~/scripts/numen/send_wrapper.sh home/command/airco/bedroom/cool
-stop air conditioning upstairs: run ~/scripts/numen/send_wrapper.sh home/command/airco/bedroom/off
-air conditioning downstairs on: run ~/scripts/numen/send_wrapper.sh home/command/airco/living/on
-air conditioning downstairs off: run ~/scripts/numen/send_wrapper.sh home/command/airco/living/off
-air conditioning upstairs on: run ~/scripts/numen/send_wrapper.sh home/command/airco/bedroom/on
-air conditioning upstairs off: run ~/scripts/numen/send_wrapper.sh home/command/airco/bedroom/off
-air conditioning bedroom on: run ~/scripts/numen/send_wrapper.sh home/command/airco/bedroom/on
-air conditioning bedroom off: run ~/scripts/numen/send_wrapper.sh home/command/airco/bedroom/off
-wake eight: run ~/scripts/numen/send_wrapper.sh home/command/wake/800
-wake eight thirty: run ~/scripts/numen/send_wrapper.sh home/command/wake/830
-wake nine: run ~/scripts/numen/send_wrapper.sh home/command/wake/900
-wake nine thirty: run ~/scripts/numen/send_wrapper.sh home/command/wake/930
-wake ten: run ~/scripts/numen/send_wrapper.sh home/command/wake/1000
-wake ten thirty: run ~/scripts/numen/send_wrapper.sh home/command/wake/1030
-watch front: run ~/scripts/numen/send_wrapper.sh home/command/homecam/voor
-watch back: run ~/scripts/numen/send_wrapper.sh home/command/homecam/achter
-watch down: run ~/scripts/numen/send_wrapper.sh home/command/homecam/onder
-watch hall: run ~/scripts/numen/send_wrapper.sh home/command/homecam/gang
-temperature eighteen: run ~/scripts/numen/send_wrapper.sh home/command/heating/18
-temperature nineteen: run ~/scripts/numen/send_wrapper.sh home/command/heating/19
-temperature twenty: run ~/scripts/numen/send_wrapper.sh home/command/heating/20
-temperature twenty one: run ~/scripts/numen/send_wrapper.sh home/command/heating/21
-set temperature eighteen: run ~/scripts/numen/send_wrapper.sh home/command/heating/18
-set temperature nineteen: run ~/scripts/numen/send_wrapper.sh home/command/heating/19
-set temperature twenty: run ~/scripts/numen/send_wrapper.sh home/command/heating/20
-set temperature twenty one: run ~/scripts/numen/send_wrapper.sh home/command/heating/21
+lights on: run ~/lighthome/scripts/numen/send_wrapper.sh home/command/lights/on 
+lights off: run ~/lighthome/scripts/numen/send_wrapper.sh home/command/lights/off 
+hall light on: run ~/lighthome/scripts/numen/send_wrapper.sh home/command/lights/hall/on 
+hall light off: run ~/lighthome/scripts/numen/send_wrapper.sh home/command/lights/hall/off 
+tv light on: run ~/lighthome/scripts/numen/send_wrapper.sh TV_SPOTS_ON
+tv light off: run ~/lighthome/scripts/numen/send_wrapper.sh TV_SPOTS_OFF
+tv spots on: run ~/lighthome/scripts/numen/send_wrapper.sh TV_SPOTS_ON
+tv spots off: run ~/lighthome/scripts/numen/send_wrapper.sh TV_SPOTS_OFF 
+office light on: run ~/lighthome/scripts/numen/send_wrapper.sh home/command/lights/office/on 
+office light off: run ~/lighthome/scripts/numen/send_wrapper.sh home/command/lights/office/off
+office on: run ~/lighthome/scripts/numen/send_wrapper.sh home/command/lights/office/on
+office off: run ~/lighthome/scripts/numen/send_wrapper.sh home/command/lights/office/off
+garden light on: run ~/lighthome/scripts/numen/send_wrapper.sh home/command/lights/garden/on
+garden light off: run ~/lighthome/scripts/numen/send_wrapper.sh home/command/lights/garden/off
+garden on: run ~/lighthome/scripts/numen/send_wrapper.sh home/command/lights/garden/on
+garden off: run ~/lighthome/scripts/numen/send_wrapper.sh home/command/lights/garden/off
+middle light on: run ~/lighthome/scripts/numen/send_wrapper.sh home/command/lights/midspots/on
+middle light off: run ~/lighthome/scripts/numen/send_wrapper.sh home/command/lights/midspots/off
+middle lights on: run ~/lighthome/scripts/numen/send_wrapper.sh home/command/lights/midspots/on
+middle lights off: run ~/lighthome/scripts/numen/send_wrapper.sh home/command/lights/midspots/off
+mid lights on: run ~/lighthome/scripts/numen/send_wrapper.sh home/command/lights/midspots/on
+mid lights off: run ~/lighthome/scripts/numen/send_wrapper.sh home/command/lights/midspots/off
+mid spots on: run ~/lighthome/scripts/numen/send_wrapper.sh home/command/lights/midspots/on
+mid spots off: run ~/lighthome/scripts/numen/send_wrapper.sh home/command/lights/midspots/off
+spots on: run ~/lighthome/scripts/numen/send_wrapper.sh SPOTS_ON
+spots off: run ~/lighthome/scripts/numen/send_wrapper.sh SPOTS_OFF
+back light on: run ~/lighthome/scripts/numen/send_wrapper.sh home/command/lights/back_room/on 
+back light off: run ~/lighthome/scripts/numen/send_wrapper.sh home/command/lights/back_room/off 
+corner light on: run ~/lighthome/scripts/numen/send_wrapper.sh home/command/lights/back_corner/on 
+corner light off: run ~/lighthome/scripts/numen/send_wrapper.sh home/command/lights/back_corner/off 
+back corner light on: run ~/lighthome/scripts/numen/send_wrapper.sh home/command/lights/back_corner/on 
+back corner light off: run ~/lighthome/scripts/numen/send_wrapper.sh home/command/lights/back_corner/off 
+front light on: run ~/lighthome/scripts/numen/send_wrapper.sh home/command/lights/front_room/on 
+front light off: run ~/lighthome/scripts/numen/send_wrapper.sh home/command/lights/front_room/off 
+bedroom light on: run ~/lighthome/scripts/numen/send_wrapper.sh home/command/lights/bedroom/on
+bedroom light off: run ~/lighthome/scripts/numen/send_wrapper.sh home/command/lights/bedroom/off
+bedroom on: run ~/lighthome/scripts/numen/send_wrapper.sh home/command/lights/bedroom/on
+bedroom off: run ~/lighthome/scripts/numen/send_wrapper.sh home/command/lights/bedroom/off
+bedroom high spots on: run ~/lighthome/scripts/numen/send_wrapper.sh home/command/lights/bedroom_highspots/on
+bedroom high spots off: run ~/lighthome/scripts/numen/send_wrapper.sh home/command/lights/bedroom_highspots/off
+bedroom low spots on: run ~/lighthome/scripts/numen/send_wrapper.sh home/command/lights/bedroom_midspots/on
+bedroom low spots off: run ~/lighthome/scripts/numen/send_wrapper.sh home/command/lights/bedroom_midspots/off
+bedroom color light on: run ~/lighthome/scripts/numen/send_wrapper.sh home/command/lights/bedroom_ambilight/on
+bedroom color light off: run ~/lighthome/scripts/numen/send_wrapper.sh home/command/lights/bedroom_ambilight/off
+bedroom colored light on: run ~/lighthome/scripts/numen/send_wrapper.sh home/command/lights/bedroom_ambilight/on
+bedroom colored light off: run ~/lighthome/scripts/numen/send_wrapper.sh home/command/lights/bedroom_ambilight/off
+bedroom ambiance light on: run ~/lighthome/scripts/numen/send_wrapper.sh home/command/lights/bedroom_ambilight/on
+bedroom ambiance light off: run ~/lighthome/scripts/numen/send_wrapper.sh home/command/lights/bedroom_ambilight/off
+ambiance light on: run ~/lighthome/scripts/numen/send_wrapper.sh AMBIANCE_ON
+ambiance light off: run ~/lighthome/scripts/numen/send_wrapper.sh AMBIANCE_OFF
+color light on: run ~/lighthome/scripts/numen/send_wrapper.sh AMBIANCE_ON
+color light off: run ~/lighthome/scripts/numen/send_wrapper.sh AMBIANCE_OFF
+colored light on: run ~/lighthome/scripts/numen/send_wrapper.sh AMBIANCE_ON
+colored light off: run ~/lighthome/scripts/numen/send_wrapper.sh AMBIANCE_OFF
+kitchen light on: run ~/lighthome/scripts/numen/send_wrapper.sh home/command/lights/kitchen/on
+kitchen light off: run ~/lighthome/scripts/numen/send_wrapper.sh home/command/lights/kitchen/off
+kitchen on: run ~/lighthome/scripts/numen/send_wrapper.sh home/command/lights/kitchen/on
+kitchen off: run ~/lighthome/scripts/numen/send_wrapper.sh home/command/lights/kitchen/off
+porch light on: run ~/lighthome/scripts/numen/send_wrapper.sh home/command/lights/porch/on
+porch light off: run ~/lighthome/scripts/numen/send_wrapper.sh home/command/lights/porch/off
+porch on: run ~/lighthome/scripts/numen/send_wrapper.sh home/command/lights/porch/on
+porch off: run ~/lighthome/scripts/numen/send_wrapper.sh home/command/lights/porch/off
+balcony light on: run ~/lighthome/scripts/numen/send_wrapper.sh home/command/lights/balcony/on
+balcony light off: run ~/lighthome/scripts/numen/send_wrapper.sh home/command/lights/balcony/off
+balcony on: run ~/lighthome/scripts/numen/send_wrapper.sh home/command/lights/balcony/on
+balcony off: run ~/lighthome/scripts/numen/send_wrapper.sh home/command/lights/balcony/off
+night lights: run ~/lighthome/scripts/numen/send_wrapper.sh NIGHT
+night scene: run ~/lighthome/scripts/numen/send_wrapper.sh NIGHT
+start tv: run ~/lighthome/scripts/numen/send_wrapper.sh TV_ON
+tv on: run ~/lighthome/scripts/numen/send_wrapper.sh TV_ON
+tv off: run ~/lighthome/scripts/numen/send_wrapper.sh TV_OFF
+watch tv: run ~/lighthome/scripts/numen/send_wrapper.sh TV_ON
+start music: run ~/lighthome/scripts/numen/send_wrapper.sh MUSIC_ON
+music on: run ~/lighthome/scripts/numen/send_wrapper.sh MUSIC_ON
+stop music: run ~/lighthome/scripts/numen/send_wrapper.sh MUSIC_OFF
+music off: run ~/lighthome/scripts/numen/send_wrapper.sh MUSIC_OFF
+stop downstairs music: run ~/lighthome/scripts/numen/send_wrapper.sh home/command/music/off 
+stop upstairs music: run ~/lighthome/scripts/numen/send_wrapper.sh home/command/music2/off 
+stop bedroom music: run ~/lighthome/scripts/numen/send_wrapper.sh home/command/music2/off 
+start media center: run ~/lighthome/scripts/numen/send_wrapper.sh KODI_ON
+stop media center: run ~/lighthome/scripts/numen/send_wrapper.sh KODI_OFF
+media center on: run ~/lighthome/scripts/numen/send_wrapper.sh KODI_ON
+media center off: run ~/lighthome/scripts/numen/send_wrapper.sh KODI_OFF
+start desktop: run ~/lighthome/scripts/numen/send_wrapper.sh DESKTOP_ON
+stop desktop: ~/lighthome/scripts/numen/send_wrapper.sh DESKTOP_OFF
+desktop on: run ~/lighthome/scripts/numen/send_wrapper.sh DESKTOP_ON
+desktop off: ~/lighthome/scripts/numen/send_wrapper.sh DESKTOP_OFF
+next song: run ~/lighthome/scripts/numen/send_wrapper.sh home/command/music/next 
+previous song: run ~/lighthome/scripts/numen/send_wrapper.sh home/command/music/previous 
+next music: run ~/lighthome/scripts/numen/send_wrapper.sh home/command/music/next 
+previous music: run ~/lighthome/scripts/numen/send_wrapper.sh home/command/music/previous 
+music next: run ~/lighthome/scripts/numen/send_wrapper.sh home/command/music/next 
+music previous: run ~/lighthome/scripts/numen/send_wrapper.sh home/command/music/previous 
+pause music: run ~/lighthome/scripts/numen/send_wrapper.sh home/command/music/pauseplay
+resume music: run ~/lighthome/scripts/numen/send_wrapper.sh home/command/music/pauseplay
+music pause: run ~/lighthome/scripts/numen/send_wrapper.sh home/command/music/pauseplay
+music resume: run ~/lighthome/scripts/numen/send_wrapper.sh home/command/music/pauseplay
+stop media: run ~/lighthome/scripts/numen/send_wrapper.sh TV_OFF 
+decoder on: run ~/lighthome/scripts/numen/send_wrapper.sh TVDECODER:on
+decoder off: run ~/lighthome/scripts/numen/send_wrapper.sh TVDECODER:off
+next channel: run ~/lighthome/scripts/numen/send_wrapper.sh TVDECODER:next
+previous channel: run ~/lighthome/scripts/numen/send_wrapper.sh TVDECODER:previous
+tv next: run ~/lighthome/scripts/numen/send_wrapper.sh TVDECODER:next
+tv previous: run ~/lighthome/scripts/numen/send_wrapper.sh TVDECODER:previous
+tv confirm: run ~/lighthome/scripts/numen/send_wrapper.sh TVDECODER:ok
+tv cancel: run ~/lighthome/scripts/numen/send_wrapper.sh TVDECODER:back
+tv mute: run ~/lighthome/scripts/numen/send_wrapper.sh home/command/mute
+tv volume up: run ~/lighthome/scripts/numen/send_wrapper.sh home/command/volup
+tv volume down: run ~/lighthome/scripts/numen/send_wrapper.sh home/command/voldown
+tv one: run ~/lighthome/scripts/numen/send_wrapper.sh TVDECODER:channel/npo1
+tv first: run ~/lighthome/scripts/numen/send_wrapper.sh TVDECODER:channel/npo1
+tv two: run ~/lighthome/scripts/numen/send_wrapper.sh TVDECODER:channel/npo2
+tv three: run ~/lighthome/scripts/numen/send_wrapper.sh TVDECODER:channel/npo3
+tv german: run ~/lighthome/scripts/numen/send_wrapper.sh TVDECODER:channel/ard
+tv british: run ~/lighthome/scripts/numen/send_wrapper.sh TVDECODER:channel/bbc1
+tv belgian: run ~/lighthome/scripts/numen/send_wrapper.sh TVDECODER:channel/een
+tv dutch: run ~/lighthome/scripts/numen/send_wrapper.sh TVDECODER:channel/npo1
+german tv: run ~/lighthome/scripts/numen/send_wrapper.sh TVDECODER:channel/ard
+british tv: run ~/lighthome/scripts/numen/send_wrapper.sh TVDECODER:channel/bbc1
+belgian tv: run ~/lighthome/scripts/numen/send_wrapper.sh TVDECODER:channel/een
+dutch tv: run ~/lighthome/scripts/numen/send_wrapper.sh TVDECODER:channel/npo1
+tv pause: run ~/lighthome/scripts/numen/send_wrapper.sh TVDECODER:pause
+tv resume: run ~/lighthome/scripts/numen/send_wrapper.sh TVDECODER:pause
+pause tv: run ~/lighthome/scripts/numen/send_wrapper.sh TVDECODER:pause
+resume tv: run ~/lighthome/scripts/numen/send_wrapper.sh TVDECODER:pause
+start air conditioning: run ~/lighthome/scripts/numen/send_wrapper.sh AIRCO_ON
+stop air conditioning: run ~/lighthome/scripts/numen/send_wrapper.sh AIRCO_OFF 
+air conditioning on: run ~/lighthome/scripts/numen/send_wrapper.sh AIRCO_ON 
+air conditioning off: run ~/lighthome/scripts/numen/send_wrapper.sh AIRCO_OFF
+start air conditioning bedroom: run ~/lighthome/scripts/numen/send_wrapper.sh home/command/airco/bedroom/cool
+stop air conditioning bedroom: run ~/lighthome/scripts/numen/send_wrapper.sh home/command/airco/bedroom/off
+start air conditioning upstairs: run ~/lighthome/scripts/numen/send_wrapper.sh home/command/airco/bedroom/cool
+stop air conditioning upstairs: run ~/lighthome/scripts/numen/send_wrapper.sh home/command/airco/bedroom/off
+air conditioning downstairs on: run ~/lighthome/scripts/numen/send_wrapper.sh home/command/airco/living/on
+air conditioning downstairs off: run ~/lighthome/scripts/numen/send_wrapper.sh home/command/airco/living/off
+air conditioning upstairs on: run ~/lighthome/scripts/numen/send_wrapper.sh home/command/airco/bedroom/on
+air conditioning upstairs off: run ~/lighthome/scripts/numen/send_wrapper.sh home/command/airco/bedroom/off
+air conditioning bedroom on: run ~/lighthome/scripts/numen/send_wrapper.sh home/command/airco/bedroom/on
+air conditioning bedroom off: run ~/lighthome/scripts/numen/send_wrapper.sh home/command/airco/bedroom/off
+wake eight: run ~/lighthome/scripts/numen/send_wrapper.sh home/command/wake/800
+wake eight thirty: run ~/lighthome/scripts/numen/send_wrapper.sh home/command/wake/830
+wake nine: run ~/lighthome/scripts/numen/send_wrapper.sh home/command/wake/900
+wake nine thirty: run ~/lighthome/scripts/numen/send_wrapper.sh home/command/wake/930
+wake ten: run ~/lighthome/scripts/numen/send_wrapper.sh home/command/wake/1000
+wake ten thirty: run ~/lighthome/scripts/numen/send_wrapper.sh home/command/wake/1030
+watch front: run ~/lighthome/scripts/numen/send_wrapper.sh home/command/homecam/voor
+watch back: run ~/lighthome/scripts/numen/send_wrapper.sh home/command/homecam/achter
+watch down: run ~/lighthome/scripts/numen/send_wrapper.sh home/command/homecam/onder
+watch hall: run ~/lighthome/scripts/numen/send_wrapper.sh home/command/homecam/gang
+temperature eighteen: run ~/lighthome/scripts/numen/send_wrapper.sh home/command/heating/18
+temperature nineteen: run ~/lighthome/scripts/numen/send_wrapper.sh home/command/heating/19
+temperature twenty: run ~/lighthome/scripts/numen/send_wrapper.sh home/command/heating/20
+temperature twenty one: run ~/lighthome/scripts/numen/send_wrapper.sh home/command/heating/21
+set temperature eighteen: run ~/lighthome/scripts/numen/send_wrapper.sh home/command/heating/18
+set temperature nineteen: run ~/lighthome/scripts/numen/send_wrapper.sh home/command/heating/19
+set temperature twenty: run ~/lighthome/scripts/numen/send_wrapper.sh home/command/heating/20
+set temperature twenty one: run ~/lighthome/scripts/numen/send_wrapper.sh home/command/heating/21
 time: run ~/lighthome/send.sh home/say/$(hostname) "$(date +"%H %M")" 
 date: run ~/lighthome/send.sh home/say/$(hostname) "$(date +"%B %d")" 
 temperature: run ~/lighthome/send.sh home/say/$(hostname) "outside $(cat /tmp/homestatus/sensor/outside_temperature), living room $(cat /tmp/homestatus/sensor/temperature_living_room_2), bedroom $(cat /tmp/homestatus/sensor/bedroom_temperature)" 
