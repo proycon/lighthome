@@ -1,9 +1,8 @@
-dismissed: eval ~/lighthome/scripts/numen/numen_idle.sh
-dismiss: eval ~/lighthome/scripts/numen/numen_idle.sh
-no: eval ~/lighthome/scripts/numen/numen_idle.sh
-never mind: eval ~/lighthome/scripts/numen/numen_idle.sh
-cancel: eval ~/lighthome/scripts/numen/numen_idle.sh
-abort: eval ~/lighthome/scripts/numen/numen_idle.sh
+dismissed: touch $NUMEN_STATE_DIR/acted
+dismiss: touch $NUMEN_STATE_DIR/acted
+never mind: touch $NUMEN_STATE_DIR/acted
+cancel: touch $NUMEN_STATE_DIR/acted
+abort: touch $NUMEN_STATE_DIR/acted
 <complete>: eval ~/lighthome/scripts/numen/numen_complete.sh
 
 mute: run ~/lighthome/send.sh --notify home/command/mute && touch $NUMEN_STATE_DIR/acted
