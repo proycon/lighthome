@@ -1,4 +1,5 @@
 #!/bin/sh
+touch "$NUMEN_STATE_DIR/acted"
 case $1 in #upper case parameter indicated something contextual
     NIGHT)
         case "$(hostname)" in
@@ -198,4 +199,3 @@ case $1 in #upper case parameter indicated something contextual
         ~/lighthome/send.sh --notify "$1" $2
         ;;
 esac
-touch "$NUMEN_STATE_DIR/acted"
