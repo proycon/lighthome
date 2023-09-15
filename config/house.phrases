@@ -1,4 +1,5 @@
 dismissed: eval ~/lighthome/scripts/numen/numen_idle.sh
+no: eval ~/lighthome/scripts/numen/numen_idle.sh --silent
 mute: run ~/lighthome/send.sh --notify home/command/mute & ~/lighthome/scripts/numen/numen_idle.sh --silent | numenc
 volume up: run ~/lighthome/send.sh --notify home/command/volup & ~/lighthome/scripts/numen/numen_idle.sh --silent | numenc
 volume down: run ~/lighthome/send.sh --notify home/command/voldown & ~/lighthome/scripts/numen/numen_idle.sh --silent | numenc
