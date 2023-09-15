@@ -1,126 +1,128 @@
 dismissed: eval ~/lighthome/scripts/numen/numen_idle.sh
 no: eval ~/lighthome/scripts/numen/numen_idle.sh --silent
-mute: run ~/lighthome/send.sh --notify home/command/mute & ~/lighthome/scripts/numen/numen_idle.sh --silent | numenc
-volume up: run ~/lighthome/send.sh --notify home/command/volup & ~/lighthome/scripts/numen/numen_idle.sh --silent | numenc
-volume down: run ~/lighthome/send.sh --notify home/command/voldown & ~/lighthome/scripts/numen/numen_idle.sh --silent | numenc
-lights on: run ~/lighthome/send.sh --notify home/command/lights/on & ~/lighthome/scripts/numen/numen_idle.sh --silent | numenc
-lights off: run ~/lighthome/send.sh --notify home/command/lights/off & ~/lighthome/scripts/numen/numen_idle.sh --silent | numenc
-hall light on: run ~/lighthome/send.sh --notify home/command/lights/hall/on & ~/lighthome/scripts/numen/numen_idle.sh --silent | numenc
-hall light off: run ~/lighthome/send.sh --notify home/command/lights/hall/off & ~/lighthome/scripts/numen/numen_idle.sh --silent | numenc
-tv light on: run ~/lighthome/send.sh --notify home/command/lights/tv_spots/on & ~/lighthome/scripts/numen/numen_idle.sh --silent | numenc
-tv light off: run ~/lighthome/send.sh --notify home/command/lights/tv_spots/off & ~/lighthome/scripts/numen/numen_idle.sh --silent | numenc
-tv spots on: run ~/lighthome/send.sh --notify home/command/lights/tv_spots/on & ~/lighthome/scripts/numen/numen_idle.sh --silent | numenc
-tv spots off: run ~/lighthome/send.sh --notify home/command/lights/tv_spots/off & ~/lighthome/scripts/numen/numen_idle.sh --silent | numenc
-office light on: run ~/lighthome/send.sh --notify home/command/lights/office/on & ~/lighthome/scripts/numen/numen_idle.sh --silent | numenc
-office light off: run ~/lighthome/send.sh --notify home/command/lights/office/off & ~/lighthome/scripts/numen/numen_idle.sh --silent | numenc
-office on: run ~/lighthome/send.sh --notify home/command/lights/office/on & ~/lighthome/scripts/numen/numen_idle.sh --silent | numenc
-office off: run ~/lighthome/send.sh --notify home/command/lights/office/off & ~/lighthome/scripts/numen/numen_idle.sh --silent | numenc
-garden light on: run ~/lighthome/send.sh --notify home/command/lights/garden/on & ~/lighthome/scripts/numen/numen_idle.sh --silent | numenc
-garden light off: run ~/lighthome/send.sh --notify home/command/lights/garden/off & ~/lighthome/scripts/numen/numen_idle.sh --silent | numenc
-garden on: run ~/lighthome/send.sh --notify home/command/lights/garden/on & ~/lighthome/scripts/numen/numen_idle.sh --silent | numenc
-garden off: run ~/lighthome/send.sh --notify home/command/lights/garden/off & ~/lighthome/scripts/numen/numen_idle.sh --silent | numenc
-middle light on: run ~/lighthome/send.sh --notify home/command/lights/midspots/on & ~/lighthome/scripts/numen/numen_idle.sh --silent | numenc
-middle light off: run ~/lighthome/send.sh --notify home/command/lights/midspots/off & ~/lighthome/scripts/numen/numen_idle.sh --silent | numenc
-middle lights on: run ~/lighthome/send.sh --notify home/command/lights/midspots/on & ~/lighthome/scripts/numen/numen_idle.sh --silent | numenc
-middle lights off: run ~/lighthome/send.sh --notify home/command/lights/midspots/off & ~/lighthome/scripts/numen/numen_idle.sh --silent | numenc
-mid lights on: run ~/lighthome/send.sh --notify home/command/lights/midspots/on & ~/lighthome/scripts/numen/numen_idle.sh --silent | numenc
-mid lights off: run ~/lighthome/send.sh --notify home/command/lights/midspots/off & ~/lighthome/scripts/numen/numen_idle.sh --silent | numenc
-mid spots on: run ~/lighthome/send.sh --notify home/command/lights/midspots/on & ~/lighthome/scripts/numen/numen_idle.sh --silent | numenc
-mid spots off: run ~/lighthome/send.sh --notify home/command/lights/midspots/off & ~/lighthome/scripts/numen/numen_idle.sh --silent | numenc
-spots on: run ~/lighthome/send.sh --notify home/command/lights/midspots/on & ~/lighthome/scripts/numen/numen_idle.sh --silent | numenc
-spots off: run ~/lighthome/send.sh --notify home/command/lights/midspots/off & ~/lighthome/scripts/numen/numen_idle.sh --silent | numenc
-back light on: run ~/lighthome/send.sh --notify home/command/lights/back_room/on & ~/lighthome/scripts/numen/numen_idle.sh --silent | numenc
-back light off: run ~/lighthome/send.sh --notify home/command/lights/back_room/off & ~/lighthome/scripts/numen/numen_idle.sh --silent | numenc
-corner light on: run ~/lighthome/send.sh --notify home/command/lights/back_corner/on & ~/lighthome/scripts/numen/numen_idle.sh --silent | numenc
-corner light off: run ~/lighthome/send.sh --notify home/command/lights/back_corner/off & ~/lighthome/scripts/numen/numen_idle.sh --silent | numenc
-front light on: run ~/lighthome/send.sh --notify home/command/lights/front_room/on & ~/lighthome/scripts/numen/numen_idle.sh --silent | numenc
-front light off: run ~/lighthome/send.sh --notify home/command/lights/front_room/off & ~/lighthome/scripts/numen/numen_idle.sh --silent | numenc
-bedroom light on: run ~/lighthome/send.sh --notify home/command/lights/bedroom/on & ~/lighthome/scripts/numen/numen_idle.sh --silent | numenc
-bedroom light off: run ~/lighthome/send.sh --notify home/command/lights/bedroom/off & ~/lighthome/scripts/numen/numen_idle.sh --silent | numenc
-kitchen light on: run ~/lighthome/send.sh --notify home/command/lights/kitchen/on & ~/lighthome/scripts/numen/numen_idle.sh --silent | numenc
-kitchen light off: run ~/lighthome/send.sh --notify home/command/lights/kitchen/off & ~/lighthome/scripts/numen/numen_idle.sh --silent | numenc
-kitchen on: run ~/lighthome/send.sh --notify home/command/lights/kitchen/on & ~/lighthome/scripts/numen/numen_idle.sh --silent | numenc
-kitchen off: run ~/lighthome/send.sh --notify home/command/lights/kitchen/off & ~/lighthome/scripts/numen/numen_idle.sh --silent | numenc
-porch light on: run ~/lighthome/send.sh --notify home/command/lights/porch/on & ~/lighthome/scripts/numen/numen_idle.sh --silent | numenc
-porch light off: run ~/lighthome/send.sh --notify home/command/lights/porch/off & ~/lighthome/scripts/numen/numen_idle.sh --silent | numenc
-porch on: run ~/lighthome/send.sh --notify home/command/lights/porch/on & ~/lighthome/scripts/numen/numen_idle.sh --silent | numenc
-porch off: run ~/lighthome/send.sh --notify home/command/lights/porch/off & ~/lighthome/scripts/numen/numen_idle.sh --silent | numenc
-balcony light on: run ~/lighthome/send.sh --notify home/command/lights/balcony/on & ~/lighthome/scripts/numen/numen_idle.sh --silent | numenc
-balcony light off: run ~/lighthome/send.sh --notify home/command/lights/balcony/off & ~/lighthome/scripts/numen/numen_idle.sh --silent | numenc
-balcony on: run ~/lighthome/send.sh --notify home/command/lights/balcony/on & ~/lighthome/scripts/numen/numen_idle.sh --silent | numenc
-balcony off: run ~/lighthome/send.sh --notify home/command/lights/balcony/off & ~/lighthome/scripts/numen/numen_idle.sh --silent | numenc
-night lights: run ~/lighthome/send.sh --notify home/command/lights/night & ~/lighthome/scripts/numen/numen_idle.sh --silent | numenc
-night scene: run ~/lighthome/send.sh --notify home/command/lights/night & ~/lighthome/scripts/numen/numen_idle.sh --silent | numenc
-start tv: run ~/lighthome/send.sh --notify home/command/media/tv & ~/lighthome/scripts/numen/numen_idle.sh --silent | numenc
-tv on: run ~/lighthome/send.sh --notify home/command/media/tv & ~/lighthome/scripts/numen/numen_idle.sh --silent | numenc
-watch tv: run ~/lighthome/send.sh --notify home/command/media/tv & ~/lighthome/scripts/numen/numen_idle.sh --silent | numenc
-start music: run ~/lighthome/send.sh --notify home/command/media/music & ~/lighthome/scripts/numen/numen_idle.sh --silent | numenc
-start music upstairs: run ~/lighthome/send.sh --notify home/command/media/music2 & ~/lighthome/scripts/numen/numen_idle.sh --silent | numenc
-start media center: run ~/lighthome/send.sh --notify home/command/kodi/on & ~/lighthome/scripts/numen/numen_idle.sh --silent | numenc
-next song: run ~/lighthome/send.sh --notify home/command/music/next  & ~/lighthome/scripts/numen/numen_idle.sh --silent | numenc
-previous song: run ~/lighthome/send.sh --notify home/command/music/previous  & ~/lighthome/scripts/numen/numen_idle.sh --silent | numenc
-next music: run ~/lighthome/send.sh --notify home/command/music/next  & ~/lighthome/scripts/numen/numen_idle.sh --silent | numenc
-previous music: run ~/lighthome/send.sh --notify home/command/music/previous  & ~/lighthome/scripts/numen/numen_idle.sh --silent | numenc
-music next: run ~/lighthome/send.sh --notify home/command/music/next  & ~/lighthome/scripts/numen/numen_idle.sh --silent | numenc
-music previous: run ~/lighthome/send.sh --notify home/command/music/previous  & ~/lighthome/scripts/numen/numen_idle.sh --silent | numenc
-pause music: run ~/lighthome/send.sh --notify home/command/music/pauseplay & ~/lighthome/scripts/numen/numen_idle.sh --silent | numenc
-resume music: run ~/lighthome/send.sh --notify home/command/music/pauseplay & ~/lighthome/scripts/numen/numen_idle.sh --silent | numenc
-music pause: run ~/lighthome/send.sh --notify home/command/music/pauseplay & ~/lighthome/scripts/numen/numen_idle.sh --silent | numenc
-music resume: run ~/lighthome/send.sh --notify home/command/music/pauseplay & ~/lighthome/scripts/numen/numen_idle.sh --silent | numenc
-media off: run ~/lighthome/send.sh --notify home/command/media/off & ~/lighthome/scripts/numen/numen_idle.sh --silent | numenc
-decoder on: run ~/lighthome/send.sh --notify home/command/tvdecoder/on & ~/lighthome/scripts/numen/numen_idle.sh --silent | numenc
-decoder off: run ~/lighthome/send.sh --notify home/command/tvdecoder/off & ~/lighthome/scripts/numen/numen_idle.sh --silent | numenc
-next channel: run ~/lighthome/send.sh --notify home/command/tvdecoder/next & ~/lighthome/scripts/numen/numen_idle.sh --silent | numenc
-previous channel: run ~/lighthome/send.sh --notify home/command/tvdecoder/previous & ~/lighthome/scripts/numen/numen_idle.sh --silent | numenc
-tv next: run ~/lighthome/send.sh --notify home/command/tvdecoder/next & ~/lighthome/scripts/numen/numen_idle.sh --silent | numenc
-tv previous: run ~/lighthome/send.sh --notify home/command/tvdecoder/previous & ~/lighthome/scripts/numen/numen_idle.sh --silent | numenc
-tv confirm: run ~/lighthome/send.sh --notify home/command/tvdecoder/ok & ~/lighthome/scripts/numen/numen_idle.sh --silent | numenc
-tv cancel: run ~/lighthome/send.sh --notify home/command/tvdecoder/back & ~/lighthome/scripts/numen/numen_idle.sh --silent | numenc
-tv mute: run ~/lighthome/send.sh --notify home/command/mute & ~/lighthome/scripts/numen/numen_idle.sh --silent | numenc
-tv volume up: run ~/lighthome/send.sh --notify home/command/volup & ~/lighthome/scripts/numen/numen_idle.sh --silent | numenc
-tv volume down: run ~/lighthome/send.sh --notify home/command/voldown & ~/lighthome/scripts/numen/numen_idle.sh --silent | numenc
-tv one: run ~/lighthome/send.sh --notify home/command/tvdecoder/channel/npo1 & ~/lighthome/scripts/numen/numen_idle.sh --silent | numenc
-tv first: run ~/lighthome/send.sh --notify home/command/tvdecoder/channel/npo1 & ~/lighthome/scripts/numen/numen_idle.sh --silent | numenc
-tv two: run ~/lighthome/send.sh --notify home/command/tvdecoder/channel/npo2 & ~/lighthome/scripts/numen/numen_idle.sh --silent | numenc
-tv three: run ~/lighthome/send.sh --notify home/command/tvdecoder/channel/npo3 & ~/lighthome/scripts/numen/numen_idle.sh --silent | numenc
-tv german: run ~/lighthome/send.sh --notify home/command/tvdecoder/channel/ard & ~/lighthome/scripts/numen/numen_idle.sh --silent | numenc
-tv british: run ~/lighthome/send.sh --notify home/command/tvdecoder/channel/bbc1 & ~/lighthome/scripts/numen/numen_idle.sh --silent | numenc
-tv belgian: run ~/lighthome/send.sh --notify home/command/tvdecoder/channel/een & ~/lighthome/scripts/numen/numen_idle.sh --silent | numenc
-tv dutch: run ~/lighthome/send.sh --notify home/command/tvdecoder/channel/npo1 & ~/lighthome/scripts/numen/numen_idle.sh --silent | numenc
-tv pause: run ~/lighthome/send.sh --notify home/command/tvdecoder/pause & ~/lighthome/scripts/numen/numen_idle.sh --silent | numenc
-tv resume: run ~/lighthome/send.sh --notify home/command/tvdecoder/pause & ~/lighthome/scripts/numen/numen_idle.sh --silent | numenc
-pause tv: run ~/lighthome/send.sh --notify home/command/tvdecoder/pause & ~/lighthome/scripts/numen/numen_idle.sh --silent | numenc
-resume tv: run ~/lighthome/send.sh --notify home/command/tvdecoder/pause & ~/lighthome/scripts/numen/numen_idle.sh --silent | numenc
-start air conditioning: run ~/lighthome/send.sh --notify home/command/airco/living/cool & ~/lighthome/scripts/numen/numen_idle.sh --silent | numenc
-stop air conditioning: run ~/lighthome/send.sh --notify home/command/airco/living/off & ~/lighthome/scripts/numen/numen_idle.sh --silent | numenc
-air conditioning on: run ~/lighthome/send.sh --notify home/command/airco/living/on & ~/lighthome/scripts/numen/numen_idle.sh --silent | numenc
-air conditioning off: run ~/lighthome/send.sh --notify home/command/airco/living/off & ~/lighthome/scripts/numen/numen_idle.sh --silent | numenc
-start air conditioning bedroom: run ~/lighthome/send.sh --notify home/command/airco/bedroom/cool & ~/lighthome/scripts/numen/numen_idle.sh --silent | numenc
-stop air conditioning bedroom: run ~/lighthome/send.sh --notify home/command/airco/bedroom/off & ~/lighthome/scripts/numen/numen_idle.sh --silent | numenc
-start air conditioning upstairs: run ~/lighthome/send.sh --notify home/command/airco/bedroom/cool & ~/lighthome/scripts/numen/numen_idle.sh --silent | numenc
-stop air conditioning upstairs: run ~/lighthome/send.sh --notify home/command/airco/bedroom/off & ~/lighthome/scripts/numen/numen_idle.sh --silent | numenc
-air conditioning upstairs on: run ~/lighthome/send.sh --notify home/command/airco/upstairs/on & ~/lighthome/scripts/numen/numen_idle.sh --silent | numenc
-air conditioning upstairs off: run ~/lighthome/send.sh --notify home/command/airco/upstairs/off & ~/lighthome/scripts/numen/numen_idle.sh --silent | numenc
-air conditioning bedroom on: run ~/lighthome/send.sh --notify home/command/airco/upstairs/on & ~/lighthome/scripts/numen/numen_idle.sh --silent | numenc
-air conditioning bedroom off: run ~/lighthome/send.sh --notify home/command/airco/upstairs/off & ~/lighthome/scripts/numen/numen_idle.sh --silent | numenc
-wake eight: run ~/lighthome/send.sh --notify home/command/wake/800 & ~/lighthome/scripts/numen/numen_idle.sh --silent | numenc
-wake eight thirty: run ~/lighthome/send.sh --notify home/command/wake/830 & ~/lighthome/scripts/numen/numen_idle.sh --silent | numenc
-wake nine: run ~/lighthome/send.sh --notify home/command/wake/900 & ~/lighthome/scripts/numen/numen_idle.sh --silent | numenc
-wake nine thirty: run ~/lighthome/send.sh --notify home/command/wake/930 & ~/lighthome/scripts/numen/numen_idle.sh --silent | numenc
-wake ten: run ~/lighthome/send.sh --notify home/command/wake/1000 & ~/lighthome/scripts/numen/numen_idle.sh --silent | numenc
-wake ten thirty: run ~/lighthome/send.sh --notify home/command/wake/1030 & ~/lighthome/scripts/numen/numen_idle.sh --silent | numenc
-watch front: run ~/lighthome/send.sh --notify home/command/homecam/voor & ~/lighthome/scripts/numen/numen_idle.sh --silent | numenc
-watch back: run ~/lighthome/send.sh --notify home/command/homecam/achter & ~/lighthome/scripts/numen/numen_idle.sh --silent | numenc
-watch down: run ~/lighthome/send.sh --notify home/command/homecam/onder & ~/lighthome/scripts/numen/numen_idle.sh --silent | numenc
-watch hall: run ~/lighthome/send.sh --notify home/command/homecam/gang & ~/lighthome/scripts/numen/numen_idle.sh --silent | numenc
-temperature eighteen: run ~/lighthome/send.sh --notify home/command/heating/18 & ~/lighthome/scripts/numen/numen_idle.sh --silent | numenc
-temperature nineteen: run ~/lighthome/send.sh --notify home/command/heating/19 & ~/lighthome/scripts/numen/numen_idle.sh --silent | numenc
-temperature twenty: run ~/lighthome/send.sh --notify home/command/heating/20 & ~/lighthome/scripts/numen/numen_idle.sh --silent | numenc
-temperature twenty one: run ~/lighthome/send.sh --notify home/command/heating/21 & ~/lighthome/scripts/numen/numen_idle.sh --silent | numenc
-set temperature eighteen: run ~/lighthome/send.sh --notify home/command/heating/18 & ~/lighthome/scripts/numen/numen_idle.sh --silent | numenc
-set temperature nineteen: run ~/lighthome/send.sh --notify home/command/heating/19 & ~/lighthome/scripts/numen/numen_idle.sh --silent | numenc
-set temperature twenty: run ~/lighthome/send.sh --notify home/command/heating/20 & ~/lighthome/scripts/numen/numen_idle.sh --silent | numenc
-set temperature twenty one: run ~/lighthome/send.sh --notify home/command/heating/21 & ~/lighthome/scripts/numen/numen_idle.sh --silent | numenc
+<complete>: eval ~/lighthome/scripts/numen/numen_idle.sh --silent
+
+mute: run ~/lighthome/send.sh --notify home/command/mute
+volume up: run ~/lighthome/send.sh --notify home/command/volup
+volume down: run ~/lighthome/send.sh --notify home/command/voldown
+lights on: run ~/lighthome/send.sh --notify home/command/lights/on
+lights off: run ~/lighthome/send.sh --notify home/command/lights/off
+hall light on: run ~/lighthome/send.sh --notify home/command/lights/hall/on
+hall light off: run ~/lighthome/send.sh --notify home/command/lights/hall/off
+tv light on: run ~/lighthome/send.sh --notify home/command/lights/tv_spots/on 
+tv light off: run ~/lighthome/send.sh --notify home/command/lights/tv_spots/off
+tv spots on: run ~/lighthome/send.sh --notify home/command/lights/tv_spots/on 
+tv spots off: run ~/lighthome/send.sh --notify home/command/lights/tv_spots/off 
+office light on: run ~/lighthome/send.sh --notify home/command/lights/office/on
+office light off: run ~/lighthome/send.sh --notify home/command/lights/office/off 
+office on: run ~/lighthome/send.sh --notify home/command/lights/office/on 
+office off: run ~/lighthome/send.sh --notify home/command/lights/office/off 
+garden light on: run ~/lighthome/send.sh --notify home/command/lights/garden/on 
+garden light off: run ~/lighthome/send.sh --notify home/command/lights/garden/off 
+garden on: run ~/lighthome/send.sh --notify home/command/lights/garden/on 
+garden off: run ~/lighthome/send.sh --notify home/command/lights/garden/off 
+middle light on: run ~/lighthome/send.sh --notify home/command/lights/midspots/on 
+middle light off: run ~/lighthome/send.sh --notify home/command/lights/midspots/off 
+middle lights on: run ~/lighthome/send.sh --notify home/command/lights/midspots/on 
+middle lights off: run ~/lighthome/send.sh --notify home/command/lights/midspots/off 
+mid lights on: run ~/lighthome/send.sh --notify home/command/lights/midspots/on 
+mid lights off: run ~/lighthome/send.sh --notify home/command/lights/midspots/off 
+mid spots on: run ~/lighthome/send.sh --notify home/command/lights/midspots/on 
+mid spots off: run ~/lighthome/send.sh --notify home/command/lights/midspots/off 
+spots on: run ~/lighthome/send.sh --notify home/command/lights/midspots/on
+spots off: run ~/lighthome/send.sh --notify home/command/lights/midspots/off
+back light on: run ~/lighthome/send.sh --notify home/command/lights/back_room/on
+back light off: run ~/lighthome/send.sh --notify home/command/lights/back_room/off
+corner light on: run ~/lighthome/send.sh --notify home/command/lights/back_corner/on
+corner light off: run ~/lighthome/send.sh --notify home/command/lights/back_corner/off
+front light on: run ~/lighthome/send.sh --notify home/command/lights/front_room/on
+front light off: run ~/lighthome/send.sh --notify home/command/lights/front_room/off
+bedroom light on: run ~/lighthome/send.sh --notify home/command/lights/bedroom/on 
+bedroom light off: run ~/lighthome/send.sh --notify home/command/lights/bedroom/off 
+kitchen light on: run ~/lighthome/send.sh --notify home/command/lights/kitchen/on 
+kitchen light off: run ~/lighthome/send.sh --notify home/command/lights/kitchen/off 
+kitchen on: run ~/lighthome/send.sh --notify home/command/lights/kitchen/on 
+kitchen off: run ~/lighthome/send.sh --notify home/command/lights/kitchen/off 
+porch light on: run ~/lighthome/send.sh --notify home/command/lights/porch/on 
+porch light off: run ~/lighthome/send.sh --notify home/command/lights/porch/off 
+porch on: run ~/lighthome/send.sh --notify home/command/lights/porch/on 
+porch off: run ~/lighthome/send.sh --notify home/command/lights/porch/off 
+balcony light on: run ~/lighthome/send.sh --notify home/command/lights/balcony/on 
+balcony light off: run ~/lighthome/send.sh --notify home/command/lights/balcony/off 
+balcony on: run ~/lighthome/send.sh --notify home/command/lights/balcony/on 
+balcony off: run ~/lighthome/send.sh --notify home/command/lights/balcony/off 
+night lights: run ~/lighthome/send.sh --notify home/command/lights/night 
+night scene: run ~/lighthome/send.sh --notify home/command/lights/night 
+start tv: run ~/lighthome/send.sh --notify home/command/media/tv 
+tv on: run ~/lighthome/send.sh --notify home/command/media/tv 
+watch tv: run ~/lighthome/send.sh --notify home/command/media/tv 
+start music: run ~/lighthome/send.sh --notify home/command/media/music 
+start music upstairs: run ~/lighthome/send.sh --notify home/command/media/music2 
+start media center: run ~/lighthome/send.sh --notify home/command/kodi/on 
+next song: run ~/lighthome/send.sh --notify home/command/music/next  
+previous song: run ~/lighthome/send.sh --notify home/command/music/previous  
+next music: run ~/lighthome/send.sh --notify home/command/music/next  
+previous music: run ~/lighthome/send.sh --notify home/command/music/previous  
+music next: run ~/lighthome/send.sh --notify home/command/music/next  
+music previous: run ~/lighthome/send.sh --notify home/command/music/previous  
+pause music: run ~/lighthome/send.sh --notify home/command/music/pauseplay 
+resume music: run ~/lighthome/send.sh --notify home/command/music/pauseplay 
+music pause: run ~/lighthome/send.sh --notify home/command/music/pauseplay 
+music resume: run ~/lighthome/send.sh --notify home/command/music/pauseplay 
+media off: run ~/lighthome/send.sh --notify home/command/media/off 
+decoder on: run ~/lighthome/send.sh --notify home/command/tvdecoder/on 
+decoder off: run ~/lighthome/send.sh --notify home/command/tvdecoder/off 
+next channel: run ~/lighthome/send.sh --notify home/command/tvdecoder/next 
+previous channel: run ~/lighthome/send.sh --notify home/command/tvdecoder/previous 
+tv next: run ~/lighthome/send.sh --notify home/command/tvdecoder/next 
+tv previous: run ~/lighthome/send.sh --notify home/command/tvdecoder/previous 
+tv confirm: run ~/lighthome/send.sh --notify home/command/tvdecoder/ok 
+tv cancel: run ~/lighthome/send.sh --notify home/command/tvdecoder/back 
+tv mute: run ~/lighthome/send.sh --notify home/command/mute 
+tv volume up: run ~/lighthome/send.sh --notify home/command/volup 
+tv volume down: run ~/lighthome/send.sh --notify home/command/voldown 
+tv one: run ~/lighthome/send.sh --notify home/command/tvdecoder/channel/npo1 
+tv first: run ~/lighthome/send.sh --notify home/command/tvdecoder/channel/npo1 
+tv two: run ~/lighthome/send.sh --notify home/command/tvdecoder/channel/npo2 
+tv three: run ~/lighthome/send.sh --notify home/command/tvdecoder/channel/npo3 
+tv german: run ~/lighthome/send.sh --notify home/command/tvdecoder/channel/ard 
+tv british: run ~/lighthome/send.sh --notify home/command/tvdecoder/channel/bbc1 
+tv belgian: run ~/lighthome/send.sh --notify home/command/tvdecoder/channel/een 
+tv dutch: run ~/lighthome/send.sh --notify home/command/tvdecoder/channel/npo1 
+tv pause: run ~/lighthome/send.sh --notify home/command/tvdecoder/pause 
+tv resume: run ~/lighthome/send.sh --notify home/command/tvdecoder/pause 
+pause tv: run ~/lighthome/send.sh --notify home/command/tvdecoder/pause 
+resume tv: run ~/lighthome/send.sh --notify home/command/tvdecoder/pause 
+start air conditioning: run ~/lighthome/send.sh --notify home/command/airco/living/cool 
+stop air conditioning: run ~/lighthome/send.sh --notify home/command/airco/living/off 
+air conditioning on: run ~/lighthome/send.sh --notify home/command/airco/living/on 
+air conditioning off: run ~/lighthome/send.sh --notify home/command/airco/living/off 
+start air conditioning bedroom: run ~/lighthome/send.sh --notify home/command/airco/bedroom/cool 
+stop air conditioning bedroom: run ~/lighthome/send.sh --notify home/command/airco/bedroom/off 
+start air conditioning upstairs: run ~/lighthome/send.sh --notify home/command/airco/bedroom/cool 
+stop air conditioning upstairs: run ~/lighthome/send.sh --notify home/command/airco/bedroom/off 
+air conditioning upstairs on: run ~/lighthome/send.sh --notify home/command/airco/upstairs/on 
+air conditioning upstairs off: run ~/lighthome/send.sh --notify home/command/airco/upstairs/off 
+air conditioning bedroom on: run ~/lighthome/send.sh --notify home/command/airco/upstairs/on 
+air conditioning bedroom off: run ~/lighthome/send.sh --notify home/command/airco/upstairs/off 
+wake eight: run ~/lighthome/send.sh --notify home/command/wake/800 
+wake eight thirty: run ~/lighthome/send.sh --notify home/command/wake/830 
+wake nine: run ~/lighthome/send.sh --notify home/command/wake/900 
+wake nine thirty: run ~/lighthome/send.sh --notify home/command/wake/930 
+wake ten: run ~/lighthome/send.sh --notify home/command/wake/1000 
+wake ten thirty: run ~/lighthome/send.sh --notify home/command/wake/1030 
+watch front: run ~/lighthome/send.sh --notify home/command/homecam/voor 
+watch back: run ~/lighthome/send.sh --notify home/command/homecam/achter 
+watch down: run ~/lighthome/send.sh --notify home/command/homecam/onder 
+watch hall: run ~/lighthome/send.sh --notify home/command/homecam/gang 
+temperature eighteen: run ~/lighthome/send.sh --notify home/command/heating/18 
+temperature nineteen: run ~/lighthome/send.sh --notify home/command/heating/19 
+temperature twenty: run ~/lighthome/send.sh --notify home/command/heating/20 
+temperature twenty one: run ~/lighthome/send.sh --notify home/command/heating/21 
+set temperature eighteen: run ~/lighthome/send.sh --notify home/command/heating/18 
+set temperature nineteen: run ~/lighthome/send.sh --notify home/command/heating/19 
+set temperature twenty: run ~/lighthome/send.sh --notify home/command/heating/20 
+set temperature twenty one: run ~/lighthome/send.sh --notify home/command/heating/21 
 
 choice:
 out:
