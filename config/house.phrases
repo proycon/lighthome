@@ -5,6 +5,7 @@ cancel: run ~/lighthome/scripts/numen/send_wrapper.sh home/say/$(hostname) Okay
 abort: run ~/lighthome/scripts/numen/send_wrapper.sh home/say/$(hostname) Okay
 
 mute: run ~/lighthome/scripts/numen/send_wrapper.sh MUTE 
+unmute: run ~/lighthome/scripts/numen/send_wrapper.sh MUTE 
 mute downstairs: run ~/lighthome/scripts/numen/send_wrapper.sh home/command/mute 
 downstairs mute: run ~/lighthome/scripts/numen/send_wrapper.sh home/command/mute 
 
