@@ -8,6 +8,6 @@ if [ "$HOST" = "pi1" ]; then
 fi
 
 export MQTT_SESSION_SUFFIX=.send
-./send.sh home/say/pi1 "At your service"
+./send.sh home/say/$(hostname) "At your service"
 numen --phraselog=/dev/stdout ~/lighthome/config/house.idle.phrases
-./send.sh home/say/pi1 "Stopped listening"
+./send.sh home/say/$(hostname) "Stopped listening"
