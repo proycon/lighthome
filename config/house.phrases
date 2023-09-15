@@ -127,6 +127,7 @@ set temperature eighteen: run ~/lighthome/send.sh --notify home/command/heating/
 set temperature nineteen: run ~/lighthome/send.sh --notify home/command/heating/19  && touch $NUMEN_STATE_DIR/acted
 set temperature twenty: run ~/lighthome/send.sh --notify home/command/heating/20  && touch $NUMEN_STATE_DIR/acted
 set temperature twenty one: run ~/lighthome/send.sh --notify home/command/heating/21  && touch $NUMEN_STATE_DIR/acted
+time: run ~/lighthome/send.sh home/say/$(hostname) "$(date +"%H %M")" && touch $NUMEN_STATE_DIR/acted
 
 choice:
 out:
