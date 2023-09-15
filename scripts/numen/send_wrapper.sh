@@ -1,5 +1,5 @@
 #!/bin/sh
-~/lighthome/scripts/numen/numen_idle.sh | numenc
+~/lighthome/scripts/numen/numen_idle.sh --silent | numenc
 case $1 in #upper case parameter indicated something contextual
     NIGHT)
         case "$(hostname)" in
