@@ -196,6 +196,10 @@ case $1 in #upper case parameter indicated something contextual
         ;;
     *)
         #normal pass-through
-        ~/lighthome/send.sh --notify "$1" $2
+        if [ -n "$2" ]; then
+            ~/lighthome/send.sh --notify "$1" "$2"
+        else
+            ~/lighthome/send.sh --notify "$1"
+        fi
         ;;
 esac
