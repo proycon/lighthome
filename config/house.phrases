@@ -93,6 +93,10 @@ tv german: run ~/lighthome/send.sh --notify home/command/tvdecoder/channel/ard  
 tv british: run ~/lighthome/send.sh --notify home/command/tvdecoder/channel/bbc1  && touch $NUMEN_STATE_DIR/acted
 tv belgian: run ~/lighthome/send.sh --notify home/command/tvdecoder/channel/een  && touch $NUMEN_STATE_DIR/acted
 tv dutch: run ~/lighthome/send.sh --notify home/command/tvdecoder/channel/npo1  && touch $NUMEN_STATE_DIR/acted
+german tv: run ~/lighthome/send.sh --notify home/command/tvdecoder/channel/ard  && touch $NUMEN_STATE_DIR/acted
+british tv: run ~/lighthome/send.sh --notify home/command/tvdecoder/channel/bbc1  && touch $NUMEN_STATE_DIR/acted
+belgian tv: run ~/lighthome/send.sh --notify home/command/tvdecoder/channel/een  && touch $NUMEN_STATE_DIR/acted
+dutch tv: run ~/lighthome/send.sh --notify home/command/tvdecoder/channel/npo1  && touch $NUMEN_STATE_DIR/acted
 tv pause: run ~/lighthome/send.sh --notify home/command/tvdecoder/pause  && touch $NUMEN_STATE_DIR/acted
 tv resume: run ~/lighthome/send.sh --notify home/command/tvdecoder/pause  && touch $NUMEN_STATE_DIR/acted
 pause tv: run ~/lighthome/send.sh --notify home/command/tvdecoder/pause  && touch $NUMEN_STATE_DIR/acted
@@ -128,6 +132,8 @@ set temperature nineteen: run ~/lighthome/send.sh --notify home/command/heating/
 set temperature twenty: run ~/lighthome/send.sh --notify home/command/heating/20  && touch $NUMEN_STATE_DIR/acted
 set temperature twenty one: run ~/lighthome/send.sh --notify home/command/heating/21  && touch $NUMEN_STATE_DIR/acted
 time: run ~/lighthome/send.sh home/say/$(hostname) "$(date +"%H %M")" && touch $NUMEN_STATE_DIR/acted
+date: run ~/lighthome/send.sh home/say/$(hostname) "$(date +"%B %d")" && touch $NUMEN_STATE_DIR/acted
+temperature: run ~/lighthome/send.sh home/say/$(hostname) "outside $(cat /tmp/homestatus/sensor/outside_temperature), living room $(cat /tmp/homestatus/sensor/temperature_living_room_2), bedroom $(cat /tmp/homestatus/sensor/bedroom_temperature)" && touch $NUMEN_STATE_DIR/acted
 
 choice:
 out:
