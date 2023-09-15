@@ -6,136 +6,174 @@ never mind: run touch $NUMEN_STATE_DIR/acted && ~/lighthome/send.sh home/say/$(h
 cancel: run touch $NUMEN_STATE_DIR/acted && ~/lighthome/send.sh home/say/$(hostname) Okay
 abort: run touch $NUMEN_STATE_DIR/acted && ~/lighthome/send.sh home/say/$(hostname) Okay
 
-mute: run ~/lighthome/send.sh --notify home/command/mute && touch $NUMEN_STATE_DIR/acted
-volume up: run ~/lighthome/send.sh --notify home/command/volup && touch $NUMEN_STATE_DIR/acted
-volume down: run ~/lighthome/send.sh --notify home/command/voldown && touch $NUMEN_STATE_DIR/acted
-lights on: run ~/lighthome/send.sh --notify home/command/lights/on && touch $NUMEN_STATE_DIR/acted
-lights off: run ~/lighthome/send.sh --notify home/command/lights/off && touch $NUMEN_STATE_DIR/acted
-hall light on: run ~/lighthome/send.sh --notify home/command/lights/hall/on && touch $NUMEN_STATE_DIR/acted
-hall light off: run ~/lighthome/send.sh --notify home/command/lights/hall/off && touch $NUMEN_STATE_DIR/acted
-tv light on: run ~/lighthome/send.sh --notify home/command/lights/tv_spots/on  && touch $NUMEN_STATE_DIR/acted
-tv light off: run ~/lighthome/send.sh --notify home/command/lights/tv_spots/off && touch $NUMEN_STATE_DIR/acted
-tv spots on: run ~/lighthome/send.sh --notify home/command/lights/tv_spots/on  && touch $NUMEN_STATE_DIR/acted
-tv spots off: run ~/lighthome/send.sh --notify home/command/lights/tv_spots/off  && touch $NUMEN_STATE_DIR/acted
-office light on: run ~/lighthome/send.sh --notify home/command/lights/office/on && touch $NUMEN_STATE_DIR/acted
-office light off: run ~/lighthome/send.sh --notify home/command/lights/office/off  && touch $NUMEN_STATE_DIR/acted
-office on: run ~/lighthome/send.sh --notify home/command/lights/office/on  && touch $NUMEN_STATE_DIR/acted
-office off: run ~/lighthome/send.sh --notify home/command/lights/office/off  && touch $NUMEN_STATE_DIR/acted
-garden light on: run ~/lighthome/send.sh --notify home/command/lights/garden/on  && touch $NUMEN_STATE_DIR/acted
-garden light off: run ~/lighthome/send.sh --notify home/command/lights/garden/off  && touch $NUMEN_STATE_DIR/acted
-garden on: run ~/lighthome/send.sh --notify home/command/lights/garden/on  && touch $NUMEN_STATE_DIR/acted
-garden off: run ~/lighthome/send.sh --notify home/command/lights/garden/off  && touch $NUMEN_STATE_DIR/acted
-middle light on: run ~/lighthome/send.sh --notify home/command/lights/midspots/on  && touch $NUMEN_STATE_DIR/acted
-middle light off: run ~/lighthome/send.sh --notify home/command/lights/midspots/off  && touch $NUMEN_STATE_DIR/acted
-middle lights on: run ~/lighthome/send.sh --notify home/command/lights/midspots/on  && touch $NUMEN_STATE_DIR/acted
-middle lights off: run ~/lighthome/send.sh --notify home/command/lights/midspots/off  && touch $NUMEN_STATE_DIR/acted
-mid lights on: run ~/lighthome/send.sh --notify home/command/lights/midspots/on  && touch $NUMEN_STATE_DIR/acted
-mid lights off: run ~/lighthome/send.sh --notify home/command/lights/midspots/off  && touch $NUMEN_STATE_DIR/acted
-mid spots on: run ~/lighthome/send.sh --notify home/command/lights/midspots/on  && touch $NUMEN_STATE_DIR/acted
-mid spots off: run ~/lighthome/send.sh --notify home/command/lights/midspots/off  && touch $NUMEN_STATE_DIR/acted
-spots on: run ~/lighthome/send.sh --notify home/command/lights/midspots/on && touch $NUMEN_STATE_DIR/acted
-spots off: run ~/lighthome/send.sh --notify home/command/lights/midspots/off && touch $NUMEN_STATE_DIR/acted
-back light on: run ~/lighthome/send.sh --notify home/command/lights/back_room/on && touch $NUMEN_STATE_DIR/acted
-back light off: run ~/lighthome/send.sh --notify home/command/lights/back_room/off && touch $NUMEN_STATE_DIR/acted
-corner light on: run ~/lighthome/send.sh --notify home/command/lights/back_corner/on && touch $NUMEN_STATE_DIR/acted
-corner light off: run ~/lighthome/send.sh --notify home/command/lights/back_corner/off && touch $NUMEN_STATE_DIR/acted
-front light on: run ~/lighthome/send.sh --notify home/command/lights/front_room/on && touch $NUMEN_STATE_DIR/acted
-front light off: run ~/lighthome/send.sh --notify home/command/lights/front_room/off && touch $NUMEN_STATE_DIR/acted
-bedroom light on: run ~/lighthome/send.sh --notify home/command/lights/bedroom/on  && touch $NUMEN_STATE_DIR/acted
-bedroom light off: run ~/lighthome/send.sh --notify home/command/lights/bedroom/off  && touch $NUMEN_STATE_DIR/acted
-bedroom on: run ~/lighthome/send.sh --notify home/command/lights/bedroom/on  && touch $NUMEN_STATE_DIR/acted
-bedroom off: run ~/lighthome/send.sh --notify home/command/lights/bedroom/off  && touch $NUMEN_STATE_DIR/acted
-kitchen light on: run ~/lighthome/send.sh --notify home/command/lights/kitchen/on  && touch $NUMEN_STATE_DIR/acted
-kitchen light off: run ~/lighthome/send.sh --notify home/command/lights/kitchen/off  && touch $NUMEN_STATE_DIR/acted
-kitchen on: run ~/lighthome/send.sh --notify home/command/lights/kitchen/on  && touch $NUMEN_STATE_DIR/acted
-kitchen off: run ~/lighthome/send.sh --notify home/command/lights/kitchen/off  && touch $NUMEN_STATE_DIR/acted
-porch light on: run ~/lighthome/send.sh --notify home/command/lights/porch/on  && touch $NUMEN_STATE_DIR/acted
-porch light off: run ~/lighthome/send.sh --notify home/command/lights/porch/off  && touch $NUMEN_STATE_DIR/acted
-porch on: run ~/lighthome/send.sh --notify home/command/lights/porch/on  && touch $NUMEN_STATE_DIR/acted
-porch off: run ~/lighthome/send.sh --notify home/command/lights/porch/off  && touch $NUMEN_STATE_DIR/acted
-balcony light on: run ~/lighthome/send.sh --notify home/command/lights/balcony/on  && touch $NUMEN_STATE_DIR/acted
-balcony light off: run ~/lighthome/send.sh --notify home/command/lights/balcony/off  && touch $NUMEN_STATE_DIR/acted
-balcony on: run ~/lighthome/send.sh --notify home/command/lights/balcony/on  && touch $NUMEN_STATE_DIR/acted
-balcony off: run ~/lighthome/send.sh --notify home/command/lights/balcony/off  && touch $NUMEN_STATE_DIR/acted
-night lights: run ~/lighthome/send.sh --notify home/command/lights/night  && touch $NUMEN_STATE_DIR/acted
-night scene: run ~/lighthome/send.sh --notify home/command/lights/night  && touch $NUMEN_STATE_DIR/acted
-start tv: run ~/lighthome/send.sh --notify home/command/media/tv  && touch $NUMEN_STATE_DIR/acted
-tv on: run ~/lighthome/send.sh --notify home/command/media/tv  && touch $NUMEN_STATE_DIR/acted
-watch tv: run ~/lighthome/send.sh --notify home/command/media/tv  && touch $NUMEN_STATE_DIR/acted
-start music: run ~/lighthome/send.sh --notify home/command/media/music  && touch $NUMEN_STATE_DIR/acted
-start music upstairs: run ~/lighthome/send.sh --notify home/command/media/music2  && touch $NUMEN_STATE_DIR/acted
-start media center: run ~/lighthome/send.sh --notify home/command/kodi/on  && touch $NUMEN_STATE_DIR/acted
-next song: run ~/lighthome/send.sh --notify home/command/music/next   && touch $NUMEN_STATE_DIR/acted
-previous song: run ~/lighthome/send.sh --notify home/command/music/previous   && touch $NUMEN_STATE_DIR/acted
-next music: run ~/lighthome/send.sh --notify home/command/music/next   && touch $NUMEN_STATE_DIR/acted
-previous music: run ~/lighthome/send.sh --notify home/command/music/previous   && touch $NUMEN_STATE_DIR/acted
-music next: run ~/lighthome/send.sh --notify home/command/music/next   && touch $NUMEN_STATE_DIR/acted
-music previous: run ~/lighthome/send.sh --notify home/command/music/previous   && touch $NUMEN_STATE_DIR/acted
-pause music: run ~/lighthome/send.sh --notify home/command/music/pauseplay  && touch $NUMEN_STATE_DIR/acted
-resume music: run ~/lighthome/send.sh --notify home/command/music/pauseplay  && touch $NUMEN_STATE_DIR/acted
-music pause: run ~/lighthome/send.sh --notify home/command/music/pauseplay  && touch $NUMEN_STATE_DIR/acted
-music resume: run ~/lighthome/send.sh --notify home/command/music/pauseplay  && touch $NUMEN_STATE_DIR/acted
-media off: run ~/lighthome/send.sh --notify home/command/media/off  && touch $NUMEN_STATE_DIR/acted
-decoder on: run ~/lighthome/send.sh --notify home/command/tvdecoder/on  && touch $NUMEN_STATE_DIR/acted
-decoder off: run ~/lighthome/send.sh --notify home/command/tvdecoder/off  && touch $NUMEN_STATE_DIR/acted
-next channel: run ~/lighthome/send.sh --notify home/command/tvdecoder/next  && touch $NUMEN_STATE_DIR/acted
-previous channel: run ~/lighthome/send.sh --notify home/command/tvdecoder/previous  && touch $NUMEN_STATE_DIR/acted
-tv next: run ~/lighthome/send.sh --notify home/command/tvdecoder/next  && touch $NUMEN_STATE_DIR/acted
-tv previous: run ~/lighthome/send.sh --notify home/command/tvdecoder/previous  && touch $NUMEN_STATE_DIR/acted
-tv confirm: run ~/lighthome/send.sh --notify home/command/tvdecoder/ok  && touch $NUMEN_STATE_DIR/acted
-tv cancel: run ~/lighthome/send.sh --notify home/command/tvdecoder/back  && touch $NUMEN_STATE_DIR/acted
-tv mute: run ~/lighthome/send.sh --notify home/command/mute  && touch $NUMEN_STATE_DIR/acted
-tv volume up: run ~/lighthome/send.sh --notify home/command/volup  && touch $NUMEN_STATE_DIR/acted
-tv volume down: run ~/lighthome/send.sh --notify home/command/voldown  && touch $NUMEN_STATE_DIR/acted
-tv one: run ~/lighthome/send.sh --notify home/command/tvdecoder/channel/npo1  && touch $NUMEN_STATE_DIR/acted
-tv first: run ~/lighthome/send.sh --notify home/command/tvdecoder/channel/npo1  && touch $NUMEN_STATE_DIR/acted
-tv two: run ~/lighthome/send.sh --notify home/command/tvdecoder/channel/npo2  && touch $NUMEN_STATE_DIR/acted
-tv three: run ~/lighthome/send.sh --notify home/command/tvdecoder/channel/npo3  && touch $NUMEN_STATE_DIR/acted
-tv german: run ~/lighthome/send.sh --notify home/command/tvdecoder/channel/ard  && touch $NUMEN_STATE_DIR/acted
-tv british: run ~/lighthome/send.sh --notify home/command/tvdecoder/channel/bbc1  && touch $NUMEN_STATE_DIR/acted
-tv belgian: run ~/lighthome/send.sh --notify home/command/tvdecoder/channel/een  && touch $NUMEN_STATE_DIR/acted
-tv dutch: run ~/lighthome/send.sh --notify home/command/tvdecoder/channel/npo1  && touch $NUMEN_STATE_DIR/acted
-german tv: run ~/lighthome/send.sh --notify home/command/tvdecoder/channel/ard  && touch $NUMEN_STATE_DIR/acted
-british tv: run ~/lighthome/send.sh --notify home/command/tvdecoder/channel/bbc1  && touch $NUMEN_STATE_DIR/acted
-belgian tv: run ~/lighthome/send.sh --notify home/command/tvdecoder/channel/een  && touch $NUMEN_STATE_DIR/acted
-dutch tv: run ~/lighthome/send.sh --notify home/command/tvdecoder/channel/npo1  && touch $NUMEN_STATE_DIR/acted
-tv pause: run ~/lighthome/send.sh --notify home/command/tvdecoder/pause  && touch $NUMEN_STATE_DIR/acted
-tv resume: run ~/lighthome/send.sh --notify home/command/tvdecoder/pause  && touch $NUMEN_STATE_DIR/acted
-pause tv: run ~/lighthome/send.sh --notify home/command/tvdecoder/pause  && touch $NUMEN_STATE_DIR/acted
-resume tv: run ~/lighthome/send.sh --notify home/command/tvdecoder/pause  && touch $NUMEN_STATE_DIR/acted
-start air conditioning: run ~/lighthome/send.sh --notify home/command/airco/living/cool  && touch $NUMEN_STATE_DIR/acted
-stop air conditioning: run ~/lighthome/send.sh --notify home/command/airco/living/off  && touch $NUMEN_STATE_DIR/acted
-air conditioning on: run ~/lighthome/send.sh --notify home/command/airco/living/on  && touch $NUMEN_STATE_DIR/acted
-air conditioning off: run ~/lighthome/send.sh --notify home/command/airco/living/off  && touch $NUMEN_STATE_DIR/acted
-start air conditioning bedroom: run ~/lighthome/send.sh --notify home/command/airco/bedroom/cool  && touch $NUMEN_STATE_DIR/acted
-stop air conditioning bedroom: run ~/lighthome/send.sh --notify home/command/airco/bedroom/off  && touch $NUMEN_STATE_DIR/acted
-start air conditioning upstairs: run ~/lighthome/send.sh --notify home/command/airco/bedroom/cool  && touch $NUMEN_STATE_DIR/acted
-stop air conditioning upstairs: run ~/lighthome/send.sh --notify home/command/airco/bedroom/off  && touch $NUMEN_STATE_DIR/acted
-air conditioning upstairs on: run ~/lighthome/send.sh --notify home/command/airco/upstairs/on  && touch $NUMEN_STATE_DIR/acted
-air conditioning upstairs off: run ~/lighthome/send.sh --notify home/command/airco/upstairs/off  && touch $NUMEN_STATE_DIR/acted
-air conditioning bedroom on: run ~/lighthome/send.sh --notify home/command/airco/upstairs/on  && touch $NUMEN_STATE_DIR/acted
-air conditioning bedroom off: run ~/lighthome/send.sh --notify home/command/airco/upstairs/off  && touch $NUMEN_STATE_DIR/acted
-wake eight: run ~/lighthome/send.sh --notify home/command/wake/800  && touch $NUMEN_STATE_DIR/acted
-wake eight thirty: run ~/lighthome/send.sh --notify home/command/wake/830  && touch $NUMEN_STATE_DIR/acted
-wake nine: run ~/lighthome/send.sh --notify home/command/wake/900  && touch $NUMEN_STATE_DIR/acted
-wake nine thirty: run ~/lighthome/send.sh --notify home/command/wake/930  && touch $NUMEN_STATE_DIR/acted
-wake ten: run ~/lighthome/send.sh --notify home/command/wake/1000  && touch $NUMEN_STATE_DIR/acted
-wake ten thirty: run ~/lighthome/send.sh --notify home/command/wake/1030  && touch $NUMEN_STATE_DIR/acted
-watch front: run ~/lighthome/send.sh --notify home/command/homecam/voor  && touch $NUMEN_STATE_DIR/acted
-watch back: run ~/lighthome/send.sh --notify home/command/homecam/achter  && touch $NUMEN_STATE_DIR/acted
-watch down: run ~/lighthome/send.sh --notify home/command/homecam/onder  && touch $NUMEN_STATE_DIR/acted
-watch hall: run ~/lighthome/send.sh --notify home/command/homecam/gang  && touch $NUMEN_STATE_DIR/acted
-temperature eighteen: run ~/lighthome/send.sh --notify home/command/heating/18  && touch $NUMEN_STATE_DIR/acted
-temperature nineteen: run ~/lighthome/send.sh --notify home/command/heating/19  && touch $NUMEN_STATE_DIR/acted
-temperature twenty: run ~/lighthome/send.sh --notify home/command/heating/20  && touch $NUMEN_STATE_DIR/acted
-temperature twenty one: run ~/lighthome/send.sh --notify home/command/heating/21  && touch $NUMEN_STATE_DIR/acted
-set temperature eighteen: run ~/lighthome/send.sh --notify home/command/heating/18  && touch $NUMEN_STATE_DIR/acted
-set temperature nineteen: run ~/lighthome/send.sh --notify home/command/heating/19  && touch $NUMEN_STATE_DIR/acted
-set temperature twenty: run ~/lighthome/send.sh --notify home/command/heating/20  && touch $NUMEN_STATE_DIR/acted
-set temperature twenty one: run ~/lighthome/send.sh --notify home/command/heating/21  && touch $NUMEN_STATE_DIR/acted
-time: run ~/lighthome/send.sh home/say/$(hostname) "$(date +"%H %M")" && touch $NUMEN_STATE_DIR/acted
-date: run ~/lighthome/send.sh home/say/$(hostname) "$(date +"%B %d")" && touch $NUMEN_STATE_DIR/acted
-temperature: run ~/lighthome/send.sh home/say/$(hostname) "outside $(cat /tmp/homestatus/sensor/outside_temperature), living room $(cat /tmp/homestatus/sensor/temperature_living_room_2), bedroom $(cat /tmp/homestatus/sensor/bedroom_temperature)" && touch $NUMEN_STATE_DIR/acted
+mute: run ~/scripts/numen/send_wrapper.sh MUTE 
+mute downstairs: run ~/scripts/numen/send_wrapper.sh home/command/mute 
+downstairs mute: run ~/scripts/numen/send_wrapper.sh home/command/mute 
+
+volume up: run ~/scripts/numen/send_wrapper.sh home/command/volup 
+volume down: run ~/scripts/numen/send_wrapper.sh home/command/voldown 
+volume down downstairs: run ~/scripts/numen/send_wrapper.sh home/command/voldown 
+
+lights on: run ~/scripts/numen/send_wrapper.sh home/command/lights/on 
+lights off: run ~/scripts/numen/send_wrapper.sh home/command/lights/off 
+hall light on: run ~/scripts/numen/send_wrapper.sh home/command/lights/hall/on 
+hall light off: run ~/scripts/numen/send_wrapper.sh home/command/lights/hall/off 
+tv light on: run ~/scripts/numen/send_wrapper.sh TV_SPOTS_ON
+tv light off: run ~/scripts/numen/send_wrapper.sh TV_SPOTS_OFF
+tv spots on: run ~/scripts/numen/send_wrapper.sh TV_SPOTS_ON
+tv spots off: run ~/scripts/numen/send_wrapper.sh TV_SPOTS_OFF 
+office light on: run ~/scripts/numen/send_wrapper.sh home/command/lights/office/on 
+office light off: run ~/scripts/numen/send_wrapper.sh home/command/lights/office/off
+office on: run ~/scripts/numen/send_wrapper.sh home/command/lights/office/on
+office off: run ~/scripts/numen/send_wrapper.sh home/command/lights/office/off
+garden light on: run ~/scripts/numen/send_wrapper.sh home/command/lights/garden/on
+garden light off: run ~/scripts/numen/send_wrapper.sh home/command/lights/garden/off
+garden on: run ~/scripts/numen/send_wrapper.sh home/command/lights/garden/on
+garden off: run ~/scripts/numen/send_wrapper.sh home/command/lights/garden/off
+middle light on: run ~/scripts/numen/send_wrapper.sh home/command/lights/midspots/on
+middle light off: run ~/scripts/numen/send_wrapper.sh home/command/lights/midspots/off
+middle lights on: run ~/scripts/numen/send_wrapper.sh home/command/lights/midspots/on
+middle lights off: run ~/scripts/numen/send_wrapper.sh home/command/lights/midspots/off
+mid lights on: run ~/scripts/numen/send_wrapper.sh home/command/lights/midspots/on
+mid lights off: run ~/scripts/numen/send_wrapper.sh home/command/lights/midspots/off
+mid spots on: run ~/scripts/numen/send_wrapper.sh home/command/lights/midspots/on
+mid spots off: run ~/scripts/numen/send_wrapper.sh home/command/lights/midspots/off
+spots on: run ~/scripts/numen/send_wrapper.sh SPOTS_ON
+spots off: run ~/scripts/numen/send_wrapper.sh SPOTS_OFF
+back light on: run ~/scripts/numen/send_wrapper.sh home/command/lights/back_room/on 
+back light off: run ~/scripts/numen/send_wrapper.sh home/command/lights/back_room/off 
+corner light on: run ~/scripts/numen/send_wrapper.sh home/command/lights/back_corner/on 
+corner light off: run ~/scripts/numen/send_wrapper.sh home/command/lights/back_corner/off 
+back corner light on: run ~/scripts/numen/send_wrapper.sh home/command/lights/back_corner/on 
+back corner light off: run ~/scripts/numen/send_wrapper.sh home/command/lights/back_corner/off 
+front light on: run ~/scripts/numen/send_wrapper.sh home/command/lights/front_room/on 
+front light off: run ~/scripts/numen/send_wrapper.sh home/command/lights/front_room/off 
+bedroom light on: run ~/scripts/numen/send_wrapper.sh home/command/lights/bedroom/on
+bedroom light off: run ~/scripts/numen/send_wrapper.sh home/command/lights/bedroom/off
+bedroom on: run ~/scripts/numen/send_wrapper.sh home/command/lights/bedroom/on
+bedroom off: run ~/scripts/numen/send_wrapper.sh home/command/lights/bedroom/off
+bedroom high spots on: run ~/scripts/numen/send_wrapper.sh home/command/lights/bedroom_highspots/on
+bedroom high spots off: run ~/scripts/numen/send_wrapper.sh home/command/lights/bedroom_highspots/off
+bedroom low spots on: run ~/scripts/numen/send_wrapper.sh home/command/lights/bedroom_midspots/on
+bedroom low spots off: run ~/scripts/numen/send_wrapper.sh home/command/lights/bedroom_midspots/off
+bedroom color light on: run ~/scripts/numen/send_wrapper.sh home/command/lights/bedroom_ambilight/on
+bedroom color light off: run ~/scripts/numen/send_wrapper.sh home/command/lights/bedroom_ambilight/off
+bedroom colored light on: run ~/scripts/numen/send_wrapper.sh home/command/lights/bedroom_ambilight/on
+bedroom colored light off: run ~/scripts/numen/send_wrapper.sh home/command/lights/bedroom_ambilight/off
+bedroom ambiance light on: run ~/scripts/numen/send_wrapper.sh home/command/lights/bedroom_ambilight/on
+bedroom ambiance light off: run ~/scripts/numen/send_wrapper.sh home/command/lights/bedroom_ambilight/off
+ambiance light on: run ~/scripts/numen/send_wrapper.sh AMBIANCE_ON
+ambiance light off: run ~/scripts/numen/send_wrapper.sh AMBIANCE_OFF
+color light on: run ~/scripts/numen/send_wrapper.sh AMBIANCE_ON
+color light off: run ~/scripts/numen/send_wrapper.sh AMBIANCE_OFF
+colored light on: run ~/scripts/numen/send_wrapper.sh AMBIANCE_ON
+colored light off: run ~/scripts/numen/send_wrapper.sh AMBIANCE_OFF
+kitchen light on: run ~/scripts/numen/send_wrapper.sh home/command/lights/kitchen/on
+kitchen light off: run ~/scripts/numen/send_wrapper.sh home/command/lights/kitchen/off
+kitchen on: run ~/scripts/numen/send_wrapper.sh home/command/lights/kitchen/on
+kitchen off: run ~/scripts/numen/send_wrapper.sh home/command/lights/kitchen/off
+porch light on: run ~/scripts/numen/send_wrapper.sh home/command/lights/porch/on
+porch light off: run ~/scripts/numen/send_wrapper.sh home/command/lights/porch/off
+porch on: run ~/scripts/numen/send_wrapper.sh home/command/lights/porch/on
+porch off: run ~/scripts/numen/send_wrapper.sh home/command/lights/porch/off
+balcony light on: run ~/scripts/numen/send_wrapper.sh home/command/lights/balcony/on
+balcony light off: run ~/scripts/numen/send_wrapper.sh home/command/lights/balcony/off
+balcony on: run ~/scripts/numen/send_wrapper.sh home/command/lights/balcony/on
+balcony off: run ~/scripts/numen/send_wrapper.sh home/command/lights/balcony/off
+night lights: run ~/scripts/numen/send_wrapper.sh NIGHT
+night scene: run ~/scripts/numen/send_wrapper.sh NIGHT
+start tv: run ~/scripts/numen/send_wrapper.sh TV_ON
+tv on: run ~/scripts/numen/send_wrapper.sh TV_ON
+tv off: run ~/scripts/numen/send_wrapper.sh TV_OFF
+watch tv: run ~/scripts/numen/send_wrapper.sh TV_ON
+start music: run ~/scripts/numen/send_wrapper.sh MUSIC_ON
+music on: run ~/scripts/numen/send_wrapper.sh MUSIC_ON
+stop music: run ~/scripts/numen/send_wrapper.sh MUSIC_OFF
+music off: run ~/scripts/numen/send_wrapper.sh MUSIC_OFF
+stop downstairs music: run ~/scripts/numen/send_wrapper.sh home/command/music/off 
+stop upstairs music: run ~/scripts/numen/send_wrapper.sh home/command/music2/off 
+stop bedroom music: run ~/scripts/numen/send_wrapper.sh home/command/music2/off 
+start media center: run ~/scripts/numen/send_wrapper.sh KODI_ON
+stop media center: run ~/scripts/numen/send_wrapper.sh KODI_OFF
+media center on: run ~/scripts/numen/send_wrapper.sh KODI_ON
+media center off: run ~/scripts/numen/send_wrapper.sh KODI_OFF
+start desktop: run ~/scripts/numen/send_wrapper.sh DESKTOP_ON
+stop desktop: ~/scripts/numen/send_wrapper.sh DESKTOP_OFF
+desktop on: run ~/scripts/numen/send_wrapper.sh DESKTOP_ON
+desktop off: ~/scripts/numen/send_wrapper.sh DESKTOP_OFF
+next song: run ~/scripts/numen/send_wrapper.sh home/command/music/next 
+previous song: run ~/scripts/numen/send_wrapper.sh home/command/music/previous 
+next music: run ~/scripts/numen/send_wrapper.sh home/command/music/next 
+previous music: run ~/scripts/numen/send_wrapper.sh home/command/music/previous 
+music next: run ~/scripts/numen/send_wrapper.sh home/command/music/next 
+music previous: run ~/scripts/numen/send_wrapper.sh home/command/music/previous 
+pause music: run ~/scripts/numen/send_wrapper.sh home/command/music/pauseplay
+resume music: run ~/scripts/numen/send_wrapper.sh home/command/music/pauseplay
+music pause: run ~/scripts/numen/send_wrapper.sh home/command/music/pauseplay
+music resume: run ~/scripts/numen/send_wrapper.sh home/command/music/pauseplay
+stop media: run ~/scripts/numen/send_wrapper.sh TV_OFF 
+decoder on: run ~/scripts/numen/send_wrapper.sh TVDECODER:on
+decoder off: run ~/scripts/numen/send_wrapper.sh TVDECODER:off
+next channel: run ~/scripts/numen/send_wrapper.sh TVDECODER:next
+previous channel: run ~/scripts/numen/send_wrapper.sh TVDECODER:previous
+tv next: run ~/scripts/numen/send_wrapper.sh TVDECODER:next
+tv previous: run ~/scripts/numen/send_wrapper.sh TVDECODER:previous
+tv confirm: run ~/scripts/numen/send_wrapper.sh TVDECODER:ok
+tv cancel: run ~/scripts/numen/send_wrapper.sh TVDECODER:back
+tv mute: run ~/scripts/numen/send_wrapper.sh home/command/mute
+tv volume up: run ~/scripts/numen/send_wrapper.sh home/command/volup
+tv volume down: run ~/scripts/numen/send_wrapper.sh home/command/voldown
+tv one: run ~/scripts/numen/send_wrapper.sh TVDECODER:channel/npo1
+tv first: run ~/scripts/numen/send_wrapper.sh TVDECODER:channel/npo1
+tv two: run ~/scripts/numen/send_wrapper.sh TVDECODER:channel/npo2
+tv three: run ~/scripts/numen/send_wrapper.sh TVDECODER:channel/npo3
+tv german: run ~/scripts/numen/send_wrapper.sh TVDECODER:channel/ard
+tv british: run ~/scripts/numen/send_wrapper.sh TVDECODER:channel/bbc1
+tv belgian: run ~/scripts/numen/send_wrapper.sh TVDECODER:channel/een
+tv dutch: run ~/scripts/numen/send_wrapper.sh TVDECODER:channel/npo1
+german tv: run ~/scripts/numen/send_wrapper.sh TVDECODER:channel/ard
+british tv: run ~/scripts/numen/send_wrapper.sh TVDECODER:channel/bbc1
+belgian tv: run ~/scripts/numen/send_wrapper.sh TVDECODER:channel/een
+dutch tv: run ~/scripts/numen/send_wrapper.sh TVDECODER:channel/npo1
+tv pause: run ~/scripts/numen/send_wrapper.sh TVDECODER:pause
+tv resume: run ~/scripts/numen/send_wrapper.sh TVDECODER:pause
+pause tv: run ~/scripts/numen/send_wrapper.sh TVDECODER:pause
+resume tv: run ~/scripts/numen/send_wrapper.sh TVDECODER:pause
+start air conditioning: run ~/scripts/numen/send_wrapper.sh AIRCO_ON
+stop air conditioning: run ~/scripts/numen/send_wrapper.sh AIRCO_OFF 
+air conditioning on: run ~/scripts/numen/send_wrapper.sh AIRCO_ON 
+air conditioning off: run ~/scripts/numen/send_wrapper.sh AIRCO_OFF
+start air conditioning bedroom: run ~/scripts/numen/send_wrapper.sh home/command/airco/bedroom/cool
+stop air conditioning bedroom: run ~/scripts/numen/send_wrapper.sh home/command/airco/bedroom/off
+start air conditioning upstairs: run ~/scripts/numen/send_wrapper.sh home/command/airco/bedroom/cool
+stop air conditioning upstairs: run ~/scripts/numen/send_wrapper.sh home/command/airco/bedroom/off
+air conditioning downstairs on: run ~/scripts/numen/send_wrapper.sh home/command/airco/living/on
+air conditioning downstairs off: run ~/scripts/numen/send_wrapper.sh home/command/airco/living/off
+air conditioning upstairs on: run ~/scripts/numen/send_wrapper.sh home/command/airco/bedroom/on
+air conditioning upstairs off: run ~/scripts/numen/send_wrapper.sh home/command/airco/bedroom/off
+air conditioning bedroom on: run ~/scripts/numen/send_wrapper.sh home/command/airco/bedroom/on
+air conditioning bedroom off: run ~/scripts/numen/send_wrapper.sh home/command/airco/bedroom/off
+wake eight: run ~/scripts/numen/send_wrapper.sh home/command/wake/800
+wake eight thirty: run ~/scripts/numen/send_wrapper.sh home/command/wake/830
+wake nine: run ~/scripts/numen/send_wrapper.sh home/command/wake/900
+wake nine thirty: run ~/scripts/numen/send_wrapper.sh home/command/wake/930
+wake ten: run ~/scripts/numen/send_wrapper.sh home/command/wake/1000
+wake ten thirty: run ~/scripts/numen/send_wrapper.sh home/command/wake/1030
+watch front: run ~/scripts/numen/send_wrapper.sh home/command/homecam/voor
+watch back: run ~/scripts/numen/send_wrapper.sh home/command/homecam/achter
+watch down: run ~/scripts/numen/send_wrapper.sh home/command/homecam/onder
+watch hall: run ~/scripts/numen/send_wrapper.sh home/command/homecam/gang
+temperature eighteen: run ~/scripts/numen/send_wrapper.sh home/command/heating/18
+temperature nineteen: run ~/scripts/numen/send_wrapper.sh home/command/heating/19
+temperature twenty: run ~/scripts/numen/send_wrapper.sh home/command/heating/20
+temperature twenty one: run ~/scripts/numen/send_wrapper.sh home/command/heating/21
+set temperature eighteen: run ~/scripts/numen/send_wrapper.sh home/command/heating/18
+set temperature nineteen: run ~/scripts/numen/send_wrapper.sh home/command/heating/19
+set temperature twenty: run ~/scripts/numen/send_wrapper.sh home/command/heating/20
+set temperature twenty one: run ~/scripts/numen/send_wrapper.sh home/command/heating/21
+time: run ~/lighthome/send.sh home/say/$(hostname) "$(date +"%H %M")" 
+date: run ~/lighthome/send.sh home/say/$(hostname) "$(date +"%B %d")" 
+temperature: run ~/lighthome/send.sh home/say/$(hostname) "outside $(cat /tmp/homestatus/sensor/outside_temperature), living room $(cat /tmp/homestatus/sensor/temperature_living_room_2), bedroom $(cat /tmp/homestatus/sensor/bedroom_temperature)" 
 status: run ~/lighthome/scripts/numen/status.sh &
 
 choice:
