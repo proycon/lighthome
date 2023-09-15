@@ -2,7 +2,7 @@
 if [ -e "$NUMEN_STATE_DIR/acted" ]; then
     rm "$NUMEN_STATE_DIR/acted"
     if [ -e "$NUMEN_STATE_DIR/listening" ]; then
-        ~/lighthome/scripts/numen/numen_idle.sh
+        ~/lighthome/scripts/numen/numen_idle.sh --silent
     fi
 fi
 
