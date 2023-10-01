@@ -86,6 +86,20 @@ tv on: run ~/lighthome/scripts/numen/send_wrapper.sh TV_ON
 tv off: run ~/lighthome/scripts/numen/send_wrapper.sh TV_OFF
 watch tv: run ~/lighthome/scripts/numen/send_wrapper.sh TV_ON
 start music: run ~/lighthome/scripts/numen/send_wrapper.sh MUSIC_ON
+start piano music: run ~/lighthome/scripts/numen/send_wrapper.sh home/command/music/search/filename "Instrumental/Calm Piano" && ~/lighthome/scripts/numen/send_wrapper.sh MUSIC_ON
+start instrumental music: run ~/lighthome/scripts/numen/send_wrapper.sh home/command/music/search/filename Instrumental && ~/lighthome/scripts/numen/send_wrapper.sh MUSIC_ON
+start french music: run ~/lighthome/scripts/numen/send_wrapper.sh home/command/music/search/filename byLanguage/Français && ~/lighthome/scripts/numen/send_wrapper.sh MUSIC_ON
+start german music: run ~/lighthome/scripts/numen/send_wrapper.sh home/command/music/search/filename byLanguage/Deutsch && ~/lighthome/scripts/numen/send_wrapper.sh MUSIC_ON
+start spanish music: run ~/lighthome/scripts/numen/send_wrapper.sh home/command/music/search/filename byLanguage/Español && ~/lighthome/scripts/numen/send_wrapper.sh MUSIC_ON
+start russian music: run ~/lighthome/scripts/numen/send_wrapper.sh home/command/music/search/filename byLanguage/Русский && ~/lighthome/scripts/numen/send_wrapper.sh MUSIC_ON
+start chinese music: run ~/lighthome/scripts/numen/send_wrapper.sh home/command/music/search/filename byLanguage/中文 && ~/lighthome/scripts/numen/send_wrapper.sh MUSIC_ON
+start portuguese music: run ~/lighthome/scripts/numen/send_wrapper.sh home/command/music/search/filename byLanguage/Português && ~/lighthome/scripts/numen/send_wrapper.sh MUSIC_ON
+start italian music: run ~/lighthome/scripts/numen/send_wrapper.sh home/command/music/search/filename byLanguage/Italiano && ~/lighthome/scripts/numen/send_wrapper.sh MUSIC_ON
+start brazilian music: run ~/lighthome/scripts/numen/send_wrapper.sh home/command/music/search/filename "byLanguage/Português do Brasil" && ~/lighthome/scripts/numen/send_wrapper.sh MUSIC_ON
+start ukrainian music: run ~/lighthome/scripts/numen/send_wrapper.sh home/command/music/search/filename "byLanguage/Українська" && ~/lighthome/scripts/numen/send_wrapper.sh MUSIC_ON
+start hebrew music: run ~/lighthome/scripts/numen/send_wrapper.sh home/command/music/search/filename "byLanguage/עברית" && ~/lighthome/scripts/numen/send_wrapper.sh MUSIC_ON
+start arabic music: run ~/lighthome/scripts/numen/send_wrapper.sh home/command/music/search/filename "byLanguage/العربية" && ~/lighthome/scripts/numen/send_wrapper.sh MUSIC_ON
+start catalan music: run ~/lighthome/scripts/numen/send_wrapper.sh home/command/music/search/filename byLanguage/Català && ~/lighthome/scripts/numen/send_wrapper.sh MUSIC_ON
 music on: run ~/lighthome/scripts/numen/send_wrapper.sh MUSIC_ON
 stop music: run ~/lighthome/scripts/numen/send_wrapper.sh MUSIC_OFF
 music off: run ~/lighthome/scripts/numen/send_wrapper.sh MUSIC_OFF
