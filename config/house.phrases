@@ -1,8 +1,10 @@
-dismissed: run ~/lighthome/scripts/numen/send_wrapper.sh home/say/$(hostname) Okay
-dismiss: run ~/lighthome/scripts/numen/send_wrapper.sh home/say/$(hostname) Okay
-never mind: run ~/lighthome/scripts/numen/send_wrapper.sh home/say/$(hostname) Okay
-cancel: run ~/lighthome/scripts/numen/send_wrapper.sh home/say/$(hostname) Okay
-abort: run ~/lighthome/scripts/numen/send_wrapper.sh home/say/$(hostname) Okay
+dismissed: run ~/lighthome/scripts/numen/send_wrapper.sh home/say/$(hostname) Cancelled
+dismiss: run ~/lighthome/scripts/numen/send_wrapper.sh home/say/$(hostname) Cancelled
+never mind: run ~/lighthome/scripts/numen/send_wrapper.sh home/say/$(hostname) Cancelled
+cancel: run ~/lighthome/scripts/numen/send_wrapper.sh home/say/$(hostname) Cancelled
+abort: run ~/lighthome/scripts/numen/send_wrapper.sh home/say/$(hostname) Cancelled
+no: run ~/lighthome/scripts/numen/send_wrapper.sh home/say/$(hostname) Cancelled
+shut up: run ~/lighthome/scripts/numen/send_wrapper.sh home/say/$(hostname) Cancelled
 
 mute: run ~/lighthome/scripts/numen/send_wrapper.sh MUTE 
 unmute: run ~/lighthome/scripts/numen/send_wrapper.sh MUTE 

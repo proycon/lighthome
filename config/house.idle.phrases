@@ -1,5 +1,3 @@
-house listen: eval ~/lighthome/scripts/numen/numen_wake.sh 8
-
 choice:
 out:
 mouse:
@@ -23,6 +21,7 @@ listen to:
 has a list:
 in house:
 at house:
+listen to me:
 can:
 well:
 put:
@@ -39,3 +38,13 @@ air:
 yes:
 no:
 okay:
+hi:
+hello:
+hello everybody:
+little house:
+house little:
+house is little:
+mouse listen:
+
+
+house listen: eval ~/lighthome/scripts/numen/numen_wake.sh 8
