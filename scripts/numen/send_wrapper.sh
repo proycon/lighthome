@@ -1,4 +1,6 @@
 #!/bin/sh
+pkill -12 -f startnumen.sh #abort returning to the idle state by timeout, as we already do it explicitly below:
+#       ^-- SIGUSR2
 ~/lighthome/scripts/numen/numen_idle.sh --silent | numenc
 case $1 in #upper case parameter indicated something contextual
     NIGHT)
