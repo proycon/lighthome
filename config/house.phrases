@@ -7,7 +7,6 @@ no: run ~/lighthome/scripts/numen/send_wrapper.sh home/say/$(hostname) Cancelled
 shut up: run ~/lighthome/scripts/numen/send_wrapper.sh home/say/$(hostname) Cancelled
 
 mute: run ~/lighthome/scripts/numen/send_wrapper.sh MUTE 
-unmute: run ~/lighthome/scripts/numen/send_wrapper.sh MUTE 
 mute downstairs: run ~/lighthome/scripts/numen/send_wrapper.sh home/command/mute 
 downstairs mute: run ~/lighthome/scripts/numen/send_wrapper.sh home/command/mute 
 
@@ -228,5 +227,4 @@ whole:
 horse:
 air:
 yes:
-no:
 okay:
