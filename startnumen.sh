@@ -12,7 +12,7 @@ timeout() {
 }
 
 cancel_timeout() {
-    echo "cancalling timeout" && pkill -g 0 sleep && echo "canceled timeout"
+    echo "cancelling timeout" && pkill -g 0 sleep && echo "cancelled timeout"
 }
 
 trap "timeout" USR1
@@ -20,5 +20,7 @@ trap "cancel_timeout" USR2
 
 export MQTT_SESSION_SUFFIX=.send
 ./send.sh home/say/$(hostname) "At your service"
-numen --phraselog=/dev/stdout ~/lighthome/config/house.idle.phrases
-./send.sh home/say/$(hostname) "Stopped listening"
+numen --phraselog=/dev/stdout ~/lighthome/config/house.idle.phrases &
+while : ; do
+    wait $! && exit 0
+done
