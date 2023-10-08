@@ -11,8 +11,8 @@ trap "" USR1
 trap "" USR2
 (
     EXIT=0
-    trap "sleep 7 && ~/lighthome/scripts/numen/numen_idle.sh --silent" USR1
-    trap "pkill -g 0 sleep" USR2
+    trap "sleep 7 && ~/lighthome/scripts/numen/numen_idle.sh --silent && echo \"back to idle mode\"" USR1
+    trap "pkill -g 0 sleep && echo \"cancelling timeout\"" USR2
     trap "EXIT=1 && pkill -g 0 sleep" TERM
     while [ "$EXIT" = 0 ]; do
         sleep 10000
