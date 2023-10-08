@@ -8,7 +8,7 @@ if [ "$HOST" = "pi1" ]; then
 fi
 
 timeout() {
-    echo "starting timeout countdown" && sleep 7 && ~/lighthome/scripts/numen/numen_idle.sh --silent && echo "back to idle mode"
+    echo "starting timeout countdown" && sleep 7 && ~/lighthome/scripts/numen/numen_idle.sh --silent | numenc && echo "back to idle mode"
 }
 
 cancel_timeout() {
