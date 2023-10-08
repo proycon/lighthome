@@ -12,6 +12,9 @@ trap "" USR2
 (
     trap "sleep 7 && ~/lighthome/scripts/numen/numen_idle.sh --silent" USR1
     trap "pkill -g 0 sleep" USR2
+    while 1; do
+        sleep 10000
+    done
 ) &
 
 export MQTT_SESSION_SUFFIX=.send
