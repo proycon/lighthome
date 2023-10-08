@@ -14,7 +14,7 @@ trap "" USR2
     trap "sleep 7 && ~/lighthome/scripts/numen/numen_idle.sh --silent" USR1
     trap "pkill -g 0 sleep" USR2
     trap "EXIT=1 && pkill -g 0 sleep" TERM
-    while $EXIT -ne 1; do
+    while [ "$EXIT" = 0 ]; do
         sleep 10000
     done
 ) &
