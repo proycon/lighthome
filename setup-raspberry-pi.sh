@@ -83,7 +83,7 @@ if [ ! -d /home/homeautomation/WiringPi-Python ]; then
     python3 setup.py install || exit 3
 fi
 
-pip3 install rpi_ws281x rflink
+pip install --break-system-packages rpi_ws281x rflink
 
 if [ ! -d /home/homeautomation/lighthome ]; then
     cd /home/homeautomation
