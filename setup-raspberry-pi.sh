@@ -20,7 +20,7 @@ systemctl enable ssh || exit 2
 
 systemctl set-default multi-user.target || exit 2 #no graphical UI by default
 
-apt install aptitude tmux git gcc make zsh kodi python3-virtualenv virtualenv vim cec-utils libcec-dev python3-cec scons swig snapclient libttspico-utils sshfs jq golang mosquitto-clients netcat-traditional mpv mpc || exit 1
+apt install aptitude tmux git gcc make zsh kodi python3-virtualenv virtualenv vim cec-utils libcec-dev python3-cec scons swig snapclient libttspico-utils sshfs jq golang mosquitto-clients netcat-traditional mpv mpc || exit 
 apt install kodi-audioencoder-flac
 
 echo "homeautomation    ALL=(ALL) NOPASSWD: ALL" > /etc/sudoers.d/030_homeautomation
@@ -80,7 +80,7 @@ if [ ! -d /home/homeautomation/WiringPi-Python ]; then
     cd /home/homeautomation
     sudo -u homeautomation git clone --recursive https://github.com/WiringPi/WiringPi-Python
     cd /home/homeautomation/WiringPi-Python
-    python3 setup.py install || exit 3
+    pip install --break-system-packages . || exit 3
 fi
 
 pip install --break-system-packages rpi_ws281x rflink
