@@ -3,7 +3,7 @@
 #include <unistd.h>
 #include <signal.h>
 #include <string.h>
-#include <wiringPi.h>
+#include <lgpio.h>
 
 int halt = 0;
 //state buffer (current state, previous state, state before that)
@@ -21,7 +21,7 @@ void refresh(int signum)
 
 int main(int argc, char *argv[]) {
     int pin = 0;
-    int pull_mode = PUD_OFF;
+    int pull_mode = LG_SET_PULL_NONE;
 
     struct sigaction action;
     memset(&action, 0, sizeof(action));
@@ -34,7 +34,11 @@ int main(int argc, char *argv[]) {
     sigaction(SIGUSR1, &action2, NULL);
     sigaction(SIGUSR2, &action2, NULL);
 
-    wiringPiSetupGpio(); //uses BCM numbering
+    int handle = lgGpiochipOpen(0);
+    if (handle < 0) {
+        fprintf(stderr, "Opening GPIO chip failed\n");
+        return 1;
+    }
 
     int opt;
     while ((opt = getopt(argc, argv, "p:udz")) != -1) {
@@ -43,13 +47,13 @@ int main(int argc, char *argv[]) {
                 pin = atoi(optarg);
                 break;
             case 'u':
-                pull_mode = PUD_UP;
+                pull_mode = LG_SET_PULL_UP;
                 break;
             case 'd':
-                pull_mode = PUD_DOWN;
+                pull_mode = LG_SET_PULL_DOWN;
                 break;
             case 'z':
-                pull_mode = PUD_OFF; //default
+                pull_mode = LG_SET_PULL_NONE; //default
                 break;
             case '?':
                 fprintf(stderr, "Unknown option: %c\n", optopt);
@@ -62,17 +66,16 @@ int main(int argc, char *argv[]) {
         return 1;
     }
 
-    pinMode(pin, INPUT);
-    pullUpDnControl(pin, pull_mode);
+    lgGpioClaimInput(handle, pull_mode, pin);
 
     while (!halt) {
-        state[0] = digitalRead(pin);
+        state[0] = lgGpioRead(handle, pin);
         if ((state[0] == state[1]) && (state[1] != state[2])) {
             printf("%d\n", state[0]);
             fflush(stdout);
         }
         for (int i = 2; i > 0; i--) state[i] = state[i-1];
-        delay(60);
+        lguSleep(0.06);
     }
 
     return 0;
