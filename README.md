@@ -28,6 +28,8 @@ between all devices is the MQTT broker.
     * These scripts are run normally, either over and over at a specified interval or as a one-shot script that runs indefinitely by itself.
     * Standard output serves as payload for MQTT (the script doesn't have to deal with MQTT itself)
 * **actions scripts and programs** (``scripts/``, ``programs/``) - Perform any action, completely MQTT unaware, can also be invoked independently from command line for low-level testing
+* `setup-raspberry-pi.sh` - Script to setup raspberry pi. For headless setup, first `sudo touch /boot/ssh` on the image, and add a `/boot/userconf.txt` with contents `homeautomation:$encryptedpw` where the password is encrypted with `openssl passwd -6`.
+    
 
 I decided on simple shell scripts to act as the glue between components and not
 opt for another layer in for example Python. In true UNIX-fashion each tool
@@ -81,5 +83,4 @@ Initially I ran Home Assistant on these devices as well, but due to their
 decision to remove GPIO support and the increased amount of unnecessary bloat
 which I don't need, I desired to go for a more lightweight approach and just
 write things from scratch.
-
 
