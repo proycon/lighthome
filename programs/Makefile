@@ -1,5 +1,5 @@
 gpio_binary_sensor: gpio_binary_sensor.c
-	gcc -o $@ $< -lwiringPi
+	gcc -o $@ $< -llgpio
 
 dht22: dht22.c
 	gcc -o $@ $< -lwiringPi
