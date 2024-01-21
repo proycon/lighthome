@@ -34,7 +34,7 @@ int main(int argc, char *argv[]) {
     sigaction(SIGUSR1, &action2, NULL);
     sigaction(SIGUSR2, &action2, NULL);
 
-    int handle = lgGpiochipOpen(0);
+    int handle = lgGpiochipOpen(4);
     if (handle < 0) {
         fprintf(stderr, "Opening GPIO chip failed\n");
         return 1;
