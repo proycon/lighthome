@@ -8,7 +8,7 @@ export PLAY="mpv --audio-device=alsa/sysdefault:CARD=Device --no-video --really-
 settrap #kill all children when dying
 
 export GPIO_PIN_433SEND=4
-export SNAPCAST_SOUNDCARD="hdmi:CARD=vc4hdmi1"
+export SNAPCAST_SOUNDCARD="hdmi:CARD=vc4hdmi0"
 export MPD_HOST="192.168.0.1"
 export DEFAULT_MPC_SEARCH="Instrumental/Calm Piano"
 
