@@ -15,7 +15,7 @@ export MPD_HOST="192.168.0.1"
 export DEFAULT_MPC_SEARCH="Instrumental/Calm Piano"
 
 #runs asynchronously
-mqtt_receiver 433send sound video musicplayer tts kodi irsend hdmi_cec_send statefiles
+mqtt_receiver 433send sound video musicplayer tts kodi irsend hdmi_cec_send statefiles desktop
 
 export GPIO_PIN=25
 export GPIO_INVERT=1

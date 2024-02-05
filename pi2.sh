@@ -26,7 +26,7 @@ export MPD_HOST="192.168.0.1"
 export DEFAULT_MPC_SEARCH="Instrumental/Calm Piano"
 
 #runs asynchronously, calls specified handlers
-mqtt_receiver 433send sound video musicplayer tts kodi technofire irsend hdmi_cec_send statefiles
+mqtt_receiver 433send sound video musicplayer tts kodi technofire irsend hdmi_cec_send statefiles desktop
 
 #runs asynchronously, calls specified sender
 #         TOPIC
