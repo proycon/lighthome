@@ -112,9 +112,9 @@ stop media center: run ~/lighthome/scripts/numen/send_wrapper.sh KODI_OFF
 media center on: run ~/lighthome/scripts/numen/send_wrapper.sh KODI_ON
 media center off: run ~/lighthome/scripts/numen/send_wrapper.sh KODI_OFF
 start desktop: run ~/lighthome/scripts/numen/send_wrapper.sh DESKTOP_ON
-stop desktop: ~/lighthome/scripts/numen/send_wrapper.sh DESKTOP_OFF
+stop desktop: run ~/lighthome/scripts/numen/send_wrapper.sh DESKTOP_OFF
 desktop on: run ~/lighthome/scripts/numen/send_wrapper.sh DESKTOP_ON
-desktop off: ~/lighthome/scripts/numen/send_wrapper.sh DESKTOP_OFF
+desktop off: run ~/lighthome/scripts/numen/send_wrapper.sh DESKTOP_OFF
 next song: run ~/lighthome/scripts/numen/send_wrapper.sh home/command/music/next 
 previous song: run ~/lighthome/scripts/numen/send_wrapper.sh home/command/music/previous 
 next music: run ~/lighthome/scripts/numen/send_wrapper.sh home/command/music/next 
