@@ -2,7 +2,7 @@
 
 handle_desktop() {
     case $TOPIC in
-        "home/desktop/set/$HOSTNAME"|"home/kodi/$HOSTNAME")
+        "home/desktop/set/$HOSTNAME"|"home/desktop/$HOSTNAME")
             STATE=$(echo "$PAYLOAD" | tr '[:lower:]' '[:upper:]')
             if [ "$STATE" = "ON" ]; then
                 pidof -q lightdm || sudo -n systemctl start display-manager &
