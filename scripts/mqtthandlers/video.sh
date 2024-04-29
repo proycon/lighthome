@@ -92,11 +92,20 @@ handle_video() {
                     clearqueue
                     (download "$PAYLOAD" && playqueue) &
                     ;;
-                *mp4|*avi|*webm|*ogv)
+                *mp4|*avi|*webm|*ogv|*mkv)
                     FILENAME="$HAROOT/media/$PAYLOAD"
                     if [ -e "$FILENAME" ]; then
                         $PLAY "$FILENAME" &
                     else
+                        if [ -n "$MEDIAPATH" ]; then
+                            for p in $MEDIAPATH; do
+                                FILENAME="$p/$PAYLOAD"
+                                if [ -e "$FILENAME" ]; then
+                                    $PLAY "$FILENAME" &
+                                    return 0;
+                                fi
+                            done
+                        fi
                         "$HAROOT/scripts/voice/picotts.sh" "Video file not found" &
                         error "Unable to play $FILENAME, file not found"
                     fi
