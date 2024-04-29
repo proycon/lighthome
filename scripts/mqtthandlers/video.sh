@@ -6,7 +6,7 @@ havevar HOSTNAME
 havedep yt-dlp
 havedep playerctl #MPRIS
 
-[ -z "$PLAYVIDEO" ] && PLAYVIDEO="cvlc --play-and-exit"
+[ -z "$PLAYVIDEO" ] && PLAYVIDEO="mpv"
 havedep "$(echo "$PLAYVIDEO" | cut -d " " -f 1)"
 
 
