@@ -6,6 +6,7 @@
 [ -n "$PULSE_HOST" ] || export PULSE_HOST=192.168.0.1
 export PLAY="mpv -ao pulse --pulse-host=$PULSE_HOST --no-video --really-quiet"
 export HASTATELOGFILE="$HAROOT/state.log"
+export MPD_HOST="192.168.0.1"
 
 . "$HAROOT/scripts/common/include.sh"
 
