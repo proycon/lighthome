@@ -3,7 +3,7 @@
 if [ -z "$HAROOT" ]; then
     export HAROOT="$(dirname $(realpath "$0"))"
 fi
-export PLAY="timeout --kill-after=12s --signal=9 10s mpv"
+export PLAY="timeout --kill-after=12s --signal=9 10s mpv --no-video --really-quiet"
 
 . "$HAROOT/scripts/common/include.sh"
 
