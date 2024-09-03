@@ -48,7 +48,9 @@ handle_video() {
             return 0
             ;;
         "home/video/$HOSTNAME/stop"|"home/command/video/$HOSTNAME/stop")
-            playerctl stop && clearqueue
+            playerctl stop 
+            killall mpv
+            clearqueue
             return 0
             ;;
         "home/video/$HOSTNAME/next"|"home/command/video/$HOSTNAME/next")
