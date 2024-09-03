@@ -95,13 +95,13 @@ handle_video() {
                 *mp4|*avi|*webm|*ogv|*mkv)
                     FILENAME="$HAROOT/media/$PAYLOAD"
                     if [ -e "$FILENAME" ]; then
-                        $PLAY "$FILENAME" &
+                        $PLAYVIDEO "$FILENAME" &
                     else
                         if [ -n "$MEDIAPATH" ]; then
                             for p in $MEDIAPATH; do
                                 FILENAME="$p/$PAYLOAD"
                                 if [ -e "$FILENAME" ]; then
-                                    $PLAY "$FILENAME" &
+                                    $PLAYVIDEO "$FILENAME" &
                                     return 0;
                                 fi
                             done

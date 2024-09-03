@@ -2,6 +2,7 @@
 
 export HAROOT="/home/homeautomation/lighthome"
 export PLAY="mpv --audio-device=alsa/sysdefault:CARD=Device --no-video --really-quiet"
+export PLAYVIDEO="mpv --audio-device=alsa/sysdefault:CARD=vc4hdmi0 --really-quiet"
 export MEDIAPATH="/Server/proycon/ /Server/anaxotic/"
 
 . "$HAROOT/scripts/common/include.sh"
