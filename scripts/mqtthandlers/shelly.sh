@@ -44,12 +44,11 @@ handle_shelly() {
         home/command/lights/*)
             #state in payload
             UNIT=$(echo "$TOPIC" | cut -d'/' -f4)
-            STATE=$(echo "$PAYLOAD" | jq .output)
-            case $STATE in
+            case $PAYLOAD in
                 on|ON|true|True|TRUE|1)
                     mqttpub "home/shelly-$UNIT/command/switch:0" "on" &
                     ;;
-                *)
+                off|OFF|false|False|FALSE|0)
                     mqttpub "home/shelly-$UNIT/command/switch:0" "off" &
                     ;;
             esac
