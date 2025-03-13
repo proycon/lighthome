@@ -15,11 +15,14 @@ handle_shelly() {
             UNIT=$(echo "$TOPIC" | cut -d'/' -f2 | cut -d'-' -f2)
             STATE=$(echo "$PAYLOAD" | jq .output)
             #propagate to homeassistant
-            if [ "$STATE" = "true" ]; then
-                mqttpub "home/lights/$UNIT" "on" &
-            elif [ "$STATE" = "false" ]; then
-                mqttpub "home/lights/$UNIT" "off" &
-            fi
+            case $STATE in
+                on|ON|true|True|TRUE|1)
+                    mqttpub "home/lights/$UNIT" "on" &
+                    ;;
+                off|OFF|false|False|FALSE|0)
+                    mqttpub "home/lights/$UNIT" "off" &
+                    ;;
+            esac
             return 0
             ;;
         home/command/lights/on)
@@ -41,8 +44,14 @@ handle_shelly() {
         home/command/lights/*)
             #state in payload
             UNIT=$(echo "$TOPIC" | cut -d'/' -f4)
-            STATE=$(echo "$PAYLOAD" | tr '[:upper:]' '[:lower:]')
-            mqttpub "home/shelly-$UNIT/command/switch:0" "$STATE" &
+            case $STATE in
+                on|ON|true|True|TRUE|1)
+                    mqttpub "home/shelly-$UNIT/command/switch:0" "on" &
+                    ;;
+                off|OFF|false|False|FALSE|0)
+                    mqttpub "home/shelly-$UNIT/command/switch:0" "off" &
+                    ;;
+            esac
             ;;
         *)
             #unhandled
