@@ -13,7 +13,7 @@ export MPD_HOST="192.168.0.1"
 settrap #kill all children when dying
 
 #runs asynchronously
-mqtt_receiver sound tts mpc
+mqtt_receiver sound tts mpc shelly
 
 mqtt_transmitter "CUSTOM" 0 nfc #transmits to home/nfc
 
