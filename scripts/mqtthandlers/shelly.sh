@@ -25,11 +25,17 @@ handle_shelly() {
             esac
             return 0
             ;;
+        home/command/lights/status)
+            #Request status update from all lights
+            for UNIT in tv_spots back_corner back_room office midspots hall front_room porch garden balcony; do
+                mqttpub "home/shelly-$UNIT/command" "status_update" 
+            done &
+            ;;
         home/command/lights/on)
-            #TODO: all lights on
+            #TODO: all lights on (currently handled by homeassistant)
             ;;
         home/command/lights/off)
-            #TODO: all lights off
+            #TODO: all lights off (currently handled by homeassistant)
             ;;
         home/command/lights/*/on)
             #state in topic
