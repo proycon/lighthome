@@ -33,8 +33,8 @@ else
     echo "#MYSETUP" >> /boot/config.txt
     if [ "$PI" -eq 1 ] || [ "$PI" -eq 2 ]; then
         #set default device to USB audio and disable internal sound
-        sed -i s/defaults.ctl.card 0/defaults.ctl.card 1/ /usr/share/alsa/alsa.conf
-        sed -i s/defaults.pcm.card 0/defaults.pcm.card 1/ /usr/share/alsa/alsa.conf
+        sed -i 's/defaults.ctl.card 0/defaults.ctl.card 1/' /usr/share/alsa/alsa.conf
+        sed -i 's/defaults.pcm.card 0/defaults.pcm.card 1/' /usr/share/alsa/alsa.conf
     fi
     if [ "$PI" -eq 1 ]; then
         echo "dtoverlay=gpio-ir-tx,gpio_pin=17" >> /boot/config.txt
