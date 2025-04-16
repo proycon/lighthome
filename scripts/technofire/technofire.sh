@@ -8,5 +8,10 @@ fi
 havedep pkill
 havedep "$HAROOT/scripts/technofire/technofire.py"
 
-pkill -f technofire.py > /dev/null 2>/dev/null
-$HAROOT/scripts/technofire/technofire.py $@
+if [ "$SUDO_TECHNOFIRE" = "1" ]; then
+    sudo pkill -f technofire.py > /dev/null 2>/dev/null
+    sudo $HAROOT/scripts/technofire/technofire.py $@
+else
+    pkill -f technofire.py > /dev/null 2>/dev/null
+    $HAROOT/scripts/technofire/technofire.py $@
+fi
