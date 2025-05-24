@@ -21,24 +21,6 @@ void refresh(int signum)
 }
 
 
-unsigned get_revision(void) {
-  FILE *fp;
-  uint32_t n = 0;
-
-  if ((fp = fopen("/proc/device-tree/system/linux,revision", "r"))) {
-    if (fread(&n, sizeof(n), 1, fp) != 1) {
-      fclose(fp);
-      return 0;
-    }
-  }
-  fclose(fp);
-  return ntohl(n);
-}
-
-unsigned processor(void) {
-     return (get_revision()>>12)&7;
-}
-
 int main(int argc, char *argv[]) {
     int pin = 0;
     int pull_mode = LG_SET_PULL_NONE;
@@ -54,12 +36,8 @@ int main(int argc, char *argv[]) {
     sigaction(SIGUSR1, &action2, NULL);
     sigaction(SIGUSR2, &action2, NULL);
 
-    int handle;
-    if (processor() == 4) {
-        handle = lgGpiochipOpen(4);
-    } else {
-        handle = lgGpiochipOpen(0);
-    }
+    int handle = lgGpiochipOpen(4);
+    if (handle < 0) handle = lgGpiochipOpen(0); //fallback
     if (handle < 0) {
         fprintf(stderr, "Opening GPIO chip failed\n");
         return 1;
