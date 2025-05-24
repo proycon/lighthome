@@ -52,6 +52,6 @@ export GPIO_INVERT=1
 export GPIO_PULL=down
 mqtt_transmitter "home/binary_sensor/bedroomwindow_left" 0 gpio
 
-mqtt_transmitter "CUSTOM" 0 rflink
+#mqtt_transmitter "CUSTOM" 0 rflink
 
 wait #wait for all children
