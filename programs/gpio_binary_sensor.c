@@ -4,6 +4,7 @@
 #include <signal.h>
 #include <string.h>
 #include <lgpio.h>
+#include <arpa/inet.h>
 
 int halt = 0;
 //state buffer (current state, previous state, state before that)
@@ -17,6 +18,25 @@ void term(int signum)
 void refresh(int signum)
 {
    for (int i = 0; i < 3; i++) state[i] = -1;
+}
+
+
+unsigned get_revision(void) {
+  FILE *fp;
+  uint32_t n = 0;
+
+  if ((fp = fopen("/proc/device-tree/system/linux,revision", "r"))) {
+    if (fread(&n, sizeof(n), 1, fp) != 1) {
+      fclose(fp);
+      return 0;
+    }
+  }
+  fclose(fp);
+  return ntohl(n);
+}
+
+unsigned processor(void) {
+     return (get_revision()>>12)&7;
 }
 
 int main(int argc, char *argv[]) {
@@ -34,7 +54,12 @@ int main(int argc, char *argv[]) {
     sigaction(SIGUSR1, &action2, NULL);
     sigaction(SIGUSR2, &action2, NULL);
 
-    int handle = lgGpiochipOpen(4);
+    int handle;
+    if (processor() == 4) {
+        handle = lgGpiochipOpen(4);
+    } else {
+        handle = lgGpiochipOpen(0);
+    }
     if (handle < 0) {
         fprintf(stderr, "Opening GPIO chip failed\n");
         return 1;
