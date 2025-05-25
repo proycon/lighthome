@@ -20,14 +20,14 @@ clearqueue() {
 download() {
     mkdir -p "$TMPDIR/videoqueue/"
     cd "$TMPDIR/videoqueue/" || error "videoqueue not created"
-    "$HAROOT/scripts/voice/picotts.sh" "Downloading video" &
+    "$HAROOT/scripts/voice/picotts.sh" "Downloading media" &
     case $1 in 
-        *jpg|*jpeg|*JPG|*gif|*png|*mp3|*MP3|*ogg|*flac|*opus|*m4a|*webp)
-            wget "$1" || (sleep 3 && "$HAROOT/scripts/voice/picotts.sh" "Download failed")
+        *jpg|*jpeg|*JPG|*gif|*png|*mp3|*MP3|*ogg|*flac|*opus|*m4a|*webp|*".mp3?"*)
+            wget "$1" || (sleep 3 && "$HAROOT/scripts/voice/picotts.sh" "Media download failed")
             ;;
         *)
             killall yt-dlp
-            yt-dlp "$1" || (sleep 3 && "$HAROOT/scripts/voice/picotts.sh" "Download failed")
+            yt-dlp "$1" || (sleep 3 && "$HAROOT/scripts/voice/picotts.sh" "Video download failed")
             #yt-dlp -f "bestvideo[height<=1080]+bestaudio" "$1" || (sleep 3 && "$HAROOT/scripts/voice/picotts.sh" "Download failed")
             ;;
     esac
@@ -94,7 +94,7 @@ handle_video() {
                     clearqueue
                     (download "$PAYLOAD" && playqueue) &
                     ;;
-                *mp4|*avi|*webm|*ogv|*mkv)
+                *mp4|*avi|*webm|*ogv|*mkv|*mp3|*opus|*m4a)
                     FILENAME="$HAROOT/media/$PAYLOAD"
                     if [ -e "$FILENAME" ]; then
                         $PLAYVIDEO "$FILENAME" &
