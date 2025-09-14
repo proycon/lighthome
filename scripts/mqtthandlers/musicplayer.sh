@@ -22,8 +22,8 @@ handle_musicplayer() {
                 mpc play #no-op when already playing
                 killall snapclient
                 (
-                    if ! snapclient -s "${SNAPCAST_SOUNDCARD:-default}" -h anaproy.nl; then
-                        mqtt_say "$HOSTNAME" "Error: Music streamer failed"
+                    if ! snapclient -s "${SNAPCAST_SOUNDCARD:-default}" -h anaproy.nl 2> /tmp/lighthome.err; then
+                        mqtt_say "$HOSTNAME" "Error: Music streamer failed: $(cat /tmp/lighthome.err)"
                     else
                         mqtt_say "$HOSTNAME" "Music streamer finished"
                     fi
