@@ -9,7 +9,7 @@ settrap #kill all children when dying
 export DEVICE_CEC=/dev/cec0
 
 export GPIO_PIN_433SEND=23
-export SNAPCAST_SOUNDCARD=17
+#export SNAPCAST_SOUNDCARD=17
 export ONEWIRE_DEVICE_ID=28-0000059319c4
 
 export GPIO25_TOPIC="home/binary_sensor/backdoor"
