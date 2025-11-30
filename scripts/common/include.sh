@@ -97,7 +97,7 @@ mqttpub() {
         PAYLOAD="ON"
     fi
 
-    info "mqttpub: $TOPIC - $PAYLOAD"
+    info "MQTT OUT $TOPIC: $PAYLOAD"
     if ! mosquitto_pub -I "$HOSTNAME$MQTT_SESSION_SUFFIX" -h "$MQTT_HOST" -p "$MQTT_PORT" -u "$MQTT_USER" -P "$MQTT_PASSWORD" --cafile "$CACERT" -t "$TOPIC" -m "$PAYLOAD" --qos 1 $MQTT_OPTIONS; then
         error "mqttpub failed"
         return 1
