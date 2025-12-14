@@ -87,7 +87,11 @@ tv on: run ~/lighthome/scripts/numen/send_wrapper.sh TV_ON
 tv off: run ~/lighthome/scripts/numen/send_wrapper.sh TV_OFF
 watch tv: run ~/lighthome/scripts/numen/send_wrapper.sh TV_ON
 start music: run ~/lighthome/scripts/numen/send_wrapper.sh MUSIC_ON
+start calm music: run ~/lighthome/scripts/numen/send_wrapper.sh home/command/music/search/filename "Instrumental/Calm Piano" && ~/lighthome/scripts/numen/send_wrapper.sh MUSIC_ON
 start piano music: run ~/lighthome/scripts/numen/send_wrapper.sh home/command/music/search/filename "Instrumental/Calm Piano" && ~/lighthome/scripts/numen/send_wrapper.sh MUSIC_ON
+start long music: run ~/lighthome/scripts/numen/send_wrapper.sh home/command/music/search/filename "Classical/Simeon ten Holt/Simeon ten Holt - Canto Ostinato piano solo by Wim te Groen" && ~/lighthome/scripts/numen/send_wrapper.sh MUSIC_ON
+start classical music: run ~/lighthome/scripts/numen/send_wrapper.sh home/command/music/search/filename "Classical" && ~/lighthome/scripts/numen/send_wrapper.sh MUSIC_ON
+start old music: run ~/lighthome/scripts/numen/send_wrapper.sh home/command/music/search/filename "Classical" && ~/lighthome/scripts/numen/send_wrapper.sh MUSIC_ON
 start instrumental music: run ~/lighthome/scripts/numen/send_wrapper.sh home/command/music/search/filename Instrumental && ~/lighthome/scripts/numen/send_wrapper.sh MUSIC_ON
 start french music: run ~/lighthome/scripts/numen/send_wrapper.sh home/command/music/search/filename byLanguage/Français && ~/lighthome/scripts/numen/send_wrapper.sh MUSIC_ON
 start german music: run ~/lighthome/scripts/numen/send_wrapper.sh home/command/music/search/filename byLanguage/Deutsch && ~/lighthome/scripts/numen/send_wrapper.sh MUSIC_ON
@@ -228,3 +232,4 @@ horse:
 air:
 yes:
 okay:
+computer:

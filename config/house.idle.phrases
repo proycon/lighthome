@@ -45,6 +45,12 @@ little house:
 house little:
 house is little:
 mouse listen:
-
+better:
+outer:
+commuter:
+compute:
+computers:
+computes:
 
 house listen: eval ~/lighthome/scripts/numen/numen_wake.sh 8
+computer: eval ~/lighthome/scripts/numen/numen_wake.sh 8
