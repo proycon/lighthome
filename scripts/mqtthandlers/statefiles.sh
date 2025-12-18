@@ -12,7 +12,10 @@ handle_statefiles() {
             [ ! -e "$HASTATEDIR/$TYPE" ] && mkdir -p "$HASTATEDIR/$TYPE"
             if [ -e "$HASTATEDIR/$TYPE/$SENSOR" ] && [ -n "$HASTATELOGFILE" ] ; then
                 if [ "$(cat "$HASTATEDIR/$TYPE/$SENSOR")" != "$PAYLOAD" ]; then
-                    echo "$(date "+%Y-%M-%D %H:%M:%S")\t$TYPE/$SENSOR\t$PAYLOAD" >> $HASTATELOGFILE
+                    echo "$(date "+%Y-%M-%D %H:%M:%S")\t$TYPE/$SENSOR\t$PAYLOAD" >> "$HASTATELOGFILE"
+                else
+                    #state file is already up to date, don't write to it again
+                    return 0
                 fi
             fi
             echo "$PAYLOAD" > "$HASTATEDIR/$TYPE/$SENSOR"
@@ -22,7 +25,10 @@ handle_statefiles() {
             SENSOR=$(echo "$TOPIC" | cut -d "/" -f 2)
             if [ -e "$HASTATEDIR/$SENSOR" ] && [ -n "$HASTATELOGFILE" ] ; then
                 if [ "$(cat "$HASTATEDIR/$SENSOR")" != "$PAYLOAD" ]; then
-                    echo "$(date "+%Y-%M-%D %H:%M:%S")\t$SENSOR\t$PAYLOAD" >> $HASTATELOGFILE
+                    echo "$(date "+%Y-%M-%D %H:%M:%S")\t$SENSOR\t$PAYLOAD" >> "$HASTATELOGFILE"
+                else
+                    #state file is already up to date, don't write to it again
+                    return 0
                 fi
             fi
             echo "$PAYLOAD" > "$HASTATEDIR/$SENSOR"
