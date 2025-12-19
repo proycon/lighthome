@@ -296,7 +296,7 @@ lastchanged() {
         else
             now=$(date +"%s")
         fi
-        mtime=$(stat -c "%Y")
+        mtime=$(stat -c "%Y" "$HASTATEDIR/$1")
         echo $((now - mtime))
     else
         return 1
