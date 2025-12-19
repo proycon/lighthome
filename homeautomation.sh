@@ -16,7 +16,7 @@ settrap #kill all children when dying
 . "$HAROOT/automations.sh"
 
 #runs asynchronously
-mqtt_receiver sound tts mpc shelly
+mqtt_receiver sound tts mpc shelly statefiles
 
 mqtt_transmitter "CUSTOM" 0 nfc #transmits to home/nfc
 
