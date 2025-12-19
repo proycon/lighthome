@@ -8,6 +8,9 @@
 # functions are never invoked when a previous same one is still running
 # _cleanup variants are invoked afterward but do not block new triggers
 
+havedep matty
+havedep mpc
+
 
 binary_sensor_doorbell() {
     case $1 in
@@ -19,6 +22,7 @@ binary_sensor_doorbell() {
                 PID2=$?
                 mqttpub "home/sound/everywhere" "doorbell.ogg"
                 mpc pause
+                matty "$MATRIX_ROOM" "Doorbell rang" &
                 #wait to ensure this automation can't be triggered twice at the same time
                 wait $PID1 $PID2
             fi
