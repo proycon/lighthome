@@ -231,9 +231,7 @@ fi
 [ -z "$HASTATEDIR" ] && export HASTATEDIR="$TMPDIR/homestatus"
 
 readstate() {
-    if [ -n "$2" ]; then
-        die "readstate expects a variable name as second parameter"
-    fi
+    [ -n "$2" ] || die "readstate expects a variable name as second parameter"
     if [ -e "$HASTATEDIR/$1" ]; then
         read -r "$2" <"$HASTATEDIR/$1"
     else
@@ -242,9 +240,7 @@ readstate() {
 }
 
 teststate() {
-    if [ -n "$2" ]; then
-        die "teststate expects a test value as second parameter"
-    fi
+    [ -n "$2" ] || die "teststate expects a test value as second parameter"
     if [ -e "$HASTATEDIR/$1" ]; then
         read -r "" state <"$HASTATEDIR/$1"
         if [ "$state" = "$2" ]; then
@@ -257,12 +253,8 @@ teststate() {
 
 #write a state, first argument is a target (without $HASTATEDIR), second is the payload:
 writestate() {
-    if [ -n "$1" ]; then
-        die "writestate expects a target as first parameter"
-    fi
-    if [ -n "$2" ]; then
-        die "writestate expects a payload as second parameter"
-    fi
+    [ -n "$1" ] || die "writestate expects a target as first parameter"
+    [ -n "$2" ] || die "writestate expects a payload as second parameter"
     d=$(dirname "$1")
     if [ "$d" != "." ] && [ ! -e "$HASTATEDIR/$d" ]; then
         mkdir -p "$HASTATEDIR/$d"
@@ -286,6 +278,7 @@ writestate() {
             touch "$TMPDIR/$f.runlock" &&\
             "$f" "$2" "$OLDPAYLOAD" "$age" &&\
             rm "$TMPDIR/$f.runlock" && "${f}_cleanup" "$2" &
+            [ -n "$HASTATELOGFILE" ] && echo "(called $f)" >> "$HASTATELOGFILE"
         fi
     fi
 }
