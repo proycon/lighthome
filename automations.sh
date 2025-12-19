@@ -20,7 +20,7 @@ binary_sensor_doorbell() {
                 PID1=$?
                 yellow_notification_lights &
                 PID2=$?
-                mqttpub "home/sound/everywhere" "doorbell.ogg"
+                mqttpub "home/sound/everywhere" "doorbell.ogg" &
                 mpc pause
                 matty "$MATRIX_ROOM" "Doorbell rang" &
                 #wait to ensure this automation can't be triggered twice at the same time
