@@ -9,12 +9,10 @@ export HASTATELOGFILE="/tmp/state.log"
 export MPD_HOST="192.168.0.1"
 export MQTT_CLEAN=1
 
+export INCLUDES="$HAROOT/scripts.sh $HAROOT/automations.sh"
 . "$HAROOT/scripts/common/include.sh"
 
 settrap #kill all children when dying
-
-. "$HAROOT/scripts.sh"
-. "$HAROOT/automations.sh"
 
 #runs asynchronously
 mqtt_receiver sound tts mpc shelly statefiles

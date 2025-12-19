@@ -309,3 +309,10 @@ playsound() {
         error "Unable to play $FILENAME, file not found"
     fi
 }
+
+#process includes
+if [ -n "$INCLUDES" ]; then
+    for include in $INCLUDES; do
+        . "$include"
+    done
+fi
