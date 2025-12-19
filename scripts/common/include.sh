@@ -110,11 +110,16 @@ mqtt_receiver() {
     mqttcheck
     #run asynchronously
     (
+        if [ "$MQTT_CLEAN" = "1" ]; then
+            MQTT_OPTS=
+        else
+            MQTT_OPTS="-c"
+        fi
         settrap
         while [ $EXIT -eq 0 ]; do
             info "mqttsub: $*"
             #shellcheck disable=SC2068,SC2086
-            if ! mosquitto_sub -c -q 1 -i "$HOSTNAME" -h "$MQTT_HOST" -p "$MQTT_PORT" -u "$MQTT_USER" -P "$MQTT_PASSWORD" --cafile "$CACERT" -t '#' -F "@H:@M:@S|%t|%p" $MQTT_OPTIONS | "$HAROOT/scripts/common/mqtthandler.sh" $@; then
+            if ! mosquitto_sub $MQTT_OPTS -q 1 -i "$HOSTNAME" -h "$MQTT_HOST" -p "$MQTT_PORT" -u "$MQTT_USER" -P "$MQTT_PASSWORD" --cafile "$CACERT" -t '#' -F "@H:@M:@S|%t|%p" $MQTT_OPTIONS | "$HAROOT/scripts/common/mqtthandler.sh" $@; then
                 #small delay before reconnecting
                 error "mqttsub failed ($*)"
             fi
