@@ -265,20 +265,18 @@ writestate() {
         mkdir -p "$HASTATEDIR/$d"
     fi
     if readstate "$1" OLDPAYLOAD; then
-        if [ "$OLDPAYLOAD" != "$2" ]; then
-            #shellcheck disable=SC2028 #(echo instead of printf is fine here)
-            [ -n "$HASTATELOGFILE" ] && echo "$(date "+%Y-%M-%D %H:%M:%S")\t$1\t$2" >> "$HASTATELOGFILE"
-        else
+        if [ "$OLDPAYLOAD" = "$2" ]; then
             #state didn't change
             return 0
         fi
     fi
+    [ -n "$HASTATELOGFILE" ] && echo "$(date "+%Y-%M-%D %H:%M:%S")	$1	$2" >> "$HASTATELOGFILE"
     age=$(lastchanged "$1")
     echo "$2" > "$HASTATEDIR/$1"
     #run callback function if it exists and is not already running (based on lock file)
     #shellcheck disable=SC3060 #(string expansion is not POSIX, but works in ash)
     f="${1//\//_}"
-    if command -v "$f"; then
+    if command -v "$f" > /dev/null; then
         if [ ! -e "$TMPDIR/$f.runlock" ]; then
             touch "$TMPDIR/$f.runlock" &&\
             "$f" "$2" "$OLDPAYLOAD" "$age" &&\
