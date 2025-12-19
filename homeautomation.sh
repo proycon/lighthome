@@ -12,6 +12,9 @@ export MPD_HOST="192.168.0.1"
 
 settrap #kill all children when dying
 
+. "$HAROOT/scripts.sh"
+. "$HAROOT/automations.sh"
+
 #runs asynchronously
 mqtt_receiver sound tts mpc shelly
 

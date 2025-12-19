@@ -229,3 +229,87 @@ fi
 [ -z "$TMPDIR" ] && export TMPDIR=/tmp
 
 [ -z "$HASTATEDIR" ] && export HASTATEDIR="$TMPDIR/homestatus"
+
+readstate() {
+    if [ -n "$2" ]; then
+        die "readstate expects a variable name as second parameter"
+    fi
+    if [ -e "$HASTATEDIR/$1" ]; then
+        read -r "$2" <"$HASTATEDIR/$1"
+    else
+        return 1
+    fi
+}
+
+teststate() {
+    if [ -n "$2" ]; then
+        die "teststate expects a test value as second parameter"
+    fi
+    if [ -e "$HASTATEDIR/$1" ]; then
+        read -r "" state <"$HASTATEDIR/$1"
+        if [ "$state" = "$2" ]; then
+            return 0
+        fi
+    else
+        return 1
+    fi
+}
+
+#write a state, first argument is a target (without $HASTATEDIR), second is the payload:
+writestate() {
+    if [ -n "$1" ]; then
+        die "writestate expects a target as first parameter"
+    fi
+    if [ -n "$2" ]; then
+        die "writestate expects a payload as second parameter"
+    fi
+    d=$(dirname "$1")
+    if [ "$d" != "." ] && [ ! -e "$HASTATEDIR/$d" ]; then
+        mkdir -p "$HASTATEDIR/$d"
+    fi
+    if readstate "$1" OLDPAYLOAD; then
+        if [ "$OLDPAYLOAD" != "$2" ]; then
+            #shellcheck disable=SC2028 #(echo instead of printf is fine here)
+            [ -n "$HASTATELOGFILE" ] && echo "$(date "+%Y-%M-%D %H:%M:%S")\t$1\t$2" >> "$HASTATELOGFILE"
+        else
+            #state didn't change
+            return 0
+        fi
+    fi
+    age=$(lastchanged "$1")
+    echo "$2" > "$HASTATEDIR/$1"
+    #run callback function if it exists and is not already running (based on lock file)
+    #shellcheck disable=SC3060 #(string expansion is not POSIX, but works in ash)
+    f="${1//\//_}"
+    if command -v "$f"; then
+        if [ ! -e "$TMPDIR/$f.runlock" ]; then
+            touch "$TMPDIR/$f.runlock" &&\
+            "$f" "$2" "$OLDPAYLOAD" "$age" &&\
+            rm "$TMPDIR/$f.runlock" && "${f}_cleanup" "$2" &
+        fi
+    fi
+}
+
+#returns the age of a state in seconds
+lastchanged() {
+    if [ -e "$HASTATEDIR/$1" ]; then
+        if [ -n "$2" ]; then
+            now=$2 
+        else
+            now=$(date +"%s")
+        fi
+        mtime=$(stat -c "%Y")
+        echo $((now - mtime))
+    else
+        return 1
+    fi
+}
+
+playsound() {
+    FILENAME="$HAROOT/media/$1"
+    if [ -e "$FILENAME" ]; then
+        $PLAY "$FILENAME"
+    else
+        error "Unable to play $FILENAME, file not found"
+    fi
+}
