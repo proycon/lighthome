@@ -21,5 +21,8 @@ mqtt_transmitter "CUSTOM" 0 nfc #transmits to home/nfc
 
 mqttpub "home/command/ping" "$HOSTNAME" &
 
+matty "$MATRIX_ROOM" "Lighthome started" &
+mqtt_say "everywhere" "light home automation started"
+
 #wait for all processes to end
 wait
