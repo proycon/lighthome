@@ -259,7 +259,6 @@ teststate() {
 #write a state, first argument is a target (without $HASTATEDIR), second is the payload:
 writestate() {
     [ -n "$1" ] || die "writestate expects a target as first parameter"
-    [ -n "$2" ] || die "writestate expects a payload as second parameter"
     d=$(dirname "$1")
     if [ "$d" != "." ] && [ ! -e "$HASTATEDIR/$d" ]; then
         mkdir -p "$HASTATEDIR/$d"
